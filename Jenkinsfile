@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKERREPO = 'utilitywebsites/dashboards'
+        DOCKERREPO = 'dashboards/dashboards'
         FULL_DOCKER_REPO = "${PRIVATE_DOCKER_REGISTRY}/${DOCKERREPO}"
         TAG = "${BUILD_TIMESTAMP}"
     }
