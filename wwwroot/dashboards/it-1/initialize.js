@@ -3,7 +3,8 @@
 /* ******************************************** */
 $(document).ready(function(){
     weather_init(WEATHER_UPDATE_URL);
-    time_init(DATE_AND_TIME_URL)
+    time_init(DATE_AND_TIME_URL);
+    envmon_init("DO-SS", "Sensor-001", "https://dashboard-api.lskysd.ca/environmentmonitor/10.177.54.161/");
 });
 
 
@@ -26,15 +27,10 @@ setInterval(function() {
     time_update();
 }, 500);
 
-// Every 30 seconds
-setInterval(function() {
-}, 30000);
-
-
 // Every 5 minutes
 setInterval(function() {
+    envmon_update("DO-SS", "Sensor-001", "https://dashboard-api.lskysd.ca/environmentmonitor/10.177.54.161/");
 }, 300000);
-
 
 // Every 30 minutes
 setInterval(function() {
