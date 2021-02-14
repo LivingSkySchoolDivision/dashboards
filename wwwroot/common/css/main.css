@@ -20,10 +20,16 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 #current-time { grid-column: span 1; font-weight: bold;}
 #current-date { grid-column: span 3; font-weight: bold;}
 
-#weather-temperature { font-weight: bold; font-size: 2em;}
+#time-main { display: inline; }
+#time-second { display: inline; color: rgba(255,255,255,0.3); }
+
+#weather-temperature { font-weight: bold; font-size: 3em;}
 #weather-feelslike { font-weight: bold; font-size: 1.5em;}
 #weather-conditions { font-weight: normal;}
 #weather-extra {font-weight: normal;}
+#weather-humidity { display: inline; }
+#weather-wind { display: inline; }
+#weather-container { display: flex; justify-content: center; align-items: center;}
 
 .tw-1 { grid-column: span 1; }
 .tw-2 { grid-column: span 2; }
