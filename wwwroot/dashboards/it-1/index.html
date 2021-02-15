@@ -19,6 +19,7 @@
         <script src="../../common/js/weather.js" type="text/javascript"></script>
         <script src="../../common/js/date-and-time.js" type="text/javascript"></script>
         <script src="../../common/js/environmentmonitors.js" type="text/javascript"></script>
+        <script src="../../common/js/itwatchdogs.js" type="text/javascript"></script>
 
         <!-- styles unique to this dashboard -->
 
@@ -60,17 +61,12 @@
                 <div class="tile tw-1 th-1">
                     <div class="tile-content">
                         <div class="tile-title">DO - Switch Rack</div>
-                        <div class="enviromon-data">
-                            <div class="enviromon-temperature">--</div>
-                            <div class="enviromon-humidity">--</div>
-                        </div>
+                        <div id="itwatchdog-DO-SWITCHES"></div>
                         <br/>
                         <br/>
                         <br/>
                         <div class="tile-title">DO - VM Rack</div>
-                        <div class="enviromon-data">
-                            <div class="enviromon-temperature">--</div>
-                        </div>
+                        <div id="itwatchdog-DO-VMS"></div>
                     </div>
                 </div>
 
@@ -91,17 +87,12 @@
                     <div class="tile-content">
                         
                         <div class="tile-title">NBCHS - Switch Rack</div>
-                        <div class="enviromon-data">
-                            <div class="enviromon-temperature">--</div>
-                            <div class="enviromon-humidity">--</div>
-                        </div>
+                        <div id="itwatchdog-NBCHS-SWITCHES"></div>
                         <br/>  
                         <br/>
                         <br/>                      
                         <div class="tile-title">NBCHS - VM Rack</div>
-                        <div class="enviromon-data">
-                            <div class="enviromon-temperature">--</div>
-                        </div>
+                        <div id="itwatchdog-NBCHS-VMS"></div>
                     </div>                    
                 </div>
 
