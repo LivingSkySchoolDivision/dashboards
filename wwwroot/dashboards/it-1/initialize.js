@@ -4,7 +4,7 @@
 $(document).ready(function(){
     weather_init(WEATHER_UPDATE_URL);
     time_init(DATE_AND_TIME_URL);
-    envmon_init("DO-SS", "Sensor-001", "https://dashboard-api.lskysd.ca/environmentmonitor/10.177.54.161/");
+    envmon_init("environment-DO-ss", "Sensor-001", "https://dashboard-api.lskysd.ca/environmentmonitor/10.177.54.161/");
     envmon_update(); // Call this after all are initialized
     
     itwatchdog_init("itwatchdog-DO-SWITCHES","https://dashboard-api.lskysd.ca/ITWatchDog/10.177.54.129/9F0004A3F25158C3", true);

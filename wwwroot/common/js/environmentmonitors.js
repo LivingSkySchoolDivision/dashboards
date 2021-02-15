@@ -2,8 +2,15 @@
 var _envmon_activeSensors = [];
 
 function envmon_init(DIVID, SENSOR, URL) {
-    console.log("Initializing Pi environment monitor " + DIVID + " from " + URL);
+    var widgethtml = "";
+    widgethtml += "<div class=\"enviromon-data\" id=\"envmon-"+DIVID+"\">";
+    widgethtml += "<div class=\"enviromon-temperature\" id=\"envmon-"+DIVID+"-temperature\">--</div>";
+    widgethtml += "<div class=\"enviromon-humidity\" id=\"envmon-"+DIVID+"-humidity\">--</div>";
+    widgethtml += "</div>";
     
+    console.log("Initializing Pi environment monitor " + DIVID + " from " + URL);
+    $('#' + DIVID).html(widgethtml);
+
     _envmon_activeSensors.push({ DIVID: DIVID, URL: URL, NAME: SENSOR });
 }
 
