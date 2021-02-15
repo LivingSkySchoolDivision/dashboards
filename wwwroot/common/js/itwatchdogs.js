@@ -1,4 +1,5 @@
 
+var _itwatchdog_activeSensors = [];
 
 function itwatchdog_init(DIVID, URL, INCLUDEHUMIDITY) {
     var widgethtml = "";
@@ -12,55 +13,67 @@ function itwatchdog_init(DIVID, URL, INCLUDEHUMIDITY) {
     console.log("Initializing IT Watchdog from "+URL+" into DIV " + DIVID);
     $('#' + DIVID).html(widgethtml);
     
-    itwatchdog_update(DIVID, URL);
+    // Add this sensor to the list of active sensors
+    _itwatchdog_activeSensors.push({ URL: URL, DIVID: DIVID, INCLHUMID: INCLUDEHUMIDITY});
 }
 
-function itwatchdog_update(DIVID, URL) {
-    $.getJSON(URL, function(data) {
+function itwatchdog_update() {
 
-      var temp = parseFloat(data.temperature)
-      var humid = parseFloat(data.humidity);
+    _itwatchdog_activeSensors.forEach(sensor => {
+        console.log("Updating IT Watchdogs sensor " + sensor.DIVID + " from " + sensor.URL);
+        $.getJSON(sensor.URL, function(data) {
 
-      if (temp == -999) {
-          console.log("Found -999 temp - ignoring.");
-      } else {                    
-          $('#itwatchdog-' + DIVID + '-temperature').html(temp + "&deg;");
-          $('#itwatchdog-' + DIVID + '-humidity').html(humid + "%");
-      }              
+            var temp = parseFloat(data.temperature)
+            var humid = parseFloat(data.humidity);
+      
+            if (temp == -999) {
+                console.log("Found -999 temp - ignoring.");
+            } else {                    
+                $('#itwatchdog-' + sensor.DIVID + '-temperature').html(temp + "&deg;");
+                
+                if (sensor.INCLHUMID == true) {
+                    $('#itwatchdog-' + sensor.DIVID + '-humidity').html(humid + "%");
+                }
+            }              
+      
+            // If temperatures are worth warning about, add warning CSS
+            if (temp > ENVIRONMENT_TEMP_DANGER_THRESHOLD) {
+                $('#itwatchdog-' + sensor.DIVID + '-temperature').addClass("color-danger");                   
+                $('#itwatchdog-' + sensor.DIVID + '-temperature').removeClass("color-warning");
+            } else if (temp > ENVIRONMENT_TEMP_WARNING_THRESHOLD) {
+                $('#itwatchdog-' + sensor.DIVID + '-temperature').addClass("color-warning");
+                $('#itwatchdog-' + sensor.DIVID + '-temperature').removeClass("color-danger");
+            } else {
+                $('#itwatchdog-' + sensor.DIVID + '-temperature').removeClass("color-danger");                    
+                $('#itwatchdog-' + sensor.DIVID + '-temperature').removeClass("color-warning");
+            }
+      
+            // Uncomment this if we start caring about humidity.
+            // We don't have anything that can fix humidity issues, so theres no point alerting about it.
+      
+            if (sensor.INCLHUMID == true) {
+                // If temperatures are worth warning about, add warning CSS
+                if (humid > ENVIRONMENT_HIGH_HUMIDITY_DANGER_THRESHOLD) {
+                    $('#itwatchdog-' + sensor.DIVID + '-humidity').addClass("color-danger");                   
+                    $('#itwatchdog-' + sensor.DIVID + '-humidity').removeClass("color-warning");
+                } else if (humid > ENVIRONMENT_TEMP_DANGER_THRESHOLD) {
+                    $('#itwatchdog-' + sensor.DIVID + '-humidity').addClass("color-warning");
+                    $('#itwatchdog-' + sensor.DIVID + '-humidity').removeClass("color-danger");
+                } else if (humid < ENVIRONMENT_LOW_HUMIDITY_DANGER_THRESHOLD) {
+                    $('#itwatchdog-' + sensor.DIVID + '-humidity').addClass("color-danger");                   
+                    $('#itwatchdog-' + sensor.DIVID + '-humidity').removeClass("color-warning");
+                } else if (humid < ENVIRONMENT_LOW_HUMIDITY_WARNING_THRESHOLD) {
+                    $('#itwatchdog-' + sensor.DIVID + '-humidity').addClass("color-warning");
+                    $('#itwatchdog-' + sensor.DIVID + '-humidity').removeClass("color-danger");
+                } else {
+                    $('#itwatchdog-' + sensor.DIVID + '-humidity').removeClass("color-danger");                    
+                    $('#itwatchdog-' + sensor.DIVID + '-humidity').removeClass("color-warning");
+                }  
+            }
+              
+          });
 
-      // If temperatures are worth warning about, add warning CSS
-      if (temp > ENVIRONMENT_TEMP_DANGER_THRESHOLD) {
-          $('#itwatchdog-' + DIVID + '-temperature').addClass("color-danger");                   
-          $('#itwatchdog-' + DIVID + '-temperature').removeClass("color-warning");
-      } else if (temp > ENVIRONMENT_TEMP_WARNING_THRESHOLD) {
-          $('#itwatchdog-' + DIVID + '-temperature').addClass("color-warning");
-          $('#itwatchdog-' + DIVID + '-temperature').removeClass("color-danger");
-      } else {
-          $('#itwatchdog-' + DIVID + '-temperature').removeClass("color-danger");                    
-          $('#itwatchdog-' + DIVID + '-temperature').removeClass("color-warning");
-      }
-
-      // Uncomment this if we start caring about humidity.
-      // We don't have anything that can fix humidity issues, so theres no point alerting about it.
-
-      // If temperatures are worth warning about, add warning CSS
-      if (humid > ENVIRONMENT_HIGH_HUMIDITY_DANGER_THRESHOLD) {
-          $('#itwatchdog-' + DIVID + '-humidity').addClass("color-danger");                   
-          $('#itwatchdog-' + DIVID + '-humidity').removeClass("color-warning");
-      } else if (humid > ENVIRONMENT_TEMP_DANGER_THRESHOLD) {
-          $('#itwatchdog-' + DIVID + '-humidity').addClass("color-warning");
-          $('#itwatchdog-' + DIVID + '-humidity').removeClass("color-danger");
-      } else if (humid < ENVIRONMENT_LOW_HUMIDITY_DANGER_THRESHOLD) {
-          $('#itwatchdog-' + DIVID + '-humidity').addClass("color-danger");                   
-          $('#itwatchdog-' + DIVID + '-humidity').removeClass("color-warning");
-      } else if (humid < ENVIRONMENT_LOW_HUMIDITY_WARNING_THRESHOLD) {
-          $('#itwatchdog-' + DIVID + '-humidity').addClass("color-warning");
-          $('#itwatchdog-' + DIVID + '-humidity').removeClass("color-danger");
-      } else {
-          $('#itwatchdog-' + DIVID + '-humidity').removeClass("color-danger");                    
-          $('#itwatchdog-' + DIVID + '-humidity').removeClass("color-warning");
-      }    
-
-        
     });
+
+    
 }
