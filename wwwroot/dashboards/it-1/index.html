@@ -20,6 +20,7 @@
         <script src="../../common/js/date-and-time.js" type="text/javascript"></script>
         <script src="../../common/js/environmentmonitors.js" type="text/javascript"></script>
         <script src="../../common/js/itwatchdogs.js" type="text/javascript"></script>
+        <script src="../../common/js/guests.js" type="text/javascript"></script>
 
         <!-- styles unique to this dashboard -->
 
@@ -54,7 +55,14 @@
                 <div class="tile tw-1 th-1"><div class="tile-content">Tickets today</div></div>
                 <div class="tile tw-1 th-1"><div class="tile-content">Core Switch 15</div></div>
                 <div class="tile tw-1 th-1"><div class="tile-content">Core Switch 16</div></div>
-                <div class="tile tw-1 th-1"><div class="tile-content">Guest accounts active</div></div>
+                <div class="tile tw-1 th-1"><div class="tile-content">
+                    <div class="tile-content">
+                        <div class="tile-title">Guest accounts active</div>
+                        <div id="guests-container">
+                            <div id="guests-active-count">---</div>
+                        </div>
+                    </div>
+                </div></div>
                 <div class="tile tw-1 th-2"><div class="tile-content">In/Out Status</div></div>
                 <div class="tile tw-1 th-1"><div class="tile-content">Tickets this week</div></div>
                 
