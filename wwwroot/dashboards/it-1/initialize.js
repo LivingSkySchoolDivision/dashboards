@@ -12,7 +12,7 @@ $(document).ready(function(){
     itwatchdog_init("itwatchdog-NBCHS-SWITCHES","https://dashboard-api.lskysd.ca/ITWatchDog/10.177.200.129/ED0004A3F25F36C3", true);
     itwatchdog_init("itwatchdog-NBCHS-VMS","https://dashboard-api.lskysd.ca/ITWatchDog/10.177.200.129/350000043FA0EC28", false);
     itwatchdog_update(); // Call this after all are initialized
-
+    guests_init('guests-active-count', 'https://guests.lskysd.ca/json/');
 });
 
 
@@ -45,4 +45,5 @@ setInterval(function() {
 setInterval(function() {
     time_refresh_offsets(DATE_AND_TIME_URL);
     weather_update(WEATHER_UPDATE_URL);
+    guests_update();
 }, 1800000);
