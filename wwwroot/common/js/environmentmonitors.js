@@ -29,7 +29,7 @@ function envmon_update() {
                     if (temp == -999) {
                         console.log("Found -999 temp - ignoring.");
                     } else {                    
-                        $('#envmon-' + sensor.DIVID + '-temperature').html(temp + "&deg;");
+                        $('#envmon-' + sensor.DIVID + '-temperature').html(temp + "&deg;C");
                         $('#envmon-' + sensor.DIVID + '-humidity').html(humid + "%");
                     }                
     

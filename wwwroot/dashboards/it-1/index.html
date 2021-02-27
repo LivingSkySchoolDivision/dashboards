@@ -21,6 +21,7 @@
         <script src="../../common/js/environmentmonitors.js" type="text/javascript"></script>
         <script src="../../common/js/itwatchdogs.js" type="text/javascript"></script>
         <script src="../../common/js/guests.js" type="text/javascript"></script>
+        <script src="../../common/js/inout-group.js" type="text/javascript"></script>
 
         <!-- styles unique to this dashboard -->
 
@@ -59,46 +60,54 @@
                     <div class="tile-content">
                         <div class="tile-title">Guest accounts active</div>
                         <div id="guests-container">
-                            <div id="guests-active-count">---</div>
+                            <div id="guests-active-count" class="lcd-panel">---</div>
                         </div>
                     </div>
                 </div></div>
-                <div class="tile tw-1 th-2"><div class="tile-content">In/Out Status</div></div>
+                <div class="tile tw-1 th-2"><div class="tile-content">
+                    <div id="inout-container">---</div>
+                </div></div>
                 <div class="tile tw-1 th-1"><div class="tile-content">Tickets this week</div></div>
                 
                 <div class="tile tw-1 th-1">
                     <div class="tile-content">
                         <div class="tile-title">DO - Switch Rack</div>
-                        <div id="itwatchdog-DO-SWITCHES"></div>
+                        <br/>
+                        <div id="itwatchdog-DO-SWITCHES" class="lcd-panel"></div>
                         <br/>
                         <br/>
                         <br/>
                         <div class="tile-title">DO - VM Rack</div>
-                        <div id="itwatchdog-DO-VMS"></div>
+                        <br/>
+                        <div id="itwatchdog-DO-VMS" class="lcd-panel"></div>
                     </div>
                 </div>
 
                 <div class="tile tw-1 th-1">
                     <div class="tile-content">
                         <div class="tile-title">DO - Student Services</div>
-                        <div id="environment-DO-ss"></div>
+                        <br/>
+                        <div id="environment-DO-ss" class="lcd-panel"></div>
                         <br/>
                         <br/>
                         <br/>
                         <div class="tile-title">DO - Bus Garage</div>
-                        <div id="environment-DO-bg"></div>
+                        <br/>
+                        <div id="environment-DO-bg" class="lcd-panel"></div>
                     </div>
                 </div>
 
                 <div class="tile tw-1 th-1">
                     <div class="tile-content">                        
                         <div class="tile-title">NBCHS - Switch Rack</div>
-                        <div id="itwatchdog-NBCHS-SWITCHES"></div>
+                        <br/>
+                        <div id="itwatchdog-NBCHS-SWITCHES" class="lcd-panel"></div>
                         <br/>  
                         <br/>
                         <br/>                      
                         <div class="tile-title">NBCHS - VM Rack</div>
-                        <div id="itwatchdog-NBCHS-VMS"></div>
+                        <br/>
+                        <div id="itwatchdog-NBCHS-VMS" class="lcd-panel"></div>
                     </div>                    
                 </div>
 
