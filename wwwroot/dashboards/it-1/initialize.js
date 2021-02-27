@@ -14,6 +14,7 @@ $(document).ready(function(){
     itwatchdog_init("itwatchdog-NBCHS-VMS","https://dashboard-api.lskysd.ca/ITWatchDog/10.177.200.129/350000043FA0EC28", false);
     itwatchdog_update(); // Call this after all are initialized
     guests_init('guests-active-count', 'https://guests.lskysd.ca/json/');
+    inout_group_init('inout-container', 'https://inoutapi.lskysd.ca/GroupMembers/5');
 });
 
 
@@ -35,6 +36,11 @@ $(document).ready(function(){
 setInterval(function() {
     time_update();
 }, 500);
+
+// Every 1 minutes
+setInterval(function() {
+    inout_group_update();
+}, 60000);
 
 // Every 5 minutes
 setInterval(function() {
