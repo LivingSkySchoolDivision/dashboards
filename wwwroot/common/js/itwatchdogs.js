@@ -29,7 +29,7 @@ function itwatchdog_update() {
             if (temp == -999) {
                 console.log("Found -999 temp - ignoring.");
             } else {                    
-                $('#itwatchdog-' + sensor.DIVID + '-temperature').html(temp + "&deg;");
+                $('#itwatchdog-' + sensor.DIVID + '-temperature').html(temp + "&deg;C");
                 
                 if (sensor.INCLHUMID == true) {
                     $('#itwatchdog-' + sensor.DIVID + '-humidity').html(humid + "%");
