@@ -9,8 +9,9 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 #container-top { width: 100%; height: 150px; display: grid; grid-template-columns: 20% 20% 20% 20% 20%; grid-template-rows: 100%; box-sizing: border-box; overflow: hidden; margin-bottom: 2px;}
 #container-main { width: 100%; height: 830px; display: grid; grid-template-columns: 20% 20% 20% 20% 20%; grid-template-rows: 50% 50%; box-sizing: border-box; overflow: hidden;}
 #container-bottom { width: 100%; height: 100px;  overflow: hidden; }
+#container-bottom-tall { width: 100%; height: 250px;  overflow: hidden; }
 
-.tile { box-sizing: border-box; margin: 3px; padding: 10px; background-color: rgba(255,255,255,0.05); min-width: 20%; min-height: 50%; display: grid; grid-template-columns: 100%; align-items: center; justify-content: center; text-align: center; }
+.tile { box-sizing: border-box; margin: 3px; padding: 10px; background-color: rgba(255,255,255,0.15); min-width: 20%; min-height: 50%; display: grid; grid-template-columns: 100%; align-items: center; justify-content: center; text-align: center; }
 .footer-tile { width: 100%; font-size: 2.5em; height: 100%; line-height: 80%; text-align: left; }
 .header-tile { font-size: 4em; height: 100%; line-height: 80%; }
 .tile-content { text-align: center;}
