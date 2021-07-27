@@ -25,3 +25,8 @@ $(document).ready(function(){
 setInterval(function() {
     inout_group_update();
 }, 60000);
+
+// Refresh the page periodically
+setInterval(function() {
+    location.reload();
+}, 3400000);

@@ -50,3 +50,8 @@ setInterval(function() {
     weather_update(WEATHER_UPDATE_URL);
     guests_update();
 }, 1800000);
+
+// Refresh the page periodically
+setInterval(function() {
+    location.reload();
+}, 3400000);
