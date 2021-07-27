@@ -10,72 +10,38 @@ $(document).ready(function(){
     itwatchdog_init("itwatchdog-NBCHS-SWITCHES","https://dashboard-api.lskysd.ca/ITWatchDog/10.177.200.129/ED0004A3F25F36C3", true);
     itwatchdog_init("itwatchdog-NBCHS-VMS","https://dashboard-api.lskysd.ca/ITWatchDog/10.177.200.129/350000043FA0EC28", false);
     itwatchdog_update(); // Call this after all are initialized
-    guests_init('guests-active-count', 'https://guests.lskysd.ca/json/');
-    inout_group_init('inout-container', 'https://inoutapi.lskysd.ca/GroupMembers/5');
+    
+    // Core switch SNMP IDs 1,2
 
     // Initialize school tiles (mostly testing right now)
-    initializeSchoolTile("school_info_box_container", "OFFICE",1570,475, 3);
-    initializeSchoolTile("school_info_box_container", "NBCHS",1500,0, 5);   
-    initializeSchoolTile("school_info_box_container", "BCS",1325,700, 1); 
-    initializeSchoolTile("school_info_box_container", "Bready",1170,145, 1);
-    initializeSchoolTile("school_info_box_container", "CKCS",262,370, 2);
-    initializeSchoolTile("school_info_box_container", "Connaught",1370,410, 1);
-    initializeSchoolTile("school_info_box_container", "Hafford",801,423, 1);
-    initializeSchoolTile("school_info_box_container", "HCES",775,260, 1);
-    initializeSchoolTile("school_info_box_container", "Heritage",1370,805, 1);
-    initializeSchoolTile("school_info_box_container", "Kerrobert",348,818, 1);
-    initializeSchoolTile("school_info_box_container", "Lawrence",1330,100, 1);
-    initializeSchoolTile("school_info_box_container", "Leoville",630,60, 1);
-    initializeSchoolTile("school_info_box_container", "Luseland",155,660, 1);
-    initializeSchoolTile("school_info_box_container", "Macklin",26,522, 2);
-    initializeSchoolTile("school_info_box_container", "Maymont",715,530, 1);
-    initializeSchoolTile("school_info_box_container", "McKitrick",1330,205, 1);
-    initializeSchoolTile("school_info_box_container", "McLurg",468,385, 2);
-    initializeSchoolTile("school_info_box_container", "Medstead",500,188, 1); 
-    initializeSchoolTile("school_info_box_container", "NCES",468,508, 1);
-    initializeSchoolTile("school_info_box_container", "SHS",775,140, 2);
-    initializeSchoolTile("school_info_box_container", "St Vital",1170,700, 2);
-    initializeSchoolTile("school_info_box_container", "UCHS",320,508, 2);
-    initializeSchoolTile("school_info_box_container", "UPS",320,633, 1);
-    initializeSchoolTile("school_info_box_container", "Cando",585,648, 2);
+    datatile_init("school_info_box_container", "OFFICE",1570,475, [5], 6, [6,7]);    
+    datatile_init("school_info_box_container", "NBCHS",1500,0, [27], 25, [21,22,23,24]);   
+    datatile_init("school_info_box_container", "BCS",1340,700, [9], 8, [1]); 
+    datatile_init("school_info_box_container", "Bready",1160,145, [10], 9, [2]);
+    datatile_init("school_info_box_container", "Cando",585,648, [11], 10, [33,34]);   
+    datatile_init("school_info_box_container", "CKCS",262,370, [13], 12, [4,5]);
+    datatile_init("school_info_box_container", "Connaught",1370,410, [14], 13, [3]);
+    datatile_init("school_info_box_container", "Hafford",801,423, [15], 14, [35]);
+    datatile_init("school_info_box_container", "HCES",775,263, [16], 15, [8]);
+    datatile_init("school_info_box_container", "Heritage",1370,805, [17], 16 , [9]);
+    datatile_init("school_info_box_container", "Kerrobert",348,818, [18], 17, [10]);
+    datatile_init("school_info_box_container", "Lawrence",1330,100, [3], 3, [11]);
+    datatile_init("school_info_box_container", "Leoville",630,60, [19], 18, [12]);
+    datatile_init("school_info_box_container", "Luseland",130,660, [20], 19, [13]);
+    datatile_init("school_info_box_container", "Macklin",16,522, [21], 20, [14,15]);
+    datatile_init("school_info_box_container", "Maymont",715,530, [23], 21, [32]);
+    datatile_init("school_info_box_container", "McKitrick",1330,205, [24], 22, [16]);
+    datatile_init("school_info_box_container", "McLurg",468,385, [25], 23, [17,18]);
+    datatile_init("school_info_box_container", "Medstead",500,188, [26], 24, [19]); 
+    datatile_init("school_info_box_container", "NCES",468,502, [28], 26, [20]);
+    datatile_init("school_info_box_container", "SHS",775,140, [30], 28, [25,26]);
+    datatile_init("school_info_box_container", "St. Vital",1170,700, [33], 31, [27,28]);
+    datatile_init("school_info_box_container", "UCHS",300,508, [31], 29, [29,30]);
+    datatile_init("school_info_box_container", "UPS",300,633, [32], 30, [31]); 
+    datatile_update();
 
 });
 
-function initializeSchoolTile(containerid, schoolname, xpos, ypos, numtempsensors) {
-    var html = "";
-    html += "<div class=\"school_info_box\" style=\"top: " + ypos + "px; left: " + xpos + "px;\">";
-    html += "  <div class=\"school_name\">" + schoolname + "</div>";
-    html += "  <div class=\"school_info_box_data_container\">";
-    html += "  <div class=\"data_box\">";
-    html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/upload.svg\"></div>";
-    html += "    <div class=\"data_box_data\">999</div>";
-    html += "  </div>";
-    html += "  <div class=\"data_box\">";
-    html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/download.svg\"></div>";
-    html += "    <div class=\"data_box_data\">999</div>";
-    html += "  </div>";
-    html += "  </div>";
-    for(var x=0; x<numtempsensors; x++) 
-    {
-        html += "  <div class=\"school_info_box_data_container\">";
-        html += "  <div class=\"data_box\">";
-        html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/thermometer-half.svg\"></div>";
-        html += "    <div class=\"data_box_data\">999</div>";
-        html += "  </div>";
-        html += "  <div class=\"data_box\">";
-        html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/humidity.svg\"></div>";
-        html += "    <div class=\"data_box_data\">999</div>";
-        html += "  </div>";
-        html += "  </div>";
-    }
-
-    html += "</div>";
-
-    console.log("Initializing school tile for " + schoolname);
-    $('#' + containerid).append(html);
-
-
-}
 
 
 /* ******************************************** */
@@ -97,11 +63,6 @@ setInterval(function() {
     time_update();
 }, 500);
 
-// Every 1 minutes
-setInterval(function() {
-    inout_group_update();
-}, 60000);
-
 // Every 5 minutes
 setInterval(function() {    
     itwatchdog_update();
@@ -111,7 +72,6 @@ setInterval(function() {
 setInterval(function() {
     time_refresh_offsets(DATE_AND_TIME_URL);
     weather_update(WEATHER_UPDATE_URL);
-    guests_update();
 }, 1800000);
 
 // Refresh the page periodically
