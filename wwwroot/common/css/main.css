@@ -12,45 +12,59 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 #container-bottom-tall { width: 100%; height: 250px;  overflow: hidden; }
 
 #teneighty_overlay {background-color: rgba(255,0,0,0.2); width: 1920px; height: 1080px; }
+
+#school_info_box_container { position: relative; }
+
+#region_map {
+ position: absolute;
+ top: 100px;
+ left: 125px;
+}
+
+#city_map {
+ position: absolute;
+ top: 50px;
+ right: 275px;
+ height: 850px;
+}
+
 .tile_container {
-    display: grid;
-    grid-template-columns:  33% 33% 33%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    /*grid-template-columns:  33% 33% 33%;*/
 }
 
 .school_info_box {
+    background-color: rgba(0,0,0,0.9);
     box-sizing: border-box;
-    border: 1px solid red;
-    padding: 10px;
-    min-height: 100px;
-    width: 100%;
+    /*border: 1px solid red;*/
+    border: 1px solid #444444;
+    padding: 5px;
     margin: 5px;
     text-align: center;
     border-radius: 5px;
-    position: relative;
-    display: grid;
-    grid-template-columns:  6% 47% 47%;
+    position: absolute;
+    color: #555555;
 
 }
 
 .school_info_box_data_container {
-    display: grid;
 }
 
 .school_info_box .data_box {
     box-sizing: border-box;
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
     margin: 2px;
-    margin-bottom: 5px;
-    font-size: 14pt;
+    font-size: 12pt;
 }
 
 .school_info_box .school_name { 
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
-    grid-row-end: span 4;
-    transform: rotate(270deg);
-    padding-top: 40px;
-    border: 1px solid green;
+    grid-row-end: span 20;
+    /*border: 1px solid green; */
 }
 
 .school_info_box .data_box_title {
@@ -59,8 +73,23 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 
 .school_info_box .data_box_data {
     display: inline;
+    font-size: 15pt;
+    font-weight: bold;
+    padding: 5px;
 }
 
+.data_indicator_icon {
+    width: 20px;
+    max-height: 20px;
+    filter: invert(100%);
+    opacity: 50%;
+}
+
+.school_info_box_data_container {
+    display: flex;
+    grid-template-columns:  20% 40% 40%;
+
+}
 
 .tile { box-sizing: border-box; margin: 3px; padding: 10px; background-color: rgba(255,255,255,0.15); min-width: 20%; min-height: 50%; display: grid; grid-template-columns: 100%; align-items: center; justify-content: center; text-align: center; }
 .footer-tile { width: 100%; font-size: 2.5em; height: 100%; line-height: 80%; text-align: left; }
