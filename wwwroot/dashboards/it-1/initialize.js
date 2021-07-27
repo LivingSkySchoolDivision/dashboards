@@ -15,29 +15,29 @@ $(document).ready(function(){
 
     // Initialize school tiles (mostly testing right now)
     initializeSchoolTile("school_info_box_container", "OFFICE",1570,475, 3);
-    initializeSchoolTile("school_info_box_container", "NBCHS",1500,0, 4);   
+    initializeSchoolTile("school_info_box_container", "NBCHS",1500,0, 5);   
     initializeSchoolTile("school_info_box_container", "BCS",1325,700, 1); 
     initializeSchoolTile("school_info_box_container", "Bready",1170,145, 1);
-    initializeSchoolTile("school_info_box_container", "CKCS",200,365, 2);
+    initializeSchoolTile("school_info_box_container", "CKCS",262,370, 2);
     initializeSchoolTile("school_info_box_container", "Connaught",1370,410, 1);
-    initializeSchoolTile("school_info_box_container", "Hafford",675,415, 1);
-    initializeSchoolTile("school_info_box_container", "HCES",803,180, 1);
+    initializeSchoolTile("school_info_box_container", "Hafford",801,423, 1);
+    initializeSchoolTile("school_info_box_container", "HCES",775,260, 1);
     initializeSchoolTile("school_info_box_container", "Heritage",1370,805, 1);
-    initializeSchoolTile("school_info_box_container", "Kerrobert",228,780, 1);
+    initializeSchoolTile("school_info_box_container", "Kerrobert",348,818, 1);
     initializeSchoolTile("school_info_box_container", "Lawrence",1330,100, 1);
-    initializeSchoolTile("school_info_box_container", "Leoville",500,115, 1);
-    initializeSchoolTile("school_info_box_container", "Luseland",67,625, 1);
-    initializeSchoolTile("school_info_box_container", "Macklin",0,495, 2);
-    initializeSchoolTile("school_info_box_container", "Maymont",600,565, 1);
+    initializeSchoolTile("school_info_box_container", "Leoville",630,60, 1);
+    initializeSchoolTile("school_info_box_container", "Luseland",155,660, 1);
+    initializeSchoolTile("school_info_box_container", "Macklin",26,522, 2);
+    initializeSchoolTile("school_info_box_container", "Maymont",715,530, 1);
     initializeSchoolTile("school_info_box_container", "McKitrick",1330,205, 1);
-    initializeSchoolTile("school_info_box_container", "McLurg",380,605, 2);
-    initializeSchoolTile("school_info_box_container", "Medstead",385,325, 1); 
-    initializeSchoolTile("school_info_box_container", "NCES",380,730, 1);
-    initializeSchoolTile("school_info_box_container", "SHS",650,180, 2);
+    initializeSchoolTile("school_info_box_container", "McLurg",468,385, 2);
+    initializeSchoolTile("school_info_box_container", "Medstead",500,188, 1); 
+    initializeSchoolTile("school_info_box_container", "NCES",468,508, 1);
+    initializeSchoolTile("school_info_box_container", "SHS",775,140, 2);
     initializeSchoolTile("school_info_box_container", "St Vital",1170,700, 2);
-    initializeSchoolTile("school_info_box_container", "UCHS",220,605, 2);
-    initializeSchoolTile("school_info_box_container", "UPS",220,508, 1);
-    initializeSchoolTile("school_info_box_container", "Cando",430,480, 2);
+    initializeSchoolTile("school_info_box_container", "UCHS",320,508, 2);
+    initializeSchoolTile("school_info_box_container", "UPS",320,633, 1);
+    initializeSchoolTile("school_info_box_container", "Cando",585,648, 2);
 
 });
 
