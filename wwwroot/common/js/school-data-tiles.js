@@ -9,12 +9,12 @@ function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorids, pings
     {
         html += "<div class=\"school_info_box_data_container\" id=\"datatile-snmp-" + sensor + "\">";
         html += "  <div class=\"data_box\">";
-        html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/upload.svg\"></div>";
-        html += "    <div class=\"data_box_data\" id=\"datatile-snmp-" + sensor + "-outbound\">---</div>";
-        html += "  </div>";
-        html += "  <div class=\"data_box\">";
         html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/download.svg\"></div>";
         html += "    <div class=\"data_box_data\" id=\"datatile-snmp-" + sensor + "-inbound\">---</div>";
+        html += "  </div>";
+        html += "  <div class=\"data_box\">";
+        html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/upload.svg\"></div>";
+        html += "    <div class=\"data_box_data\" id=\"datatile-snmp-" + sensor + "-outbound\">---</div>";
         html += "  </div>";
         html += "</div>";
     }
@@ -46,19 +46,81 @@ function datatile_update()
 
     // Get temperature info
     datatile_update_environmentsensors(PIENVMON_API_PATH);
+
+    // Get ping network info
+    datatile_update_ping(STRENDINMONITOR_API_PATH + "/pinglatencysensors");
+
+}
+
+function datatile_update_ping(url) 
+{
+    $.getJSON(url, function (data) {
+        $.each(data, function (allsensors, sensor) {
+            if (sensor.isEnabled == true) {
+                var divBase = "#datatile-ping-" + sensor.id;
+
+                // Just check for issues and highlight the box if health isn't 100%
+
+                // Check for errors or warnings
+                if (sensor.health <= 0) {
+                    $(divBase).addClass("tile-danger");
+                    $(divBase).removeClass("tile-warning");
+                } else if (sensor.health <= 99) {
+                    $(divBase).removeClass("tile-danger");
+                    $(divBase).addClass("tile-warning");
+                } else {
+                    $(divBase).removeClass("tile-danger");
+                    $(divBase).removeClass("tile-warning");
+                }
+
+            }
+        });
+    });
+
 }
 
 function datatile_update_snmp(url) 
 {
     $.getJSON(url, function(data) {        
         $.each(data, function (allsensors, sensor) {
-            console.log("Getting network info from " + sensor.id);
             if (sensor.isEnabled == true) {
                 var divBase = "#datatile-snmp-" + sensor.id + "-";                 
                 
                 // Update SNMP values
-                $(divBase + "inbound").html(sensor.shortMBPSIn);
-                $(divBase + "outbound").html(sensor.shortMBPSOut);
+                if (sensor.health > 0) {
+                    $(divBase + "inbound").html(sensor.friendlyBPSIn);
+                    $(divBase + "outbound").html(sensor.friendlyBPSOut);
+                } else {
+                    $(divBase + "inbound").html("DOWN");
+                    $(divBase + "outbound").html("DOWN");
+                }
+
+                // Check for errors or warnings
+                if (sensor.lastScan_ifOutOctets == -1) {
+                    $(divBase + "outbound").addClass("color-danger");
+                } else {
+                    $(divBase + "outbound").removeClass("color-danger");
+                }
+
+                if (sensor.lastScan_ifInOctets == -1) {
+                    $(divBase + "inbound").addClass("color-danger");
+                } else {
+                    $(divBase + "inbound").removeClass("color-danger");
+                }
+
+                // Utilization
+                if (sensor.lastBPSOut > SNMP_UTILIZATION_WARNING_BPS) {
+                    $(divBase + "outbound").addClass("color-warning");
+                } else {
+                    $(divBase + "outbound").removeClass("color-warning");
+                }
+
+                if (sensor.lastBPSIn > SNMP_UTILIZATION_WARNING_BPS) {
+                    $(divBase + "inbound").addClass("color-warning");
+                } else {
+                    $(divBase + "inbound").removeClass("color-warning");
+                }
+
             }
         });
     });
