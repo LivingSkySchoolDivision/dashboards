@@ -82,43 +82,46 @@ function datatile_update_environmentsensors(url)
                     ) {
                     $(divBase + "temp").html(sensor.lastTempCelsius + "&deg;C");
                     $(divBase + "humid").html(sensor.lastHumidityPercent + "%");
-                }
-                
-                // Check for temperature warnings
-                if (sensor.lastTempCelsius > ENVIRONMENT_TEMP_DANGER_THRESHOLD) {
-                    $(divBase + "temp").addClass("color-danger");                   
-                    $(divBase + "temp").removeClass("color-warning");
-                } else if (sensor.lastTempCelsius > ENVIRONMENT_TEMP_WARNING_THRESHOLD) {
-                    $(divBase + "temp").addClass("color-warning");
-                    $(divBase + "temp").removeClass("color-danger");
-                } else {
-                    $(divBase + "temp").removeClass("color-danger");                    
-                    $(divBase + "temp").removeClass("color-warning");
-                }
+                    
+                    // Check for temperature warnings
+                    if (sensor.lastTempCelsius > ENVIRONMENT_TEMP_DANGER_THRESHOLD) {
+                        $(divBase + "temp").addClass("color-danger");
+                        $(divBase + "temp").removeClass("color-warning");
+                    } else if (sensor.lastTempCelsius > ENVIRONMENT_TEMP_WARNING_THRESHOLD) {
+                        $(divBase + "temp").addClass("color-warning");
+                        $(divBase + "temp").removeClass("color-danger");
+                    } else {
+                        $(divBase + "temp").removeClass("color-danger");
+                        $(divBase + "temp").removeClass("color-warning");
+                    }
 
-                // Check for high humidity warnings
-                if (sensor.lastHumidityPercent > ENVIRONMENT_HIGH_HUMIDITY_DANGER_THRESHOLD) {
-                    $(divBase + "humid").addClass("color-danger");                   
-                    $(divBase + "humid").removeClass("color-warning");
-                } else if (sensor.lastHumidityPercent > ENVIRONMENT_HIGH_HUMIDITY_WARNING_THRESHOLD) {
-                    $(divBase + "humid").addClass("color-warning");
-                    $(divBase + "humid").removeClass("color-danger");
-                } else {
-                    $(divBase + "humid").removeClass("color-danger");                    
-                    $(divBase + "humid").removeClass("color-warning");
+                    // Check for high humidity warnings
+                    if (sensor.lastHumidityPercent > ENVIRONMENT_HIGH_HUMIDITY_DANGER_THRESHOLD) {
+                        $(divBase + "humid").addClass("color-danger");
+                        $(divBase + "humid").removeClass("color-warning");
+                    } else if (sensor.lastHumidityPercent > ENVIRONMENT_HIGH_HUMIDITY_WARNING_THRESHOLD) {
+                        $(divBase + "humid").addClass("color-warning");
+                        $(divBase + "humid").removeClass("color-danger");
+                    } else {
+                        $(divBase + "humid").removeClass("color-danger");
+                        $(divBase + "humid").removeClass("color-warning");
+                    }
+
+                    // Check for low humidity warnings
+                    if (sensor.lastHumidityPercent < ENVIRONMENT_LOW_HUMIDITY_DANGER_THRESHOLD) {
+                        $(divBase + "humid").addClass("color-danger");
+                        $(divBase + "humid").removeClass("color-warning");
+                    } else if (sensor.lastHumidityPercent < ENVIRONMENT_LOW_HUMIDITY_WARNING_THRESHOLD) {
+                        $(divBase + "humid").addClass("color-warning");
+                        $(divBase + "humid").removeClass("color-danger");
+                    } else {
+                        $(divBase + "humid").removeClass("color-danger");
+                        $(divBase + "humid").removeClass("color-warning");
+                    }
+
                 }
                 
-                // Check for low humidity warnings
-                if (sensor.lastHumidityPercent < ENVIRONMENT_LOW_HUMIDITY_DANGER_THRESHOLD) {
-                    $(divBase + "humid").addClass("color-danger");                   
-                    $(divBase + "humid").removeClass("color-warning");
-                } else if (sensor.lastHumidityPercent < ENVIRONMENT_LOW_HUMIDITY_WARNING_THRESHOLD) {
-                    $(divBase + "humid").addClass("color-warning");
-                    $(divBase + "humid").removeClass("color-danger");
-                } else {
-                    $(divBase + "humid").removeClass("color-danger");                    
-                    $(divBase + "humid").removeClass("color-warning");
-                }
+                
 
             }
         });
