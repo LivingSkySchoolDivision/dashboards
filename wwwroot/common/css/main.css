@@ -15,82 +15,19 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 
 #school_info_box_container { position: relative; }
 
-#region_map {
- position: absolute;
- top: 0px;
- left: 125px;
- height: 920px;
-}
+#region_map { position: absolute; top: 0px; left: 125px; height: 920px; }
 
-#city_map {
- position: absolute;
- top: 50px;
- right: 275px;
- height: 850px;
-}
+#city_map {position: absolute; top: 50px; right: 275px; height: 850px; }
 
-.tile_container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: baseline;
-    /*grid-template-columns:  33% 33% 33%;*/
-}
+.tile_container { display: flex; flex-wrap: wrap; justify-content: space-around; align-items: baseline; }
 
-.school_info_box {
-    background-color: rgba(0,0,0,0.9);
-    box-sizing: border-box;
-    /*border: 1px solid red;*/
-    border: 2px dashed #444444;
-    padding: 5px;
-    margin: 5px;
-    text-align: center;
-    border-radius: 5px;
-    position: absolute;
-    color: #555555;
-    min-width: 120px;
-
-}
-
-.school_info_box_data_container {
-}
-
-.school_info_box .data_box {
-    box-sizing: border-box;
-    /*border: 1px solid blue;*/
-    margin: 2px;
-    font-size: 12pt;
-}
-
-.school_info_box .school_name { 
-    font-size: 20px;
-    font-weight: bold;
-    grid-row-end: span 20;
-    /*border: 1px solid green; */
-}
-
-.school_info_box .data_box_title {
-    display: inline;
-}
-
-.school_info_box .data_box_data {
-    display: inline;
-    font-size: 12pt;
-    padding: 5px;
-}
-
-.data_indicator_icon {
-    width: 16px;
-    max-height: 16px;
-    filter: invert(100%);
-    opacity: 25%;
-}
-
-.school_info_box_data_container {
-    display: flex;
-    grid-template-columns:  20% 40% 40%;
-
-}
+.school_info_box { background-color: rgba(0,0,0,0.85); box-sizing: border;  border: 2px dashed #444444; padding: 5px; margin: 5px; text-align: center; border-radius: 5px; position: absolute; color: #555555; min-width: 120px; }
+.school_info_box .data_box { box-sizing: border-box; margin: 2px; font-size: 12pt; }
+.school_info_box .school_name { font-size: 20px; font-weight: bold; grid-row-end: span 20; }
+.school_info_box .data_box_title { display: inline; }
+.school_info_box .data_box_data { display: inline; font-size: 12pt; padding: 5px; }
+.data_indicator_icon { width: 16px; max-height: 16px; filter: invert(100%); opacity: 25%; }
+.school_info_box_data_container { display: flex; grid-template-columns:  20% 40% 40%; }
 
 .tile { box-sizing: border-box; margin: 3px; padding: 10px; min-width: 20%; min-height: 50%; display: grid; grid-template-columns: 100%; align-items: center; justify-content: center; text-align: center; }
 .footer-tile { width: 100%; font-size: 2.5em; height: 100%; line-height: 80%; text-align: left; }

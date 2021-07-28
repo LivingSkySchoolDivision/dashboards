@@ -12,5 +12,5 @@ var ENVIRONMENT_LOW_HUMIDITY_DANGER_THRESHOLD = 5;
 
 var GUEST_API_PATH = "https://guests.lskysd.ca/json/"
 
-var PIENVMON_API_PATH = "https://envirodashboard-api.lskysd.ca/"
-var STRENDINMONITOR_API_PATH = "https://strendinmonitor.lskysd.ca/"
+var PIENVMON_API_PATH = "https://envirodashboard-api.lskysd.ca"
+var STRENDINMONITOR_API_PATH = "https://strendinmonitor.lskysd.ca"

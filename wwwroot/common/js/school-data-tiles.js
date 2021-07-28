@@ -7,14 +7,14 @@ function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorids, pings
 
     for(const sensor of snmpsensorids) 
     {
-        html += "<div class=\"school_info_box_data_container\" id=\"datatile-smnp-" + sensor + "\">";
+        html += "<div class=\"school_info_box_data_container\" id=\"datatile-snmp-" + sensor + "\">";
         html += "  <div class=\"data_box\">";
         html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/upload.svg\"></div>";
-        html += "    <div class=\"data_box_data\" id=\"datatile-enviro-" + sensor + "-inbound\">---</div>";
+        html += "    <div class=\"data_box_data\" id=\"datatile-snmp-" + sensor + "-outbound\">---</div>";
         html += "  </div>";
         html += "  <div class=\"data_box\">";
         html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/download.svg\"></div>";
-        html += "    <div class=\"data_box_data\" id=\"datatile-enviro-" + sensor + "-outbound\">---</div>";
+        html += "    <div class=\"data_box_data\" id=\"datatile-snmp-" + sensor + "-inbound\">---</div>";
         html += "  </div>";
         html += "</div>";
     }
@@ -41,8 +41,8 @@ function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorids, pings
 
 function datatile_update()
 {
-    // Get Network info
-    //datatile_update_snmp(STRENDINMONITOR_API_PATH);
+    // Get SNMP Network info
+    datatile_update_snmp(STRENDINMONITOR_API_PATH + "/snmpthroughputsensors");
 
     // Get temperature info
     datatile_update_environmentsensors(PIENVMON_API_PATH);
@@ -51,19 +51,17 @@ function datatile_update()
 function datatile_update_snmp(url) 
 {
     $.getJSON(url, function(data) {        
-        $.each(data, function(allsensors, sensor) {
+        $.each(data, function (allsensors, sensor) {
+            console.log("Getting network info from " + sensor.id);
             if (sensor.isEnabled == true) {
-                var divBase = "#datatile-smnp-" + sensor.id + "-";                 
+                var divBase = "#datatile-snmp-" + sensor.id + "-";                 
                 
-                // Update temperature and humidity values
-                
-                $(divBase + "inbound").html(sensor.humanfriendlybpsin + "&deg;C");
-                $(divBase + "outbound").html(sensor.humanfriendlybpsout + "%");
-
+                // Update SNMP values
+                $(divBase + "inbound").html(sensor.shortMBPSIn);
+                $(divBase + "outbound").html(sensor.shortMBPSOut);
             }
         });
     });
-
 }
 
 function datatile_update_environmentsensors(url) 
@@ -82,7 +80,7 @@ function datatile_update_environmentsensors(url)
                     ) {
                     $(divBase + "temp").html(sensor.lastTempCelsius + "&deg;C");
                     $(divBase + "humid").html(sensor.lastHumidityPercent + "%");
-                    
+
                     // Check for temperature warnings
                     if (sensor.lastTempCelsius > ENVIRONMENT_TEMP_DANGER_THRESHOLD) {
                         $(divBase + "temp").addClass("color-danger");
