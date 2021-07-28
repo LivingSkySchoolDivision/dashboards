@@ -8,15 +8,16 @@ function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorids, pings
     for(const sensor of snmpsensorids) 
     {
         html += "<div class=\"school_info_box_data_container\" id=\"datatile-snmp-" + sensor + "\">";
-        html += "  <div class=\"data_box\">";
+        html += "  <div class=\"data_box network_data_box\">";
         html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/download.svg\"></div>";
-        html += "    <div class=\"data_box_data\" id=\"datatile-snmp-" + sensor + "-inbound\">---</div>";
+        html += "    <div class=\"data_box_data network_data_box\" id=\"datatile-snmp-" + sensor + "-inbound\">---</div>";
         html += "  </div>";
-        html += "  <div class=\"data_box\">";
+        html += "  <div class=\"data_box network_data_box\">";
         html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/upload.svg\"></div>";
-        html += "    <div class=\"data_box_data\" id=\"datatile-snmp-" + sensor + "-outbound\">---</div>";
+        html += "    <div class=\"data_box_data network_data_box\" id=\"datatile-snmp-" + sensor + "-outbound\">---</div>";
         html += "  </div>";
         html += "</div>";
+        html += "<div class=\"data_box_error hidden\" id=\"datatile-snmp-" + sensor + "-error\"></div>";
     }
 
     for(const sensor of tempsensorids) 
@@ -31,7 +32,17 @@ function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorids, pings
         html += "    <div class=\"data_box_data\" id=\"datatile-enviro-" + sensor + "-humid\">---</div>";
         html += "  </div>";
         html += "</div>";
+        html += "<div class=\"data_box_error hidden\" id=\"datatile-enviro-" + sensor + "-error\"></div>";
     }
+
+    
+    for(const sensor of snmpsensorids) 
+    {
+    }
+    for(const sensor of tempsensorids) 
+    {
+    }
+
 
     html += "</div>";
 
@@ -86,6 +97,8 @@ function datatile_update_snmp(url)
             if (sensor.isEnabled == true) {
                 var divBase = "#datatile-snmp-" + sensor.id + "-";                 
                 
+                $(divBase + "error").html(sensor.address);
+
                 // Update SNMP values
                 if (sensor.health > 0) {
                     $(divBase + "inbound").html(sensor.friendlyBPSIn);
@@ -98,8 +111,10 @@ function datatile_update_snmp(url)
                 // Check for errors or warnings
                 if (sensor.lastScan_ifOutOctets == -1) {
                     $(divBase + "outbound").addClass("color-danger");
+                    $(divBase + "error").removeClass("hidden");
                 } else {
                     $(divBase + "outbound").removeClass("color-danger");
+                    $(divBase + "error").addClass("hidden");
                 }
 
                 if (sensor.lastScan_ifInOctets == -1) {
@@ -131,12 +146,14 @@ function datatile_update_environmentsensors(url)
     $.getJSON(url, function(data) {        
         $.each(data, function(allsensors, sensor) {
             if (sensor.isEnabled == true) {
-                var divBase = "#datatile-enviro-" + sensor.databaseId + "-";                 
+                var divBase = "#datatile-enviro-" + sensor.databaseId + "-";
+
+                $(divBase + "error").html(sensor.ipAddress);                 
                 
                 // Update temperature and humidity values
-                if (
-                    (sensor.lastTempCelsius > 0) 
-                    && (sensor.lastHumidityPercent >0)
+                if (                    
+                    (sensor.lastTempCelsius != -999) 
+                    && (sensor.lastHumidityPercent != -999)
                     && (sensor.lastHumidityPercent != -999)
                     && (sensor.lastHumidityPercent != -999)
                     ) {
@@ -178,7 +195,10 @@ function datatile_update_environmentsensors(url)
                         $(divBase + "humid").removeClass("color-danger");
                         $(divBase + "humid").removeClass("color-warning");
                     }
-
+                    
+                    $("#datatile-enviro-" + sensor.databaseId).removeClass("hidden");
+                } else {
+                    $("#datatile-enviro-" + sensor.databaseId).addClass("hidden");
                 }
                 
                 
