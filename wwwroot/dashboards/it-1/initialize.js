@@ -7,6 +7,9 @@ $(document).ready(function(){
        
     // Core switch SNMP IDs 1,2
 
+    datatile_largesnmp_init("large_snmp_tile_container", "CORE 1", 1);
+    datatile_largesnmp_init("large_snmp_tile_container", "CORE 2", 2);
+
     // Initialize school tiles (mostly testing right now)
     datatile_init("school_info_box_container", "OFFICE",1570,475, [5], 6, [6,7]);    
     datatile_init("school_info_box_container", "NBCHS",1540,25, [27], 25, [21,22,23,24]);   

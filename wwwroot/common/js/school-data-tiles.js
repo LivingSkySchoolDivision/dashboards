@@ -1,5 +1,34 @@
 
 
+function datatile_small_init(containerid, tilename, pingsensorid)
+{
+}
+
+function datatile_largesnmp_init(containerid, tilename, snmpsensorid) 
+{
+    var html = "";
+    html += "<div class=\"datatile_largesnmp\" id=\"datatile-snmp-" + snmpsensorid + "\">";
+    html += "  <div class=\"datatile_largesnmp_name\">" + tilename + "</div>";
+    html += "<div id=\"datatile-snmp-" + snmpsensorid + "-error\"></div>";
+    html += "<div class=\"datatile_largesnmp_datacontainer\" id=\"datatile-snmp-" + snmpsensorid + "\">";
+
+    html += "  <div class=\"data_box network_data_box\">";
+    html += "    <div class=\"datatile_largesnmp_label\"><img class=\"data_indicator_icon\" src=\"../../img/download.svg\"></div>";
+    html += "    <div class=\"datatile_largesnmp_data\" id=\"datatile-snmp-" + snmpsensorid + "-inbound\">---</div>";
+    html += "  </div>";
+
+    html += "  <div class=\"data_box network_data_box\">";
+    html += "    <div class=\"datatile_largesnmp_label\"><img class=\"data_indicator_icon\" src=\"../../img/upload.svg\"></div>";
+    html += "    <div class=\"datatile_largesnmp_data\" id=\"datatile-snmp-" + snmpsensorid + "-outbound\">---</div>";
+    html += "  </div>";
+
+    html += "</div>";
+    html += "</div>";
+
+
+    $('#' + containerid).append(html);
+}
+
 function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorids, pingsensorid, tempsensorids) {
     var html = "";
     html += "<div class=\"school_info_box\" style=\"top: " + ypos + "px; left: " + xpos + "px;\" id=\"datatile-ping-" + pingsensorid + "\">";
@@ -7,7 +36,7 @@ function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorids, pings
 
     for(const sensor of snmpsensorids) 
     {
-        html += "<div class=\"school_info_box_data_container\" id=\"datatile-snmp-" + sensor + "\">";
+        html += "<div class=\"school_info_box_data_container\">";
         html += "  <div class=\"data_box network_data_box\">";
         html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/download.svg\"></div>";
         html += "    <div class=\"data_box_data network_data_box\" id=\"datatile-snmp-" + sensor + "-inbound\">---</div>";
@@ -95,45 +124,46 @@ function datatile_update_snmp(url)
     $.getJSON(url, function(data) {        
         $.each(data, function (allsensors, sensor) {
             if (sensor.isEnabled == true) {
-                var divBase = "#datatile-snmp-" + sensor.id + "-";                 
+                var divBase = "#datatile-snmp-" + sensor.id;                 
                 
                 $(divBase + "error").html(sensor.address);
 
                 // Update SNMP values
                 if (sensor.health > 0) {
-                    $(divBase + "inbound").html(sensor.friendlyBPSIn);
-                    $(divBase + "outbound").html(sensor.friendlyBPSOut);
+                    $(divBase + "-inbound").html(sensor.friendlyBPSIn);
+                    $(divBase + "-outbound").html(sensor.friendlyBPSOut);
                 } else {
-                    $(divBase + "inbound").html("DOWN");
-                    $(divBase + "outbound").html("DOWN");
+                    $(divBase + "-inbound").html("DOWN");
+                    $(divBase + "-outbound").html("DOWN");
                 }
 
                 // Check for errors or warnings
                 if (sensor.lastScan_ifOutOctets == -1) {
-                    $(divBase + "outbound").addClass("color-danger");
-                    $(divBase + "error").removeClass("hidden");
+                    $(divBase + "-outbound").addClass("color-danger");
+                    $(divBase).addClass("tile-danger");
+                    $(divBase + "-error").removeClass("hidden");
                 } else {
                     $(divBase + "outbound").removeClass("color-danger");
                     $(divBase + "error").addClass("hidden");
                 }
 
                 if (sensor.lastScan_ifInOctets == -1) {
-                    $(divBase + "inbound").addClass("color-danger");
+                    $(divBase + "-inbound").addClass("color-danger");
                 } else {
-                    $(divBase + "inbound").removeClass("color-danger");
+                    $(divBase + "-inbound").removeClass("color-danger");
                 }
 
                 // Utilization
                 if (sensor.lastBPSOut > SNMP_UTILIZATION_WARNING_BPS) {
-                    $(divBase + "outbound").addClass("color-warning");
+                    $(divBase + "-outbound").addClass("color-warning");
                 } else {
-                    $(divBase + "outbound").removeClass("color-warning");
+                    $(divBase + "-outbound").removeClass("color-warning");
                 }
 
                 if (sensor.lastBPSIn > SNMP_UTILIZATION_WARNING_BPS) {
-                    $(divBase + "inbound").addClass("color-warning");
+                    $(divBase + "-inbound").addClass("color-warning");
                 } else {
-                    $(divBase + "inbound").removeClass("color-warning");
+                    $(divBase + "-inbound").removeClass("color-warning");
                 }
 
             }

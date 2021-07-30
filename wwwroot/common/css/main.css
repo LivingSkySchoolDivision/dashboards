@@ -34,6 +34,13 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 
 .data_box_error { color: white; background-color: red; border-radius: 0 5px 0 5px;}
 
+#large_snmp_tile_container { position: absolute; top: 0; left: 0; z-index: 999; display: flex; flex-wrap: wrap; max-width: 600px; max-height: 350px;}
+.datatile_largesnmp_name {font-size: 20pt; font-weight: bolder; text-align: center;  margin-bottom: 10px;}
+.datatile_largesnmp { border: 2px dashed #444444; padding: 20px; margin: 5px;  color: #555555; border-radius: 5px;}
+.datatile_largesnmp_label { display: inline; }
+.datatile_largesnmp_data { display: inline;  font-size: 150%; font-weight: normal; }
+.datatile_largesnmp_datacontainer { } 
+
 .tile { box-sizing: border-box; margin: 3px; padding: 10px; min-width: 20%; min-height: 50%; display: grid; grid-template-columns: 100%; align-items: center; justify-content: center; text-align: center; }
 .footer-tile { width: 100%; font-size: 2.5em; height: 100%; line-height: 80%; text-align: left; }
 .header-tile { font-size: 4em; height: 100%; line-height: 80%; }
