@@ -5,10 +5,26 @@ $(document).ready(function(){
     weather_init(WEATHER_UPDATE_URL);
     time_init(DATE_AND_TIME_URL);
        
-    // Core switch SNMP IDs 1,2
-
     datatile_largesnmp_init("large_snmp_tile_container", "CORE 1", 1);
     datatile_largesnmp_init("large_snmp_tile_container", "CORE 2", 2);
+
+    datatile_small_init("small_ping_tile_container", "ADFS2019-1", 234);
+    datatile_small_init("small_ping_tile_container", "ADFS2019-2", 235);
+    datatile_small_init("small_ping_tile_container", "adsync", 236);
+    datatile_small_init("small_ping_tile_container", "dc-backups", 87);
+    datatile_small_init("small_ping_tile_container", "jenkins", 239);
+    datatile_small_init("small_ping_tile_container", "l4u", 238);
+    datatile_small_init("small_ping_tile_container", "logstash-1", 122);
+    datatile_small_init("small_ping_tile_container", "papercut ", 86);
+    datatile_small_init("small_ping_tile_container", "radius", 90);
+    datatile_small_init("small_ping_tile_container", "nscnet", 133);
+    datatile_small_init("small_ping_tile_container", "ntp", 136);
+    datatile_small_init("small_ping_tile_container", "sccm2012-dc", 145);
+    datatile_small_init("small_ping_tile_container", "sync", 242);
+    datatile_small_init("small_ping_tile_container", "vpn2", 233);
+    datatile_small_init("small_ping_tile_container", "web-external", 88);
+    datatile_small_init("small_ping_tile_container", "webportal", 241);
+    datatile_small_init("small_ping_tile_container", "xibo", 137);
 
     // Initialize school tiles (mostly testing right now)
     datatile_init("school_info_box_container", "OFFICE",1570,475, [5], 6, [6,7]);    

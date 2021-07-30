@@ -2,6 +2,13 @@
 
 function datatile_small_init(containerid, tilename, pingsensorid)
 {
+    var html = "";
+    html += "<div class=\"datatile_small_ping\" id=\"datatile-ping-" + pingsensorid + "\">";
+    html += "  <div class=\"datatile_small_ping_name\">" + tilename + "</div>";
+    html += "</div>";
+
+
+    $('#' + containerid).append(html);
 }
 
 function datatile_largesnmp_init(containerid, tilename, snmpsensorid) 

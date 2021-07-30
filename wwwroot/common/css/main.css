@@ -41,6 +41,10 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .datatile_largesnmp_data { display: inline;  font-size: 150%; font-weight: normal; }
 .datatile_largesnmp_datacontainer { } 
 
+#small_ping_tile_container { position: absolute; bottom: 0px; right: 0px; display: flex; flex-wrap: wrap; max-width: 125px;}
+.datatile_small_ping { margin: 5px; border: 2px dotted #444444; color: #555555; padding: 3px; text-align: center; width: 100%; border-radius: 5px;}
+.datatile_small_ping_name { font-weight: normal; }
+
 .tile { box-sizing: border-box; margin: 3px; padding: 10px; min-width: 20%; min-height: 50%; display: grid; grid-template-columns: 100%; align-items: center; justify-content: center; text-align: center; }
 .footer-tile { width: 100%; font-size: 2.5em; height: 100%; line-height: 80%; text-align: left; }
 .header-tile { font-size: 4em; height: 100%; line-height: 80%; }
