@@ -23,7 +23,7 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 
 .tile_container { display: flex; flex-wrap: wrap; justify-content: space-around; align-items: baseline; }
 
-.school_info_box { background-color: rgba(0,0,0,0.85); box-sizing: border;  border: 2px dashed #444444; padding: 5px; margin: 5px; text-align: center; border-radius: 5px; position: absolute; color: #555555; min-width: 120px; }
+.school_info_box { background-color: rgba(0,0,0,0.85); box-sizing: border;  border: 2px dashed #444444; padding: 5px; margin: 5px; text-align: center; border-radius: 5px; position: absolute; color: #555555; min-width: 120px; max-width: 200px; }
 .school_info_box .data_box { box-sizing: border-box; margin: 2px; font-size: 12pt; }
 .school_info_box .school_name { font-size: 20px; font-weight: bold; grid-row-end: span 20; }
 .school_info_box .data_box_title { display: inline; }
@@ -31,6 +31,7 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .data_indicator_icon { width: 16px; max-height: 16px; filter: invert(100%); opacity: 25%; }
 .school_info_box_data_container { display: flex; width: 100%; justify-content: center; }
 .network_data_box { font-weight: bold; }
+
 
 .data_box_error { color: white; background-color: red; border-radius: 0 5px 0 5px;}
 
@@ -42,8 +43,12 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .datatile_largesnmp_datacontainer { } 
 
 #small_ping_tile_container { position: absolute; bottom: 0px; right: 0px; display: flex; flex-wrap: wrap; max-width: 125px;}
+#small_ping_tile_container_2 {  position: absolute; bottom: 0px; left: 890px; display: flex; flex-wrap: wrap; max-height: 400px; max-width: 125px; }
+#small_ping_tile_container_3 {  position: absolute; bottom: 0px; left: 1010px; display: flex; flex-wrap: wrap; max-height: 400px; max-width: 125px; }
 .datatile_small_ping { margin: 5px; border: 2px dotted #444444; color: #555555; padding: 3px; text-align: center; width: 100%; border-radius: 5px;}
-.datatile_small_ping_name { font-weight: normal; }
+.datatile_small_ping_name { font-weight: normal;  }
+.datatile_small_site_ping_container { display: flex; flex-wrap: wrap; justify-content: center; }
+.datatile_small_site_ping_item { padding-left: 5px; padding-right: 6px;margin: 5px; font-weight: bold; }
 
 .tile { box-sizing: border-box; margin: 3px; padding: 10px; min-width: 20%; min-height: 50%; display: grid; grid-template-columns: 100%; align-items: center; justify-content: center; text-align: center; }
 .footer-tile { width: 100%; font-size: 2.5em; height: 100%; line-height: 80%; text-align: left; }
@@ -96,15 +101,16 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .color-ok {  }
 .color-warning { color: rgb(224, 108, 0);} 
 .color-danger { animation: danger 1.5s infinite linear; }
+.danger-by-default {  }
 
-.tile-danger { z-index: 999; animation: zoom 0.5s infinite linear; border-style: solid; border-color: red; background-color: rgba(255,0,0,0.2); color: white;}
-.tile-warning { border-color: rgb(224, 108, 0);; background-color: rgba(224,108,0,0.2); color: white; }
+.tile-danger { z-index: 999; animation: zoom 0.5s infinite linear; border-style: solid; border-color: red; background-color: rgba(255,0,0,0.6); color: white;}
+.tile-warning {  z-index: 999; border-color: rgb(224, 108, 0);; border-style: solid; background-color: rgba(224,108,0,0.5); color: white }
 
 
 @keyframes danger {
-    0%  { color: inherit; transform:scale(100%)}
-    50%  { color: rgba(255,0,0, 1); transform:scale(125%);}
-    100%  { color: inherit; transform:scale(100%)}
+    0%  { color: inherit; }
+    50%  { color: rgba(255,0,0, 1);}
+    100%  { color: inherit;}
 }
 
 @keyframes zoom {
