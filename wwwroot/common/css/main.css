@@ -46,9 +46,10 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .datatile_largewebsite_address { font-size: 14pt; }
 
 #small_ping_tile_container { position: absolute; bottom: 0px; right: 0px; display: flex; flex-wrap: wrap; max-width: 125px;}
-#small_ping_tile_container_2 {  position: absolute; bottom: 0px; left: 890px; display: flex; flex-wrap: wrap; max-height: 400px; max-width: 125px; }
+#small_ping_tile_container_2 { position: absolute; bottom: 0px; left: 890px; display: flex; flex-wrap: wrap; max-height: 400px; max-width: 125px; }
 #small_ping_tile_container_3 {  position: absolute; bottom: 0px; left: 1010px; display: flex; flex-wrap: wrap; max-height: 400px; max-width: 125px; }
-.datatile_small_ping { margin: 5px; border-width: 2px; border-style: dotted;  padding: 3px; text-align: center; width: 100%; border-radius: 5px;}
+
+.datatile_small_ping { margin: 5px; border-width: 2px; border-style: dotted;  padding: 3px; text-align: center; width: 100%; border-radius: 2px;}
 .datatile_small_ping_name { font-weight: normal;  }
 .datatile_small_site_ping_container { display: flex; flex-wrap: wrap; justify-content: center; }
 .datatile_small_site_ping_item { padding-left: 5px; padding-right: 6px;margin: 5px; font-weight: bold; }
@@ -104,6 +105,7 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .color-ok { color: #444444;  border-color: #444444;}
 .color-warning { color: rgb(224, 108, 0);} 
 .color-danger { animation: danger 1.5s infinite linear; }
+.color-high-utilization { color: white; }
 .danger-by-default {  }
 
 .tile-ok { color: #444444; border-color: #444444;}
