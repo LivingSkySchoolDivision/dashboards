@@ -1,9 +1,12 @@
 /* ******************************************** */
 /* * Document onLoad stuff                    * */
 /* ******************************************** */
-$(document).ready(function(){    
+$(document).ready(function(){   
+    weather_init(WEATHER_UPDATE_URL);
+    time_init(DATE_AND_TIME_URL);
+
     guests_init('guests-active-count', 'https://guests.lskysd.ca/json/');
-    inout_group_init('inout-container', 'https://inoutapi.lskysd.ca/GroupMembers/5');
+    inout_group_init('inout-container', 'https://inoutapi.lskysd.ca/GroupMembers/2');
 });
 
 
@@ -21,10 +24,21 @@ $(document).ready(function(){
  3600000     1 hour
  */
 
+// Every second
+setInterval(function() {
+    time_update();
+}, 1000);
+
 // Every 30 sec
 setInterval(function() {
     inout_group_update();
 }, 30000);
+
+// Every 30 minutes
+setInterval(function() {
+    time_refresh_offsets(DATE_AND_TIME_URL);
+    weather_update(WEATHER_UPDATE_URL);
+}, 1800000);
 
 // Refresh the page periodically
 setInterval(function() {

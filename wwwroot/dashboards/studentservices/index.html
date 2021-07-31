@@ -18,9 +18,11 @@
         <script src="../../common/js/common-settings.js" type="text/javascript"></script>
         <script src="../../common/js/guests.js" type="text/javascript"></script>
         <script src="../../common/js/inout-group.js" type="text/javascript"></script>
+        <script src="../../common/js/weather.js" type="text/javascript"></script>
+        <script src="../../common/js/date-and-time.js" type="text/javascript"></script>
 
         <!-- styles unique to this dashboard -->
-		<link rel="Stylesheet" type="text/css" href="it2.css" />
+		<link rel="Stylesheet" type="text/css" href="studentservices.css" />
 
         <!-- javascripts unique to this dashboard -->
         <script src="initialize.js" type="text/javascript"></script>
@@ -29,29 +31,34 @@
 	</head>
 	<body>
         <div id="container-1080p">
-            
-
-            <div id="container-main">
-                <div class="tile tw-1 th-1"><div class="tile-content"></div></div>
-                <div class="tile tw-1 th-1"><div class="tile-content"></div></div>
-                <div class="tile tw-1 th-1"><div class="tile-content"></div></div>
-                <div class="tile tw-1 th-1"><div class="tile-content">
+            <div id="container-top">
+                <div class="tile header-tile" id="current-date">##########, ####### ### ####</div>
+                <div class="tile header-tile"><div id="current-time">##:## ##</div></div>
+                <div class="tile header-tile" id="current-weather">
                     <div class="tile-content">
-                        <div class="tile-title">Guest accounts active</div>
-                        <div id="guests-container">
-                            <div id="guests-active-count" class="lcd-panel">---</div>
+                        <div id="weather-container">
+                            <div id="weather-detail-icon"><img src="../../img/weather/default.png"></div>
+                            <div>
+                                <div id="weather-temperature">###&deg;C</div>
+                                <div id="weather-feelslike">Feels like ###&deg;C</div>
+                                <div id="weather-extra"> 
+                                    Humid: <div id="weather-humidity"></div> 
+                                    Wind: <div id="weather-wind"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div></div>
-                <div class="tile tw-1 th-2"><div class="tile-content">
-                    <div id="inout-container">---</div>
-                </div></div>
-                <div class="tile tw-1 th-1"><div class="tile-content"></div></div>
-                <div class="tile tw-1 th-1"><div class="tile-content"></div></div>
-                <div class="tile tw-1 th-1"><div class="tile-content"></div></div>
-                <div class="tile tw-1 th-1"><div class="tile-content"></div></div>
-                
+                </div>
+            </div>
+            
+            
 
+            <div>
+                <div class="tile tw-3 th-2">
+                    <div class="tile-content">
+                        <div id="inout-container">---</div>
+                    </div>
+                </div>
             </div>
 
             <div id="container-bottom-tall">

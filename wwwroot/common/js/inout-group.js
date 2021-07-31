@@ -71,6 +71,8 @@ function inout_group_update() {
                         }
                     } else {
                         $(userDivName).addClass("presence_user_unknown");
+                        $(userDivName + "-status").html("&nbsp;");
+                        $(userDivName + "-inorout").text("??");
                     }
 
                 }
