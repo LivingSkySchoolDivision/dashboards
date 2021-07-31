@@ -3,7 +3,7 @@
 function datatile_small_init(containerid, tilename, pingsensorid)
 {
     var html = "";
-    html += "<div class=\"datatile_small_ping\" id=\"datatile-ping-" + pingsensorid + "\">";
+    html += "<div class=\"datatile datatile_small_ping\" id=\"datatile-ping-" + pingsensorid + "\">";
     html += "  <div class=\"datatile_small_ping_name\">" + tilename + "</div>";
     html += "</div>";
 
@@ -14,7 +14,7 @@ function datatile_small_init(containerid, tilename, pingsensorid)
 function datatile_largesnmp_init(containerid, tilename, snmpsensorid) 
 {
     var html = "";
-    html += "<div class=\"datatile_largesnmp\" id=\"datatile-snmp-" + snmpsensorid + "\">";
+    html += "<div class=\"datatile datatile_largesnmp\" id=\"datatile-snmp-" + snmpsensorid + "\">";
     html += "  <div class=\"datatile_largesnmp_name\">" + tilename + "</div>";
     html += "<div id=\"datatile-snmp-" + snmpsensorid + "-error\"></div>";
     html += "<div class=\"datatile_largesnmp_datacontainer\" id=\"datatile-snmp-" + snmpsensorid + "\">";
@@ -39,7 +39,7 @@ function datatile_largesnmp_init(containerid, tilename, snmpsensorid)
 function datatile_large_ping_init(containerid, tilename, pingsensorid)
 {
     var html = "";
-    html += "<div class=\"datatile_largesnmp\" id=\"datatile-ping-" + pingsensorid + "\">";
+    html += "<div class=\"datatile datatile_largesnmp\" id=\"datatile-ping-" + pingsensorid + "\">";
     html += "  <div class=\"datatile_largesnmp_name\">" + tilename + "</div>";
     html += "  <div class=\"datatile_largesnmp_name\" id=\"datatile-ping-" + pingsensorid + "-ip\"></div>";
     html += "</div>";
@@ -48,9 +48,21 @@ function datatile_large_ping_init(containerid, tilename, pingsensorid)
     $('#' + containerid).append(html);
 }
 
+function datatile_large_website_init(containerid, tilename, websitesensorid)
+{
+    var html = "";
+    html += "<div class=\"datatile datatile_largesnmp\" id=\"datatile-website-" + websitesensorid + "\">";
+    html += "  <div class=\"datatile_largesnmp_name\">" + tilename + "</div>";
+    html += "  <div class=\"datatile_largewebsite_address\" id=\"datatile-website-" + websitesensorid + "-address\"></div>";
+    html += "</div>";
+
+
+    $('#' + containerid).append(html);
+}
+
 function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorid, tempsensorids, pingsensors) {
     var html = "";
-    html += "<div class=\"school_info_box\" style=\"top: " + ypos + "px; left: " + xpos + "px;\" id=\"datatile-snmp-" + snmpsensorid + "-health\">";
+    html += "<div class=\"datatile school_info_box\" style=\"top: " + ypos + "px; left: " + xpos + "px;\" id=\"datatile-snmp-" + snmpsensorid + "\">";
     html += "  <div class=\"school_name\">" + schoolname + "</div>";
 
     html += "<div class=\"school_info_box_data_container\">";
@@ -94,7 +106,6 @@ function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorid, tempse
 
     html += "</div>";
 
-    console.log("Initializing school tile for " + schoolname);
     $('#' + containerid).append(html);
 }
 
@@ -108,6 +119,9 @@ function datatile_update()
 
     // Get ping network info
     datatile_update_ping(STRENDINMONITOR_API_PATH + "/pinglatencysensors");
+
+    // Get website network info
+    datatile_update_websites(STRENDINMONITOR_API_PATH + "/WebsiteSensors");
 
 }
 
@@ -126,16 +140,19 @@ function datatile_update_ping(url)
                 if (sensor.health <= 0) {
                     $(divBase).addClass("tile-danger");
                     $(divBase).removeClass("tile-warning");
+                    $(divBase).removeClass("tile-ok");
                     $(divBase + "-textonly").addClass("color-danger");
                     $(divBase + "-textonly").removeClass("color-warning");
                     $(divBase + "-hidden").removeClass("hidden");
                 } else if (sensor.health <= 99) {
                     $(divBase).removeClass("tile-danger");
                     $(divBase).addClass("tile-warning");
+                    $(divBase).removeClass("tile-ok");
                     $(divBase + "-textonly").removeClass("color-danger");
                     $(divBase + "-textonly").addClass("color-warning");
                     $(divBase + "-hidden").removeClass("hidden");
                 } else {
+                    $(divBase).addClass("tile-ok");
                     $(divBase).removeClass("tile-danger");
                     $(divBase).removeClass("tile-warning");
                     $(divBase + "-textonly").removeClass("color-danger");
@@ -143,6 +160,46 @@ function datatile_update_ping(url)
                     $(divBase + "-hidden").addClass("hidden");
                 }
 
+            }
+        });
+    });
+
+}
+
+function datatile_update_websites(url) 
+{
+    $.getJSON(url, function (data) {
+        $.each(data, function (allsensors, sensor) {
+            if (sensor.isEnabled == true) {
+                var divBase = "#datatile-website-" + sensor.id;
+
+                $(divBase + "-address").html(sensor.address);
+
+                // Just check for issues and highlight the box if health isn't 100%
+
+                // Check for errors or warnings
+                if (sensor.health <= 0) {
+                    $(divBase).addClass("tile-danger");
+                    $(divBase).removeClass("tile-warning");
+                    $(divBase).removeClass("tile-ok");
+                    $(divBase + "-textonly").addClass("color-danger");
+                    $(divBase + "-textonly").removeClass("color-warning");
+                    $(divBase + "-hidden").removeClass("hidden");
+                } else if (sensor.health <= 99) {
+                    $(divBase).removeClass("tile-danger");
+                    $(divBase).addClass("tile-warning");
+                    $(divBase).removeClass("tile-ok");
+                    $(divBase + "-textonly").removeClass("color-danger");
+                    $(divBase + "-textonly").addClass("color-warning");
+                    $(divBase + "-hidden").removeClass("hidden");
+                } else {
+                    $(divBase).addClass("tile-ok");
+                    $(divBase).removeClass("tile-danger");
+                    $(divBase).removeClass("tile-warning");
+                    $(divBase + "-textonly").removeClass("color-danger");
+                    $(divBase + "-textonly").removeClass("color-warning");
+                    $(divBase + "-hidden").addClass("hidden");
+                }
             }
         });
     });
@@ -159,30 +216,37 @@ function datatile_update_snmp(url)
                 $(divBase + "error").html(sensor.address);
 
                 // Update SNMP values
-                if (sensor.health > 0) {
-                    $(divBase + "-inbound").html(sensor.friendlyBPSIn);
-                    $(divBase + "-outbound").html(sensor.friendlyBPSOut);
-                } else {
+                if (sensor.lastBPSIn == -1) {
                     $(divBase + "-inbound").html("DOWN");
+                } else if (sensor.lastBPSIn < 1000) {
+                    $(divBase + "-inbound").html("IDLE");
+                } else {
+                    $(divBase + "-inbound").html(sensor.friendlyBPSIn);
+                }
+
+                if (sensor.lastBPSOut == -1) {
                     $(divBase + "-outbound").html("DOWN");
-
-                    $(divBase + "-health").addClass("tile-danger");
+                } else if (sensor.lastBPSOut < 1000) {
+                    $(divBase + "-outbound").html("IDLE");
+                } else {
+                    $(divBase + "-outbound").html(sensor.friendlyBPSOut);
                 }
 
-                // Check for errors or warnings
-                if (sensor.lastScan_ifOutOctets == -1) {
-                    //$(divBase + "-outbound").addClass("color-danger");
+
+
+                // Set colour based on health
+                if (sensor.health <= 0) {
                     $(divBase).addClass("tile-danger");
-                    $(divBase + "-error").removeClass("hidden");
+                    $(divBase).removeClass("tile-warning");
+                    $(divBase).removeClass("tile-ok");
+                } else if (sensor.health <= 99) {
+                    $(divBase).removeClass("tile-danger");
+                    $(divBase).addClass("tile-warning");
+                    $(divBase).removeClass("tile-ok");
                 } else {
-                    //$(divBase + "outbound").removeClass("color-danger");
-                    $(divBase + "error").addClass("hidden");
-                }
-
-                if (sensor.lastScan_ifInOctets == -1) {
-                    //$(divBase + "-inbound").addClass("color-danger");
-                } else {
-                    //$(divBase + "-inbound").removeClass("color-danger");
+                    $(divBase).addClass("tile-ok");
+                    $(divBase).removeClass("tile-danger");
+                    $(divBase).removeClass("tile-warning");
                 }
 
                 // Utilization
@@ -225,11 +289,14 @@ function datatile_update_environmentsensors(url)
                     // Check for temperature warnings
                     if (sensor.lastTempCelsius > ENVIRONMENT_TEMP_DANGER_THRESHOLD) {
                         $(divBase + "temp").addClass("color-danger");
+                        $(divBase + "temp").removeClass("color-ok");
                         $(divBase + "temp").removeClass("color-warning");
                     } else if (sensor.lastTempCelsius > ENVIRONMENT_TEMP_WARNING_THRESHOLD) {
                         $(divBase + "temp").addClass("color-warning");
                         $(divBase + "temp").removeClass("color-danger");
+                        $(divBase + "temp").removeClass("color-ok");
                     } else {
+                        $(divBase + "temp").addClass("color-ok");
                         $(divBase + "temp").removeClass("color-danger");
                         $(divBase + "temp").removeClass("color-warning");
                     }
@@ -238,10 +305,13 @@ function datatile_update_environmentsensors(url)
                     if (sensor.lastHumidityPercent > ENVIRONMENT_HIGH_HUMIDITY_DANGER_THRESHOLD) {
                         $(divBase + "humid").addClass("color-danger");
                         $(divBase + "humid").removeClass("color-warning");
+                        $(divBase + "humid").removeClass("color-ok");
                     } else if (sensor.lastHumidityPercent > ENVIRONMENT_HIGH_HUMIDITY_WARNING_THRESHOLD) {
                         $(divBase + "humid").addClass("color-warning");
                         $(divBase + "humid").removeClass("color-danger");
+                        $(divBase + "humid").removeClass("color-ok");
                     } else {
+                        $(divBase + "humid").addClass("color-ok");
                         $(divBase + "humid").removeClass("color-danger");
                         $(divBase + "humid").removeClass("color-warning");
                     }
@@ -250,10 +320,13 @@ function datatile_update_environmentsensors(url)
                     if (sensor.lastHumidityPercent < ENVIRONMENT_LOW_HUMIDITY_DANGER_THRESHOLD) {
                         $(divBase + "humid").addClass("color-danger");
                         $(divBase + "humid").removeClass("color-warning");
+                        $(divBase + "humid").removeClass("color-ok");
                     } else if (sensor.lastHumidityPercent < ENVIRONMENT_LOW_HUMIDITY_WARNING_THRESHOLD) {
                         $(divBase + "humid").addClass("color-warning");
                         $(divBase + "humid").removeClass("color-danger");
+                        $(divBase + "humid").removeClass("color-ok");
                     } else {
+                        $(divBase + "humid").addClass("color-ok");
                         $(divBase + "humid").removeClass("color-danger");
                         $(divBase + "humid").removeClass("color-warning");
                     }

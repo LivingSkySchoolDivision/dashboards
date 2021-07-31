@@ -7,7 +7,7 @@ $(document).ready(function(){
 
     datatile_largesnmp_init("large_snmp_tile_container", "CORE 1", 1);
     datatile_largesnmp_init("large_snmp_tile_container", "CORE 2", 2);
-    datatile_large_ping_init("large_snmp_tile_container", "INTERNET", 91);
+    datatile_large_website_init("large_snmp_tile_container", "INTERNET", 1);
 
     datatile_small_init("small_ping_tile_container", "ADFS2019-1", 234);
     datatile_small_init("small_ping_tile_container", "ADFS2019-2", 235);
