@@ -54,6 +54,7 @@ function datatile_large_website_init(containerid, tilename, websitesensorid)
     html += "<div class=\"datatile datatile_largesnmp\" id=\"datatile-website-" + websitesensorid + "\">";
     html += "  <div class=\"datatile_largesnmp_name\">" + tilename + "</div>";
     html += "  <div class=\"datatile_largewebsite_address\" id=\"datatile-website-" + websitesensorid + "-address\"></div>";
+    html += "  <div class=\"datatile_largewebsite_icon_container\"><img src=\"../../img/question-circle.svg\" id=\"datatile-website-" + websitesensorid + "-icon\"></div>";
     html += "</div>";
 
 
@@ -204,6 +205,11 @@ function datatile_update_websites(url)
                 $(divBase + "-address").html(sensor.address);
 
                 // Just check for issues and highlight the box if health isn't 100%
+                if  (sensor.health == 100) {
+                    $(divBase + "-icon").attr("src","../../img/smile.svg");
+                } else {
+                    $(divBase + "-icon").attr("src","../../img/frown.svg");
+                }
 
                 // Check for errors or warnings
                 if (sensor.health <= 0) {

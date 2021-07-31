@@ -43,7 +43,10 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .datatile_largesnmp_data { display: inline;  font-size: 150%; font-weight: normal; }
 .datatile_largesnmp_datacontainer { } 
 
-.datatile_largewebsite_address { font-size: 14pt; }
+.datatile_largewebsite_address { font-size: 10pt; }
+.datatile_largewebsite_icon_container img { filter: invert(100%); opacity: 25%; height: 32px; width: 32px;}
+.datatile_largewebsite_icon_container { text-align: center; margin-top: 15px;}
+.tile-danger .datatile_largewebsite_icon_container img { opacity: 100%; }
 
 #small_ping_tile_container { position: absolute; bottom: 0px; right: 0px; display: flex; flex-wrap: wrap; max-width: 125px;}
 #small_ping_tile_container_2 { position: absolute; bottom: 0px; left: 890px; display: flex; flex-wrap: wrap; max-height: 400px; max-width: 125px; }
