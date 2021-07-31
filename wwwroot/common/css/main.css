@@ -113,6 +113,8 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .tile-warning {  z-index: 999; border-color: rgb(224, 108, 0);; border-style: solid; background-color: rgba(224,108,0,0.5); color: white }
 .tile-danger .color-ok { color: white; }
 .tile-warning .color-ok { color: white; }
+.tile-danger .data_indicator_icon  {opacity: 80%; }
+.tile-warning .data_indicator_icon { opacity: 80%; }
 
 @keyframes danger {
     0%  { color: inherit; }
