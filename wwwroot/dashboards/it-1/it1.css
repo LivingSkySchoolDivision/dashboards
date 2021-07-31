@@ -1,0 +1,11 @@
+
+#small_website_tile_container {
+    position: absolute;
+    top: 330px;
+    left: 0px;
+    width: 450px;
+    max-height: 100px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+

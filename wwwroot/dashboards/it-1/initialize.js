@@ -9,6 +9,11 @@ $(document).ready(function(){
     datatile_largesnmp_init("large_snmp_tile_container", "CORE 2", 2);
     datatile_large_website_init("large_snmp_tile_container", "INTERNET", 1);
 
+    datatile_small_website_init("small_website_tile_container", "LIVINGSKYSD.CA", 2);
+    datatile_small_website_init("small_website_tile_container", "L4U", 4);
+    datatile_small_website_init("small_website_tile_container", "WEBPORTAL", 6);
+    datatile_small_website_init("small_website_tile_container", "MSS", 5);
+
     datatile_small_init("small_ping_tile_container", "ADFS2019-1", 234);
     datatile_small_init("small_ping_tile_container", "ADFS2019-2", 235);
     datatile_small_init("small_ping_tile_container", "adsync", 236);

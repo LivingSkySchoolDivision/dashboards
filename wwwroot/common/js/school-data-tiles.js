@@ -61,6 +61,17 @@ function datatile_large_website_init(containerid, tilename, websitesensorid)
     $('#' + containerid).append(html);
 }
 
+function datatile_small_website_init(containerid, tilename, websitesensorid)
+{
+    var html = "";
+    html += "<div class=\"datatile datatile_small_ping\" id=\"datatile-website-" + websitesensorid + "\">";
+    html += "  <div class=\"datatile_small_ping_name\">" + tilename + "</div>";
+    html += "</div>";
+
+
+    $('#' + containerid).append(html);
+}
+
 function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorid, tempsensorids, shownpingsensors, extrapingsensors) {
     var html = "";
     html += "<div class=\"datatile school_info_box\" style=\"top: " + ypos + "px; left: " + xpos + "px;\" id=\"datatile-snmp-" + snmpsensorid + "\">";
@@ -162,8 +173,7 @@ function datatile_update_ping(url)
                     $(divBase + "-value").removeClass("color-ok");
                     $(divBase + "-value").addClass("color-warning");
                 }
-
-                // Just check for issues and highlight the box if health isn't 100%
+                
 
                 // Check for errors or warnings
                 if (sensor.health <= 0) {
@@ -188,7 +198,6 @@ function datatile_update_ping(url)
                     $(divBase + "-textonly").removeClass("color-warning");
                     $(divBase + "-hidden").addClass("hidden");
                 }
-
             }
         });
     });
@@ -265,8 +274,6 @@ function datatile_update_snmp(url)
                 } else {
                     $(divBase + "-outbound").html(sensor.friendlyBPSOut);
                 }
-
-
 
                 // Set colour based on health
                 if (sensor.health <= 0) {
