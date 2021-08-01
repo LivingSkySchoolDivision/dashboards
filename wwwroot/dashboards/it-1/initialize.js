@@ -8,55 +8,8 @@ $(document).ready(function(){
     datatile_largesnmp_init("large_snmp_tile_container", "CORE 1", 1);
     datatile_largesnmp_init("large_snmp_tile_container", "CORE 2", 2);
     datatile_large_website_init("large_snmp_tile_container", "INTERNET", 1);
-
-    datatile_small_website_init("small_website_tile_container", "LIVINGSKYSD.CA", 2);
-    datatile_small_website_init("small_website_tile_container", "L4U", 4);
-    datatile_small_website_init("small_website_tile_container", "WEBPORTAL", 6);
-    datatile_small_website_init("small_website_tile_container", "MSS", 5);
-
-    datatile_small_init("small_ping_tile_container", "ADFS2019-1", 234);
-    datatile_small_init("small_ping_tile_container", "ADFS2019-2", 235);
-    datatile_small_init("small_ping_tile_container", "adsync", 236);
-    datatile_small_init("small_ping_tile_container", "ansible", 257);
-    datatile_small_init("small_ping_tile_container", "dc-backups", 87);
-    datatile_small_init("small_ping_tile_container", "dropoff", 270);
-    datatile_small_init("small_ping_tile_container", "InfectionMonkey", 254);
-    datatile_small_init("small_ping_tile_container", "jenkins", 239);
-    datatile_small_init("small_ping_tile_container", "JingleKeys", 267);
-    datatile_small_init("small_ping_tile_container", "l4u", 238);
-    datatile_small_init("small_ping_tile_container", "papercut ", 86);
-    datatile_small_init("small_ping_tile_container", "radius", 90);
-    datatile_small_init("small_ping_tile_container", "mongo", 255);
-    datatile_small_init("small_ping_tile_container", "nscnet", 133);
-    datatile_small_init("small_ping_tile_container", "ntp", 136);
-    datatile_small_init("small_ping_tile_container", "sccm2012-dc", 145);
-    datatile_small_init("small_ping_tile_container", "sync", 242);
-    datatile_small_init("small_ping_tile_container", "UNMS", 256);
-    datatile_small_init("small_ping_tile_container", "vpn2", 233);
-    datatile_small_init("small_ping_tile_container", "Warrant", 268);
-    datatile_small_init("small_ping_tile_container", "web-internal", 269);
-    datatile_small_init("small_ping_tile_container", "webportal", 241);
-    datatile_small_init("small_ping_tile_container", "xibo", 137);
-
+   
     
-    datatile_small_init("small_ping_tile_container_2", "dc-kube-ext-lb", 250);
-    datatile_small_init("small_ping_tile_container_2", "dc-kube-ext-m", 251);
-    datatile_small_init("small_ping_tile_container_2", "dc-kube-ext-n1", 252);
-    datatile_small_init("small_ping_tile_container_2", "dc-kube-ext-n2", 253);
-    datatile_small_init("small_ping_tile_container_2", "do-kube-int-lb", 246);
-    datatile_small_init("small_ping_tile_container_2", "do-kube-int-m", 247);
-    datatile_small_init("small_ping_tile_container_2", "do-kube-int-n1", 248);
-    datatile_small_init("small_ping_tile_container_2", "do-kube-int-n2", 249);
-    
-    datatile_small_init("small_ping_tile_container_3", "Prismcentral", 258);
-    datatile_small_init("small_ping_tile_container_3", "do-nutanix", 259);
-    datatile_small_init("small_ping_tile_container_3", "do-nutanix-1", 260);
-    datatile_small_init("small_ping_tile_container_3", "do-nutanix-2", 261);
-    datatile_small_init("small_ping_tile_container_3", "do-nutanix-3", 262);
-    datatile_small_init("small_ping_tile_container_3", "dc-nutanix", 263);
-    datatile_small_init("small_ping_tile_container_3", "dc-nutanix-1", 264);
-    datatile_small_init("small_ping_tile_container_3", "dc-nutanix-2", 265);
-    datatile_small_init("small_ping_tile_container_3", "dc-nutanix-3", 266);
 
     // Initialize school tiles 
     datatile_init("school_info_box_container", "DIV. OFFICE",1570,455, 5, [6,7], [6],[{"name":"AD", "id": 6},{"name": "DEPLOY-DO", "id": 155}, {"name": "Mac Mini", "id": 92}, {"name": "SCCM", "id": 156}]);
