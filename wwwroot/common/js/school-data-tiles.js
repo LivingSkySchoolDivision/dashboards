@@ -258,21 +258,31 @@ function datatile_update_snmp(url)
                 
                 $(divBase + "error").html(sensor.address);
 
+                // Check to see if the values are inverted                
+                var inboundFieldName = "-inbound";
+                var outboundFieldName = "-outbound";
+                if (sensor.hasInvertedInterfaces) {
+                    var tmp = inboundFieldName;
+                    inboundFieldName = outboundFieldName;
+                    outboundFieldName = tmp;
+                }
+
+
                 // Update SNMP values
                 if (sensor.lastBPSIn == -1) {
-                    $(divBase + "-inbound").html("DOWN");
+                    $(divBase + inboundFieldName).html("DOWN");
                 } else if (sensor.lastBPSIn < 1000) {
-                    $(divBase + "-inbound").html("IDLE");
+                    $(divBase + inboundFieldName).html("IDLE");
                 } else {
-                    $(divBase + "-inbound").html(sensor.friendlyBPSIn);
+                    $(divBase + inboundFieldName).html(sensor.friendlyBPSIn);
                 }
 
                 if (sensor.lastBPSOut == -1) {
-                    $(divBase + "-outbound").html("DOWN");
+                    $(divBase + outboundFieldName).html("DOWN");
                 } else if (sensor.lastBPSOut < 1000) {
-                    $(divBase + "-outbound").html("IDLE");
+                    $(divBase + outboundFieldName).html("IDLE");
                 } else {
-                    $(divBase + "-outbound").html(sensor.friendlyBPSOut);
+                    $(divBase + outboundFieldName).html(sensor.friendlyBPSOut);
                 }
 
                 // Set colour based on health
@@ -292,31 +302,31 @@ function datatile_update_snmp(url)
 
                 // Utilization
                 if (sensor.lastBPSIn > SNMP_UTILIZATION_WARNING_BPS) {
-                    $(divBase + "-inbound").addClass("color-warning");
-                    $(divBase + "-inbound").removeClass("color-high-utilization");
-                    $(divBase + "-inbound").removeClass("color-ok");
+                    $(divBase + inboundFieldName).addClass("color-warning");
+                    $(divBase + inboundFieldName).removeClass("color-high-utilization");
+                    $(divBase + inboundFieldName).removeClass("color-ok");
                 } else if (sensor.lastBPSIn > SNMP_UTILIZATION_HIGH_BPS) {
-                    $(divBase + "-inbound").addClass("color-high-utilization");
-                    $(divBase + "-inbound").removeClass("color-warning");
-                    $(divBase + "-inbound").removeClass("color-ok");
+                    $(divBase + inboundFieldName).addClass("color-high-utilization");
+                    $(divBase + inboundFieldName).removeClass("color-warning");
+                    $(divBase + inboundFieldName).removeClass("color-ok");
                 } else {
-                    $(divBase + "-inbound").addClass("color-ok");
-                    $(divBase + "-inbound").removeClass("color-warning");
-                    $(divBase + "-inbound").removeClass("color-high-utilization");
+                    $(divBase + inboundFieldName).addClass("color-ok");
+                    $(divBase + inboundFieldName).removeClass("color-warning");
+                    $(divBase + inboundFieldName).removeClass("color-high-utilization");
                 }
 
                 if (sensor.lastBPSOut > SNMP_UTILIZATION_WARNING_BPS) {
-                    $(divBase + "-outbound").addClass("color-warning");
-                    $(divBase + "-outbound").removeClass("color-high-utilization");
-                    $(divBase + "-outbound").removeClass("color-ok");
+                    $(divBase + outboundFieldName).addClass("color-warning");
+                    $(divBase + outboundFieldName).removeClass("color-high-utilization");
+                    $(divBase + outboundFieldName).removeClass("color-ok");
                 } else if (sensor.lastBPSOut > SNMP_UTILIZATION_HIGH_BPS) {
-                    $(divBase + "-outbound").addClass("color-high-utilization");
-                    $(divBase + "-outbound").removeClass("color-warning");
-                    $(divBase + "-outbound").removeClass("color-ok");
+                    $(divBase + outboundFieldName).addClass("color-high-utilization");
+                    $(divBase + outboundFieldName).removeClass("color-warning");
+                    $(divBase + outboundFieldName).removeClass("color-ok");
                 } else {
-                    $(divBase + "-outbound").addClass("color-ok");
-                    $(divBase + "-outbound").removeClass("color-warning");
-                    $(divBase + "-outbound").removeClass("color-high-utilization");
+                    $(divBase + outboundFieldName).addClass("color-ok");
+                    $(divBase + outboundFieldName).removeClass("color-warning");
+                    $(divBase + outboundFieldName).removeClass("color-high-utilization");
                 }
 
             }
