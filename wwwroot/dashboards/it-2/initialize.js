@@ -34,6 +34,8 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "dc-sql2019", 278);
     datatile_small_init("container-tilesensors", "do-deploy", 155);
     datatile_small_init("container-tilesensors", "do-kube-int-lb", 246);
+    datatile_small_init("container-tilesensors", "do-kube-test-m", 300);
+    datatile_small_init("container-tilesensors", "do-kube-test-n1", 301);
     datatile_small_init("container-tilesensors", "do-kube-int-m", 247);
     datatile_small_init("container-tilesensors", "do-kube-int-n1", 248);
     datatile_small_init("container-tilesensors", "do-kube-int-n2", 249);
@@ -42,6 +44,7 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "do-nutanix-3", 262);
     datatile_small_init("container-tilesensors", "do-nutanix", 259);
     datatile_small_init("container-tilesensors", "do-sql2019", 279);
+    datatile_small_init("container-tilesensors", "docker-registry", 302);
     datatile_small_init("container-tilesensors", "doors2019", 281);
     datatile_small_init("container-tilesensors", "doorsws", 280);
     datatile_small_init("container-tilesensors", "dropoff", 270);
@@ -76,6 +79,10 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "webportal", 241);
     datatile_small_init("container-tilesensors", "WTS2-DO", 295);
     datatile_small_init("container-tilesensors", "xibo", 137);
+
+    datatile_small_init("container-tilesensors", "do-dashboards-it-1", 297);
+    datatile_small_init("container-tilesensors", "do-dashboards-it-2", 298);
+    datatile_small_init("container-tilesensors", "do-dashboards-ss-1", 299);
 
     datatile_update();
 

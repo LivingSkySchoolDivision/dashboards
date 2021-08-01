@@ -25,5 +25,5 @@
 #container-tilesensors { display: grid; grid-template-columns: 25% 25% 25% 25%; flex-wrap: wrap; box-sizing: border-box; width: 900px; max-height: 1080px; position: absolute; top: 0; left: 0;}
 .datatile_largesnmp { box-sizing: border-box; width: 240px; text-align: center; font-size: 14pt; }
 
-
+.datatile_small_ping { box-sizing: border-box; border-style: solid; border-radius: 5px; }
 #container-tilesensors-2 {  display: grid; grid-template-columns: 50% 50%; flex-wrap: wrap; box-sizing: border-box; width: 550px; max-height: 500px; position: absolute; top: 325px; left: 925px;}
