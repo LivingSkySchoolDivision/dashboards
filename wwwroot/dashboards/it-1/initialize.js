@@ -18,7 +18,7 @@ $(document).ready(function(){
         {"name": "PiEnvMon", "id": 303}
     ]);
 
-    datatile_init("school_info_box_container", "NBCHS",1540,25, 27,  [21,22,23,24], [25],[
+    datatile_init("school_info_box_container", "NBCHS",1540,25, 35, [21,22,23,24], [25],[
         {"name":"AD", "id": 25},
         {"name": "Alarm", "id": 53},
         {"name": "Mac Mini", "id": 116},
