@@ -24,6 +24,9 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "Cisco TMS", 276);
     datatile_small_init("container-tilesensors", "confluence", 292);
     datatile_small_init("container-tilesensors", "dc-backups", 87);
+    datatile_small_init("container-tilesensors", "do-dashboards-it-1", 297);
+    datatile_small_init("container-tilesensors", "do-dashboards-it-2", 298);
+    datatile_small_init("container-tilesensors", "do-dashboards-ss-1", 299);
     datatile_small_init("container-tilesensors", "dc-kube-ext-lb", 250);
     datatile_small_init("container-tilesensors", "dc-kube-ext-m", 251);
     datatile_small_init("container-tilesensors", "dc-kube-ext-n1", 252);
@@ -81,9 +84,6 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "WTS2-DO", 295);
     datatile_small_init("container-tilesensors", "xibo", 137);
 
-    datatile_small_init("container-tilesensors", "do-dashboards-it-1", 297);
-    datatile_small_init("container-tilesensors", "do-dashboards-it-2", 298);
-    datatile_small_init("container-tilesensors", "do-dashboards-ss-1", 299);
 
     datatile_update();
 
