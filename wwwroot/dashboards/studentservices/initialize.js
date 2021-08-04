@@ -40,7 +40,8 @@ setInterval(function() {
     weather_update(WEATHER_UPDATE_URL);
 }, 1800000);
 
+
 // Refresh the page periodically
 setInterval(function() {
-    location.reload();
-}, 3400000);
+    window.location.replace(window.location.href);
+}, 2700000);
