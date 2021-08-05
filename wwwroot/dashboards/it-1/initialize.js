@@ -18,19 +18,6 @@ $(document).ready(function(){
         {"name": "PiEnvMon", "id": 303}
     ]);
 
-    datatile_init("school_info_box_container", "NBCHS",1540,25, 35, [21,22,23,24], [25],[
-        {"name":"AD", "id": 25},
-        {"name": "Alarm", "id": 53},
-        {"name": "Mac Mini", "id": 116},
-        {"name": "IDRAC", "id": 196},
-        {"name": "SCCM", "id": 198},
-        {"name": "ESXI", "id": 197},
-        {"name":"ROVER","id":60}, 
-        {"name": "PiEnvMon01", "id": 327},
-        {"name": "PiEnvMon02", "id": 328},
-        {"name": "PiEnvMon03", "id": 329},
-        {"name": "PiEnvMon04", "id": 330}
-    ]);
     datatile_init("school_info_box_container", "BCS", 1350, 700, 9,[1], [8],[
         {"name":"AD", "id": 8},
         {"name": "Alarm", "id": 37},
@@ -89,7 +76,7 @@ $(document).ready(function(){
         {"name": "ESXI", "id": 161},
         {"name": "PiEnvMon01", "id": 312}
     ]);
-    datatile_init("school_info_box_container", "HCES",870,197, 16,  [8], [15],[
+    datatile_init("school_info_box_container", "HCES",890,197, 16,  [8], [15],[
         {"name":"AD", "id": 15},
         {"name": "Alarm", "id": 56},
         {"name": "Mac Mini", "id": 104},
@@ -126,7 +113,7 @@ $(document).ready(function(){
         {"name": "ESXI", "id": 173},
         {"name": "PiEnvMon01", "id": 316}
     ]);
-    datatile_init("school_info_box_container", "Leoville",630,40, 19, [12], [18],[
+    datatile_init("school_info_box_container", "Leoville",630,30, 19, [12], [18],[
         {"name":"AD", "id": 18},
         {"name": "Alarm", "id": 49},
         {"name": "Mac Mini", "id": 108},
@@ -192,6 +179,21 @@ $(document).ready(function(){
         {"name": "ESXI", "id": 194},
         {"name": "PiEnvMon01", "id": 325}
     ]);
+
+    datatile_init("school_info_box_container", "NBCHS",1540,25, 35, [21,22,23,24], [25],[
+        {"name":"AD", "id": 25},
+        {"name": "Alarm", "id": 53},
+        {"name": "Mac Mini", "id": 116},
+        {"name": "IDRAC", "id": 196},
+        {"name": "SCCM", "id": 198},
+        {"name": "ESXI", "id": 197},
+        {"name":"ROVER","id":60}, 
+        {"name": "PiEnvMon01", "id": 327},
+        {"name": "PiEnvMon02", "id": 328},
+        {"name": "PiEnvMon03", "id": 329},
+        {"name": "PiEnvMon04", "id": 330}
+    ]);
+
     datatile_init("school_info_box_container", "NCES",478,502, 28,  [20], [26],[
         {"name":"AD", "id": 26},
         {"name": "Alarm", "id": 52},
