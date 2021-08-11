@@ -114,3 +114,8 @@ setInterval(function() {
 setInterval(function() {
     window.location.replace(window.location.href);
 }, 2700000);
+
+// Every 1 minutes
+setInterval(function() {
+    datatile_update();
+}, 60000);
