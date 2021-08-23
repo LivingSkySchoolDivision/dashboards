@@ -51,7 +51,6 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "docker-registry", 302);
     datatile_small_init("container-tilesensors", "doors2019", 281);
     datatile_small_init("container-tilesensors", "doorsws", 280);
-    datatile_small_init("container-tilesensors", "dropoff", 270);
     datatile_small_init("container-tilesensors", "helpdesk", 291);
     datatile_small_init("container-tilesensors", "InfectionMonkey", 254);
     datatile_small_init("container-tilesensors", "jenkins", 239);
