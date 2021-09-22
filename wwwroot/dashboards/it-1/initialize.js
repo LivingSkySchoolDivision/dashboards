@@ -15,7 +15,7 @@ $(document).ready(function(){
         {"name": "DEPLOY-DO", "id": 155}, 
         {"name": "Mac Mini", "id": 92}, 
         {"name": "SCCM", "id": 156}, 
-        {"name": "PiEnvMon01", "id": 310}
+        {"name": "PiEnvMon01", "id": 310},
         {"name": "PiEnvMon02", "id": 311}
     ]);
 
