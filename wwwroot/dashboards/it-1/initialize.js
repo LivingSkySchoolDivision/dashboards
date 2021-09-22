@@ -15,7 +15,8 @@ $(document).ready(function(){
         {"name": "DEPLOY-DO", "id": 155}, 
         {"name": "Mac Mini", "id": 92}, 
         {"name": "SCCM", "id": 156}, 
-        {"name": "PiEnvMon", "id": 303}
+        {"name": "PiEnvMon01", "id": 310}
+        {"name": "PiEnvMon02", "id": 311}
     ]);
 
     datatile_init("school_info_box_container", "BCS", 1350, 700, 9,[1], [8],[
@@ -25,7 +26,6 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 139},
         {"name": "SCCM", "id": 141},
         {"name": "ESXI", "id": 140},
-        {"name": "PiEnvMon", "id": 330},
         {"name": "PiEnvMon01", "id": 303}
     ]);
     datatile_init("school_info_box_container", "Bready",1140,145, 10,  [2], [9],[
@@ -46,7 +46,7 @@ $(document).ready(function(){
         {"name": "ESXI", "id": 153},
         {"name":"ROVER","id":62},
         {"name": "PiEnvMon01", "id": 305},
-        {"name": "PiEnvMon01", "id": 306}
+        {"name": "PiEnvMon02", "id": 306}
     ]);
     datatile_init("school_info_box_container", "CKCS",222,330, 13,  [4,5], [12],[
         {"name":"AD", "id": 12},
@@ -56,7 +56,7 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 151},
         {"name": "ESXI", "id": 150},
         {"name": "PiEnvMon01", "id":308},
-        {"name": "PiEnvMon01", "id": 309}
+        {"name": "PiEnvMon02", "id": 309}
     ]);
     datatile_init("school_info_box_container", "Connaught",1370,410, 14,  [3], [13],[
         {"name":"AD", "id": 13},
@@ -140,7 +140,7 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 183},
         {"name": "ESXI", "id": 182},
         {"name": "PiEnvMon01", "id": 319},
-        {"name": "PiEnvMon01", "id": 320}
+        {"name": "PiEnvMon02", "id": 320}
     ]);
     datatile_init("school_info_box_container", "Maymont",715,530, 23,  [32], [21],[
         {"name":"AD", "id": 21},
@@ -168,7 +168,7 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 192},
         {"name": "ESXI", "id": 191},
         {"name": "PiEnvMon01", "id": 323},
-        {"name": "PiEnvMon01", "id": 324}
+        {"name": "PiEnvMon02", "id": 324}
     ]);
     datatile_init("school_info_box_container", "Medstead",500,188, 26, [19], [24],[
         {"name":"AD", "id": 24},
@@ -212,7 +212,7 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 204},
         {"name": "ESXI", "id": 203},
         {"name": "PiEnvMon01", "id": 331},
-        {"name": "PiEnvMon01", "id": 332}
+        {"name": "PiEnvMon02", "id": 332}
     ]);
     datatile_init("school_info_box_container", "St. Vital",1150,700, 33,  [27,28], [31],[
         {"name":"AD", "id": 31},
@@ -222,7 +222,7 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 207},
         {"name": "ESXI", "id": 206},
         {"name": "PiEnvMon01", "id": 333},
-        {"name": "PiEnvMon01", "id": 334}
+        {"name": "PiEnvMon02", "id": 334}
     ]);
     datatile_init("school_info_box_container", "UCHS",265,508, 31,  [29,30], [29],[
         {"name":"AD", "id": 29},
@@ -232,7 +232,7 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 210},
         {"name": "ESXI", "id": 209},
         {"name": "PiEnvMon01", "id": 335},
-        {"name": "PiEnvMon01", "id": 336}
+        {"name": "PiEnvMon02", "id": 336}
     ]);
     datatile_init("school_info_box_container", "UPS", 265, 663, 32,  [31], [30],[
         {"name":"AD", "id": 30},
