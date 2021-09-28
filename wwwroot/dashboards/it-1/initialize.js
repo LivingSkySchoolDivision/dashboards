@@ -15,8 +15,9 @@ $(document).ready(function(){
         {"name": "DEPLOY-DO", "id": 155}, 
         {"name": "Mac Mini", "id": 92}, 
         {"name": "SCCM", "id": 156}, 
-        {"name": "PiEnvMon01", "id": 310},
-        {"name": "PiEnvMon02", "id": 311}
+        {"name": "Pi-BusGarage", "id": 310},
+        {"name": "Pi-ServerRoom", "id": 338},
+        {"name": "Pi-LearningServ", "id": 311}
     ]);
 
     datatile_init("school_info_box_container", "BCS", 1350, 700, 9,[1], [8],[
