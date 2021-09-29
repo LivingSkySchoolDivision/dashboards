@@ -10,7 +10,7 @@ $(document).ready(function(){
     datatile_large_website_init("large_snmp_tile_container", "INTERNET", 1);
    
     // Initialize school tiles 
-    datatile_init("school_info_box_container", "DIV. OFFICE",1570,455, 5, [6,7], [6],[
+    datatile_init("school_info_box_container", "DIV. OFFICE",1570,455, 5, [6,36,7], [6],[
         {"name":"AD", "id": 6},
         {"name": "DEPLOY-DO", "id": 155}, 
         {"name": "Mac Mini", "id": 92}, 
