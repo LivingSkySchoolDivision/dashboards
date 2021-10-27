@@ -192,7 +192,7 @@ $(document).ready(function(){
         {"name": "Pi-206", "id": 327},
         {"name": "Pi-201-212", "id": 328},
         {"name": "Pi-TelephonyRm", "id": 329},
-        {"name": "Pi-Maintenance", "id": 330}
+        {"name": "Pi-Maintenance", "id": 330},
         {"name": "Pi-ServerRoom", "id": 337}
     ]);
 
