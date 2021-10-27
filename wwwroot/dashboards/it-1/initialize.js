@@ -46,8 +46,8 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 154},
         {"name": "ESXI", "id": 153},
         {"name":"ROVER","id":62},
-        {"name": "PiEnvMon01", "id": 305},
-        {"name": "PiEnvMon02", "id": 306}
+        {"name": "Pi-MainRack", "id": 305},
+        {"name": "Pi-ElementaryRack", "id": 306}
     ]);
     datatile_init("school_info_box_container", "CKCS",222,330, 13,  [4,5], [12],[
         {"name":"AD", "id": 12},
@@ -56,8 +56,8 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 149},
         {"name": "SCCM", "id": 151},
         {"name": "ESXI", "id": 150},
-        {"name": "PiEnvMon01", "id":308},
-        {"name": "PiEnvMon02", "id": 309}
+        {"name": "Pi-MainRack", "id":308},
+        {"name": "Pi-AcrossFromOffice", "id": 309}
     ]);
     datatile_init("school_info_box_container", "Connaught",1370,410, 14,  [3], [13],[
         {"name":"AD", "id": 13},
@@ -140,8 +140,8 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 181},
         {"name": "SCCM", "id": 183},
         {"name": "ESXI", "id": 182},
-        {"name": "PiEnvMon01", "id": 319},
-        {"name": "PiEnvMon02", "id": 320}
+        {"name": "Pi-ServerRack", "id": 319},
+        {"name": "Pi-HighSchoolLab", "id": 320}
     ]);
     datatile_init("school_info_box_container", "Maymont",715,530, 23,  [32], [21],[
         {"name":"AD", "id": 21},
@@ -168,8 +168,8 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 190},
         {"name": "SCCM", "id": 192},
         {"name": "ESXI", "id": 191},
-        {"name": "PiEnvMon01", "id": 323},
-        {"name": "PiEnvMon02", "id": 324}
+        {"name": "Pi-Electrical", "id": 323},
+        {"name": "Pi-CompLab", "id": 324}
     ]);
     datatile_init("school_info_box_container", "Medstead",500,188, 26, [19], [24],[
         {"name":"AD", "id": 24},
@@ -181,7 +181,7 @@ $(document).ready(function(){
         {"name": "PiEnvMon01", "id": 325}
     ]);
 
-    datatile_init("school_info_box_container", "NBCHS",1540,25, 35, [21,22,23,24], [25],[
+    datatile_init("school_info_box_container", "NBCHS",1540,25, 35, [37,21,22,23,24], [25],[
         {"name":"AD", "id": 25},
         {"name": "Alarm", "id": 53},
         {"name": "Mac Mini", "id": 116},
@@ -189,10 +189,11 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 198},
         {"name": "ESXI", "id": 197},
         {"name":"ROVER","id":60}, 
-        {"name": "PiEnvMon01", "id": 327},
-        {"name": "PiEnvMon02", "id": 328},
-        {"name": "PiEnvMon03", "id": 329},
-        {"name": "PiEnvMon04", "id": 330}
+        {"name": "Pi-206", "id": 327},
+        {"name": "Pi-201-212", "id": 328},
+        {"name": "Pi-TelephonyRm", "id": 329},
+        {"name": "Pi-Maintenance", "id": 330}
+        {"name": "Pi-ServerRoom", "id": 337}
     ]);
 
     datatile_init("school_info_box_container", "NCES",478,502, 28,  [20], [26],[
@@ -222,8 +223,8 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 205},
         {"name": "SCCM", "id": 207},
         {"name": "ESXI", "id": 206},
-        {"name": "PiEnvMon01", "id": 333},
-        {"name": "PiEnvMon02", "id": 334}
+        {"name": "Pi-Library", "id": 333},
+        {"name": "Pi-Room104", "id": 334}
     ]);
     datatile_init("school_info_box_container", "UCHS",265,508, 31,  [29,30], [29],[
         {"name":"AD", "id": 29},
@@ -232,8 +233,8 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 208},
         {"name": "SCCM", "id": 210},
         {"name": "ESXI", "id": 209},
-        {"name": "PiEnvMon01", "id": 335},
-        {"name": "PiEnvMon02", "id": 336}
+        {"name": "Pi-ServerRack", "id": 335},
+        {"name": "Pi-BoilerRoom", "id": 336}
     ]);
     datatile_init("school_info_box_container", "UPS", 265, 663, 32,  [31], [30],[
         {"name":"AD", "id": 30},
