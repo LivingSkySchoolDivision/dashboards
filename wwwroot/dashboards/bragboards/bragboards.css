@@ -1,0 +1,47 @@
+html, body { margin: 0; padding: 0; background-color: gray; }
+#screen_container { box-sizing: border-box; width: 3840px; height: 2160px; background-color: black}
+#lssd_logo { width: 500px; height: 500px; }
+#bounce {
+    position: relative; 
+    animation: animate-dvd 200s forwards infinite alternate-reverse linear; 
+    top: 0;
+    left: 0;
+}
+
+@keyframes animate-dvd {
+    15% {
+       top: 83%;
+       left: 45%;
+    }
+ 
+    30% {
+      top: 40%;
+       left: 90%;
+    }
+ 
+    45% {
+       top: 0%;
+       left: 50%;
+    }
+ 
+    60% {
+       top: 60%;
+       left: 0%;
+    }
+ 
+    75% {
+       top: 82%;
+       left: 30%;
+    }
+ 
+    90% {
+       top: 40%;
+       left: 82%;
+ 
+    }
+ 
+    100% {
+       top: 0;
+       left: 0;
+    }
+ }
