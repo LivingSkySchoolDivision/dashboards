@@ -47,8 +47,7 @@ function envmon_update() {
     
                     // Uncomment this if we start caring about humidity.
                     // We don't have anything that can fix humidity issues, so theres no point alerting about it.
-    
-                    // If temperatures are worth warning about, add warning CSS
+                    /*
                     if (humid > ENVIRONMENT_HIGH_HUMIDITY_DANGER_THRESHOLD) {
                         $('#envmon-' + sensor.DIVID + '-humidity').addClass("color-danger");                   
                         $('#envmon-' + sensor.DIVID + '-humidity').removeClass("color-warning");
@@ -65,6 +64,7 @@ function envmon_update() {
                         $('#envmon-' + sensor.DIVID + '-humidity').removeClass("color-danger");                    
                         $('#envmon-' + sensor.DIVID + '-humidity').removeClass("color-warning");
                     }
+                    */
     
                 }
             });
