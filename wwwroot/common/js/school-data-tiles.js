@@ -365,20 +365,22 @@ function datatile_update_environmentsensors(url)
                 }
 
                 // Check for high humidity warnings
+                /*
                 if (sensor.lastHumidityPercent > ENVIRONMENT_HIGH_HUMIDITY_DANGER_THRESHOLD) {
                     $(divBase + "humid").addClass("color-danger");
                 } else if (sensor.lastHumidityPercent > ENVIRONMENT_HIGH_HUMIDITY_WARNING_THRESHOLD) {
                     $(divBase + "humid").addClass("color-warning");
                 }
+                */
 
                 // Check for low humidity warnings
+                /*
                 if (sensor.lastHumidityPercent < ENVIRONMENT_LOW_HUMIDITY_DANGER_THRESHOLD) {
                     $(divBase + "humid").addClass("color-danger");
                 } else if (sensor.lastHumidityPercent < ENVIRONMENT_LOW_HUMIDITY_WARNING_THRESHOLD) {
                     $(divBase + "humid").addClass("color-warning");
                 }
-
-                    
+                */                    
                 
                 // If the last poll wasn't successful, add warning styles to both humidity and temperature
                 if (!sensor.wasLastPollSuccessful) {
