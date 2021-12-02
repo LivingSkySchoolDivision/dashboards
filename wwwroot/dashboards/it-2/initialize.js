@@ -13,8 +13,6 @@ $(document).ready(function(){
     datatile_large_website_init("container-tilesensors-2", "MSS", 5);
     datatile_large_website_init("container-tilesensors-2", "EDSBY", 7);
         
-    datatile_small_init("container-tilesensors", "ADFS2019-1", 234);
-    datatile_small_init("container-tilesensors", "ADFS2019-2", 235);
     datatile_small_init("container-tilesensors", "adsync", 236);
     datatile_small_init("container-tilesensors", "ansible", 257);
     datatile_small_init("container-tilesensors", "archive", 274);
