@@ -58,7 +58,8 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "kube-storage-3", 289);
     datatile_small_init("container-tilesensors", "kube-storage-4", 290);
     datatile_small_init("container-tilesensors", "kwiktag", 282);
-    datatile_small_init("container-tilesensors", "l4u", 238);
+    datatile_small_init("container-tilesensors", "l4u", 238);    
+    datatile_small_init("container-tilesensors", "lemons", 341);
     datatile_small_init("container-tilesensors", "mongo", 255);
     datatile_small_init("container-tilesensors", "navision", 283);
     datatile_small_init("container-tilesensors", "nscnet", 133);
