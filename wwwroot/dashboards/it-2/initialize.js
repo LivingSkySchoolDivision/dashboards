@@ -18,8 +18,6 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "archive", 274);
     datatile_small_init("container-tilesensors", "busplanner", 275);
     datatile_small_init("container-tilesensors", "chunkymonkey", 296);
-    datatile_small_init("container-tilesensors", "Cisco TMS SQL", 277);
-    datatile_small_init("container-tilesensors", "Cisco TMS", 276);
     datatile_small_init("container-tilesensors", "confluence", 292);
     datatile_small_init("container-tilesensors", "dc-backups", 87);
     datatile_small_init("container-tilesensors", "do-dashboards-it-1", 297);
