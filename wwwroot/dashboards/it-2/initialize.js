@@ -16,6 +16,7 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "adsync", 236);
     datatile_small_init("container-tilesensors", "ansible", 257);
     datatile_small_init("container-tilesensors", "archive", 274);
+    datatile_small_init("container-tilesensors", "blue", 343);
     datatile_small_init("container-tilesensors", "busplanner", 275);
     datatile_small_init("container-tilesensors", "chunkymonkey", 296);
     datatile_small_init("container-tilesensors", "confluence", 292);
