@@ -1,0 +1,26 @@
+.work_order {
+    border-bottom: 2px dotted rgba(255,255,255,0.5);
+    display: grid;
+    grid-template-columns: 25% 75%;
+    padding: 25px;
+    margin: 25px;
+
+}
+
+.work_order_number {
+    font-size: 350%;
+    font-weight: bold;        
+}
+
+.work_order_text {  
+    font-size: 350%;  
+}
+
+.work_order_container {
+    
+}
+
+#page_divider {
+    display: grid;    
+    grid-template-columns: 60% 40%;
+}
