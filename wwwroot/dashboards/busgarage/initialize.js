@@ -6,7 +6,7 @@ $(document).ready(function(){
     time_init(DATE_AND_TIME_URL);
 
 
-    shopvision_init_inspections("inspection_continer","https://shopvision.lskysd.ca/JSON/Versatrans/UpcomingBusInspections.aspx");
+    shopvision_init_inspections("inspection_container","https://shopvision.lskysd.ca/JSON/Versatrans/UpcomingBusInspections.aspx");
     shopvision_init_workorders("work_order_container","https://shopvision.lskysd.ca/JSON/FleetVision/NewestWorkOrders.aspx");
     shopvision_init_messages("message_container","https://shopvision.lskysd.ca/JSON/ShopMessages.aspx");
 
@@ -35,13 +35,12 @@ setInterval(function() {
 
 // animation tick
 setInterval(function() {
-    shopvision_animation_tick();
-}, 5000);
+    shopvision_tick();
+}, 10000);
 
 
 // Every 1 minutes
 setInterval(function() {
-    shopvision_refresh_all_data();
 }, 60000);
 
 // Every 30 minutes
