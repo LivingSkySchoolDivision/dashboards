@@ -36,7 +36,7 @@
 
 .work_order_text {  
     padding: 15px;
-    font-size: 250%;  
+    font-size: 260%;  
 }
 
 .work_order_container {
@@ -84,6 +84,7 @@
 }
 
 .inspection_nextmonth {
-    font-size: 80%;
+    font-size: 75%;
+    padding-top: 10px;
     color: rgba(255,255,255,0.5);
 }

@@ -30,9 +30,6 @@ function shopvision_init_workorders(DIVID, URL)
     _shopvision_workorder_url = URL;
     _shopvision_workorder_container = DIVID;
 
-    // Clear the container div
-    //$('#' + _shopvision_workorder_container).html("");
-
     shopvision_refresh_workorders();  
 }
 
