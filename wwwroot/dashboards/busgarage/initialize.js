@@ -5,11 +5,11 @@ $(document).ready(function(){
     weather_init(WEATHER_UPDATE_URL);
     time_init(DATE_AND_TIME_URL);
 
-
     shopvision_init_inspections("inspection_container","https://shopvision.lskysd.ca/JSON/Versatrans/UpcomingBusInspections.aspx");
     shopvision_init_workorders("work_order_container","https://shopvision.lskysd.ca/JSON/FleetVision/NewestWorkOrders.aspx");
     shopvision_init_messages("message_container","https://shopvision.lskysd.ca/JSON/ShopMessages.aspx");
 
+    shopvision_tick_inspections();
 });
 
 
@@ -33,11 +33,14 @@ setInterval(function() {
     time_update();
 }, 500);
 
-// animation tick
+
 setInterval(function() {
-    shopvision_tick();
+    shopvision_tick_workorders();
 }, 10000);
 
+setInterval(function() {
+    shopvision_tick_inspections();
+}, 10000);
 
 // Every 1 minutes
 setInterval(function() {

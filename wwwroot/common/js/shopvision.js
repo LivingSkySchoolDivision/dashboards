@@ -11,17 +11,17 @@ var _shopvision_message_url = "";
 var _shopvision_inspections_thismonth = [];
 var _shopvision_inspections_overdue = [];
 var _shopvision_inspections_nextmonth = [];
+var _shopvision_inspections_visible_inspections = [];
 var _shopvision_inspection_url = "";
 var _shopvision_inspection_container = "";
 
 // How many tickets disappear and reappear per "tick"
 var _shopvision_workorders_shown_at_once = 4;
 
-function shopvision_refresh_all_data() {
-    shopvision_refresh_workorders();
-    shopvision_refresh_messages();
-    shopvision_refresh_inspections();
-}
+
+/* ********************************************************** */
+// * Workorders
+/* ********************************************************** */
 
 function shopvision_init_workorders(DIVID, URL)
 {
@@ -33,30 +33,6 @@ function shopvision_init_workorders(DIVID, URL)
     shopvision_refresh_workorders();  
 }
 
-function shopvision_init_messages(DIVID, URL)
-{
-    console.log("Initializing ShopVision messages into DIV " + DIVID);
-    console.log(" ShopVision messages source: " + URL);
-    _shopvision_message_url = URL;
-    _shopvision_message_container = DIVID;
-
-    shopvision_refresh_messages();
-}
-
-function shopvision_init_inspections(DIVID, URL)
-{
-    console.log("Initializing ShopVision inspections into DIV " + DIVID);
-    console.log(" ShopVision inspections source: " + URL);
-    _shopvision_inspection_url = URL;
-    _shopvision_inspection_container = DIVID;
-
-    // Clear the container div
-    $('#' + _shopvision_inspection_container).html("");
-
-    shopvision_refresh_inspections();
-}
-
-
 function shopvision_refresh_workorders() {
     _shopvision_all_workorders = [];
     if (_shopvision_workorder_url.length > 0) {
@@ -66,48 +42,6 @@ function shopvision_refresh_workorders() {
             });              
         });
     }
-}
-
-function shopvision_refresh_inspections() {
-    if (_shopvision_inspection_url.length > 0) {
-        $.getJSON(_shopvision_inspection_url, function(data) {
-            $.each(data.Overdue, function(inspections, inspection) {
-                _shopvision_inspections_overdue += inspection;  
-                shopvision_add_inspection_div(inspection, 2);              
-            });
-
-            $.each(data.ThisMonth, function(inspections, inspection) {
-                _shopvision_inspections_thismonth += inspection;
-                shopvision_add_inspection_div(inspection, 0);
-            });
-            
-            $.each(data.NextMonth, function(inspections, inspection) {
-                _shopvision_inspections_nextmonth += inspection;
-                shopvision_add_inspection_div(inspection, 1);
-            });
-        });
-    }
-}
-
-function shopvision_refresh_messages() {
-    if (_shopvision_message_url.length > 0) {
-        $.getJSON(_shopvision_message_url, function(data) {
-            $.each(data.Normal, function(messages, message) {
-                _shopvision_messages_normal += message;
-            });            
-            
-            $.each(data.High, function(messages, message) {
-                _shopvision_messages_highpriority += message;
-            });
-        });
-    }
-}
-
-// Controls what is displayed, and what is being loaded in the background
-function shopvision_tick() {
-    shopvision_tick_workorders();   
-
-
 }
 
 function shopvision_tick_workorders() 
@@ -158,6 +92,78 @@ function shopvision_add_workorder_div(workorder)
     return widgethtml;
 }
 
+/* ********************************************************** */
+// * Messages
+/* ********************************************************** */
+
+function shopvision_init_messages(DIVID, URL)
+{
+    console.log("Initializing ShopVision messages into DIV " + DIVID);
+    console.log(" ShopVision messages source: " + URL);
+    _shopvision_message_url = URL;
+    _shopvision_message_container = DIVID;
+
+    shopvision_refresh_messages();
+}
+
+
+function shopvision_refresh_messages() {
+    if (_shopvision_message_url.length > 0) {
+        $.getJSON(_shopvision_message_url, function(data) {
+            $.each(data.Normal, function(messages, message) {
+                _shopvision_messages_normal += message;
+            });            
+            
+            $.each(data.High, function(messages, message) {
+                _shopvision_messages_highpriority += message;
+            });
+        });
+    }
+}
+
+
+/* ********************************************************** */
+// * Inspections
+/* ********************************************************** */
+
+function shopvision_init_inspections(DIVID, URL)
+{
+    console.log("Initializing ShopVision inspections into DIV " + DIVID);
+    console.log(" ShopVision inspections source: " + URL);
+    _shopvision_inspection_url = URL;
+    _shopvision_inspection_container = DIVID;
+}
+
+function shopvision_tick_inspections() 
+{
+    if (_shopvision_inspection_url.length > 0) {
+        $.getJSON(_shopvision_inspection_url, function(data) {
+            _shopvision_inspections_visible_inspections = [];
+            
+            var newHTML = "";
+            $.each(data.Overdue, function(inspections, inspection) {
+                _shopvision_inspections_overdue += inspection;     
+                _shopvision_inspections_visible_inspections += inspection.vehicle;
+                newHTML += shopvision_add_inspection_div(inspection, 2);         
+            });
+
+            $.each(data.ThisMonth, function(inspections, inspection) {
+                _shopvision_inspections_thismonth += inspection;
+                _shopvision_inspections_visible_inspections += inspection.vehicle;
+                newHTML += shopvision_add_inspection_div(inspection, 0);  
+            });
+            
+            $.each(data.NextMonth, function(inspections, inspection) {
+                _shopvision_inspections_nextmonth += inspection;
+                _shopvision_inspections_visible_inspections += inspection.vehicle;
+                newHTML += shopvision_add_inspection_div(inspection, 1);
+            });
+            
+            $('#' + _shopvision_inspection_container).html(newHTML);
+        });
+    }
+}
+
 function shopvision_add_inspection_div(inspection, priority) 
 {
     // priority is expected to be an int
@@ -167,7 +173,7 @@ function shopvision_add_inspection_div(inspection, priority)
 
     var widgethtml = "";
     if (priority === 1) {
-        widgethtml += '<div class="inspection inspection_nextmonth">'    
+        widgethtml += '<div id="inspection_' + inspection.vehicle + '" class="inspection inspection_nextmonth">'    
     } else if (priority === 2) {
         widgethtml += '<div class="inspection inspection_overdue">'    
     } else {
@@ -176,9 +182,5 @@ function shopvision_add_inspection_div(inspection, priority)
     widgethtml += '<div class="inspection_number">' + inspection.Vehicle + '</div>'    
     widgethtml += '</div>'
     
-    $('#' + _shopvision_inspection_container).append(widgethtml);
-}
-
-function shopvision_remove_workorder_div(workorder) {    
-    $('#workorder_' + workorder.number).fadeOut('fast');
+    return widgethtml;    
 }
