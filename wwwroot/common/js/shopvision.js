@@ -31,7 +31,7 @@ function shopvision_init_workorders(DIVID, URL)
     _shopvision_workorder_container = DIVID;
 
     // Clear the container div
-    $('#' + _shopvision_workorder_container).html("");
+    //$('#' + _shopvision_workorder_container).html("");
 
     shopvision_refresh_workorders();  
 }
@@ -65,8 +65,7 @@ function shopvision_refresh_workorders() {
     if (_shopvision_workorder_url.length > 0) {
         $.getJSON(_shopvision_workorder_url, function(data) {   
             $.each(data.WorkOrders, function(workorders, workorder) {                
-                _shopvision_all_workorders.push(workorder);  
-                console.log(workorder);               
+                _shopvision_all_workorders.push(workorder);               
             });              
         });
     }
@@ -109,7 +108,6 @@ function shopvision_refresh_messages() {
 
 // Controls what is displayed, and what is being loaded in the background
 function shopvision_tick() {
-    console.log("Shopvision-tick");
     shopvision_tick_workorders();   
 
 
@@ -146,13 +144,6 @@ function shopvision_tick_workorders()
     {
         shopvision_refresh_workorders();
     }
-
-    console.log("All: " + _shopvision_all_workorders.length);
-    console.log(_shopvision_all_workorders);
-    console.log("Visible: " + _shopvision_visible_workorders.length);
-    console.log(_shopvision_visible_workorders);
-
-
 }
 
 
