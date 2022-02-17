@@ -27,24 +27,24 @@
     font-size: 300%;
     background-color: rgba(255,255,255,0.8);
     color: #353865;
-    font-weight: bolder; 
+    font-weight: bolder;
     padding: 15px;
     border-radius: 5px;
     margin-right: 25px;
     text-align: center;
 }
 
-.work_order_text {  
+.work_order_text {
     padding: 15px;
-    font-size: 250%;  
+    font-size: 260%;
 }
 
 .work_order_container {
-    
+
 }
 
 #page_divider {
-    display: grid;    
+    display: grid;
     grid-template-columns: 80% 20%;
 }
 
@@ -84,6 +84,58 @@
 }
 
 .inspection_nextmonth {
-    font-size: 80%;
+    font-size: 75%;
+    padding-top: 10px;
     color: rgba(255,255,255,0.5);
+}
+
+#message_container_highpriority {
+}
+
+.high_priority_message {
+    border: 20px solid red;
+    height: 930px;
+    position: absolute;
+    left: 0;
+    top: 150px;
+    width: 1920px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.95);
+    text-align: center;
+    font-size: 700%;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 50px;
+    z-index: 999;
+}
+
+.high_priority_message_sender {
+    font-size: 75%;
+}
+
+#message_container_normal {
+    font-size: 300%;
+    font-weight: bold;
+    background: rgba(0,0,0,0.50);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1920px;
+}
+
+.normal_priority_message {
+    text-align: center;
+    border-top: 8px solid red;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.normal_priority_message_content {
+    display: inline;
+
+}
+
+.normal_priority_message_sender {
+    display: inline;
+
 }
