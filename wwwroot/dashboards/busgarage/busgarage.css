@@ -1,0 +1,89 @@
+#container-top {
+    background-color: #252747
+}
+
+#container-1080p {
+    background-color: #353865
+}
+
+.loading-indicator {
+    font-size: 500%;
+    font-weight: bold;
+    height: 100%;
+    text-align: center;
+    padding: 50px;
+}
+
+.work_order {
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    display: grid;
+    grid-template-columns: 25% 75%;
+    padding: 20px;
+    margin: 20px;
+
+}
+
+.work_order_number {
+    font-size: 300%;
+    background-color: rgba(255,255,255,0.8);
+    color: #353865;
+    font-weight: bolder; 
+    padding: 15px;
+    border-radius: 5px;
+    margin-right: 25px;
+    text-align: center;
+}
+
+.work_order_text {  
+    padding: 15px;
+    font-size: 250%;  
+}
+
+.work_order_container {
+    
+}
+
+#page_divider {
+    display: grid;    
+    grid-template-columns: 80% 20%;
+}
+
+#inspection_title {
+    font-size: 300%;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    text-align: center;
+}
+
+#inspection_parent {
+    border-left: 2px dotted rgba(255,255,255,0.5);
+    padding: 10px;
+    padding-left: 25px;
+
+}
+
+#inspection_container {
+}
+
+.inspection {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.inspection_number {
+    font-size: 500%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.inspection_overdue {
+    color: white;
+    background-color: rgba(255, 0, 0, 0.6);
+    border-radius: 5px;
+    font-size: 150%;
+}
+
+.inspection_nextmonth {
+    font-size: 80%;
+    color: rgba(255,255,255,0.5);
+}
