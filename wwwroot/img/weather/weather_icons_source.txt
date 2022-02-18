@@ -1,0 +1,4 @@
+Weather icons are from:
+https://erikflowers.github.io/weather-icons/
+
+SVGs converted to 64x64 PNG files with transparent backgrounds.
