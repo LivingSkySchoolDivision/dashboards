@@ -8,7 +8,7 @@ $(document).ready(function(){
     
     datatile_large_website_init("container-tilesensors-2", "GOOGLE", 1);
     datatile_large_website_init("container-tilesensors-2", "LIVINGSKYSD.CA", 2);
-    datatile_large_website_init("container-tilesensors-2", "L4U", 4);
+    datatile_large_website_init("container-tilesensors-2", "INSIGNIA", 8);
     datatile_large_website_init("container-tilesensors-2", "WEBPORTAL", 6);
     datatile_large_website_init("container-tilesensors-2", "MSS", 5);
     datatile_large_website_init("container-tilesensors-2", "EDSBY", 7);
