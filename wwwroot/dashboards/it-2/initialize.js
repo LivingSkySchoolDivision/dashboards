@@ -13,7 +13,7 @@ $(document).ready(function(){
     datatile_large_website_init("container-tilesensors-2", "MSS", 5);
     datatile_large_website_init("container-tilesensors-2", "EDSBY", 7);
         
-    datatile_small_init("container-tilesensors", "adsync", 236);
+    datatile_small_init("container-tilesensors", "adsync2019", 236);
     datatile_small_init("container-tilesensors", "ansible", 257);
     datatile_small_init("container-tilesensors", "archive", 274);
     datatile_small_init("container-tilesensors", "blue", 343);
@@ -75,6 +75,7 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "streaming", 293);
     datatile_small_init("container-tilesensors", "sync", 242);
     datatile_small_init("container-tilesensors", "UNMS", 256);
+    datatile_small_init("container-tilesensors", "virtuallab", 347);
     datatile_small_init("container-tilesensors", "vpn2", 233);
     datatile_small_init("container-tilesensors", "Warrant", 268);
     datatile_small_init("container-tilesensors", "web-internal", 269);
