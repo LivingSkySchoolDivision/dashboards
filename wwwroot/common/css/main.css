@@ -153,8 +153,8 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .eap_data_value { display: inline; }
 .eap_map_container { position: relative; }
 .eap_sensor_container { position: relative; }
-.eap_map { opacity: 20%; z-index: -999;;}
-
+.eap_map { opacity: 40%; z-index: -999;;}
+.eap_map_title { font-size: 500%; font-weight: bold; position: absolute; top: 20px; left: 20px; color: #777777; font-family: 'Bebas Neue'; }
 .eap_sensor_good { border-color: green; } .eap_sensor_good .eap_pin { background-color: green; }
 .eap_sensor_alarm { border-color: red; } .eap_sensor_alarm .eap_pin { background-color: red; }
 
