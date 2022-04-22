@@ -20,6 +20,8 @@ $(document).ready(function(){
     eap_init_tile("eap_sensor_container", 115, 100, "0000000036553dc2", "bottomleft"); // 025 - SS back hall
     eap_init_tile("eap_sensor_container", 1625, 460, "00000000f62d67b8", "bottomright"); // 143 - Bus Garage SE wall
 
+    eap_init_tile("eap_sensor_container", 50, 430, "00000000bd4533ee", "none"); // 057 - Purposefully unplugged stale sensor
+
     eap_update_names();
     eap_update_data();
 });

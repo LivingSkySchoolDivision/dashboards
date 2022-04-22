@@ -155,8 +155,15 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .eap_sensor_container { position: relative; }
 .eap_map { opacity: 40%; z-index: -999;;}
 .eap_map_title { font-size: 500%; font-weight: bold; position: absolute; top: 20px; left: 20px; color: #777777; font-family: 'Bebas Neue'; }
+
 .eap_sensor_good { border-color: green; } .eap_sensor_good .eap_pin { background-color: green; }
+.eap_sensor_warning { border-color: orange; } .eap_sensor_alarm .eap_pin { background-color: red; }
 .eap_sensor_alarm { border-color: red; } .eap_sensor_alarm .eap_pin { background-color: red; }
+
+.eap_temp_too_high { color: orangered }
+.eap_temp_too_low { color: cyan; }
+
+.eap_stale_sensor { border-color:rgb(224, 108, 0); background-color: rgba(224, 108, 0, 0.2); color: rgb(224, 108, 0); }
 
 .eap_sensor_temp, .eap_sensor_humid { font-size: 120%; }            
 
