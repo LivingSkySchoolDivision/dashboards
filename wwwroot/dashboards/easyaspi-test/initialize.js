@@ -18,8 +18,7 @@ $(document).ready(function(){
     eap_init_tile("eap_sensor_container", 480, 150, "00000000d3d673a2", "none"); // 005 - accounting label room
     eap_init_tile("eap_sensor_container", 190, 230, "000000003e2e3911", "topright"); // 148 - SS hall
     eap_init_tile("eap_sensor_container", 115, 100, "0000000036553dc2", "bottomleft"); // 025 - SS back hall
-
-
+    eap_init_tile("eap_sensor_container", 1625, 460, "00000000f62d67b8", "bottomright"); // 143 - Bus Garage SE wall
 
     eap_update_names();
     eap_update_data();
@@ -39,8 +38,13 @@ $(document).ready(function(){
  3600000     1 hour
  */
 
+setInterval(function() {
+    eap_update_data();
+}, 600000);
 
-
+setInterval(function() {
+    eap_update_names()
+}, 3600000);
 
 // Refresh the page periodically
 setInterval(function() {
