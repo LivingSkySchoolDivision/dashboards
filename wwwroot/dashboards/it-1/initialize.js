@@ -17,7 +17,14 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 156}, 
         {"name": "Pi-BusGarage", "id": 310},
         {"name": "Pi-ServerRoom", "id": 338},
-        {"name": "Pi-LearningServ", "id": 311}
+        {"name": "Pi-LearningServ", "id": 311},
+        {"name": "PRINT-ADMCOLOR", "id": 411},
+        {"name": "PRINT-APTECH", "id": 413},
+        {"name": "PRINT-Facilities", "id": 414},
+        {"name": "PRINT-HRPayroll", "id": 412},
+        {"name": "PRINT-Recept", "id": 415},
+        {"name": "PRINT-LearningSrv", "id": 417},
+        {"name": "PRINT-Transportation", "id": 416}
     ]);
 
     datatile_init("school_info_box_container", "BCS", 1350, 700, 9,[1], [8],[
@@ -27,7 +34,11 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 139},
         {"name": "SCCM", "id": 141},
         {"name": "ESXI", "id": 140},
-        {"name": "PiEnvMon01", "id": 303}
+        {"name": "PiEnvMon01", "id": 303},
+        {"name": "PRINT-Copier", "id": 418},
+        {"name": "PRINT-Office", "id": 420},
+        {"name": "PRINT-StudSrv", "id": 419},
+        {"name": "PRINT-Wrkrm", "id": 421}
     ]);
     datatile_init("school_info_box_container", "Bready",1140,145, 10,  [2], [9],[
         {"name":"AD", "id": 9},
@@ -36,7 +47,10 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 143},
         {"name": "SCCM", "id": 144},
         {"name": "ESXI", "id": 142},
-        {"name": "PiEnvMon01", "id": 304}
+        {"name": "PiEnvMon01", "id": 304},
+        {"name": "PRINT-Library", "id": 434},
+        {"name": "PRINT-Office", "id": 432},
+        {"name": "PRINT-Wrkrm", "id": 433}
     ]);
     datatile_init("school_info_box_container", "Cando",585,648, 11,  [33,34], [10],[
         {"name":"AD", "id": 10},
@@ -47,7 +61,9 @@ $(document).ready(function(){
         {"name": "ESXI", "id": 153},
         {"name":"ROVER","id":62},
         {"name": "Pi-MainRack", "id": 305},
-        {"name": "Pi-ElementaryRack", "id": 306}
+        {"name": "Pi-ElementaryRack", "id": 306},
+        {"name": "PRINT-Colour", "id": 358},
+        {"name": "PRINT-Copier", "id": 357}
     ]);
     datatile_init("school_info_box_container", "CKCS",222,330, 13,  [4,5], [12],[
         {"name":"AD", "id": 12},
@@ -57,7 +73,11 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 151},
         {"name": "ESXI", "id": 150},
         {"name": "Pi-MainRack", "id":308},
-        {"name": "Pi-AcrossFromOffice", "id": 309}
+        {"name": "Pi-AcrossFromOffice", "id": 309},
+        {"name": "PRINT-Copier", "id": 437},
+        {"name": "PRINT-Library", "id": 439},
+        {"name": "PRINT-Secretary", "id": 438},
+        {"name": "PRINT-Upstairs", "id": 440}
     ]);
     datatile_init("school_info_box_container", "Connaught",1370,410, 14,  [3], [13],[
         {"name":"AD", "id": 13},
@@ -66,7 +86,10 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 157},
         {"name": "SCCM", "id": 159},
         {"name": "ESXI", "id": 158},
-        {"name": "PiEnvMon01", "id": 307}
+        {"name": "PiEnvMon01", "id": 307},
+        {"name": "PRINT-Copier", "id": 424},
+        {"name": "PRINT-Office", "id": 426},
+        {"name": "PRINT-StudSrv", "id": 425}
     ]);
     datatile_init("school_info_box_container", "Hafford",801,423, 15,  [35], [14],[
         {"name":"AD", "id": 14},
@@ -75,7 +98,9 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 160},
         {"name": "SCCM", "id": 162},
         {"name": "ESXI", "id": 161},
-        {"name": "PiEnvMon01", "id": 312}
+        {"name": "PiEnvMon01", "id": 312},
+        {"name": "PRINT-BackRm", "id": 435},
+        {"name": "PRINT-Office", "id": 436}
     ]);
     datatile_init("school_info_box_container", "HCES",890,197, 16,  [8], [15],[
         {"name":"AD", "id": 15},
@@ -85,7 +110,10 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 165},
         {"name": "ESXI", "id": 164},
         {"name":"ROVER","id":65},
-        {"name": "PiEnvMon01", "id": 313}
+        {"name": "PiEnvMon01", "id": 313},
+        {"name": "PRINT-ArtRm", "id": 401},
+        {"name": "PRINT-Copier", "id": 402},
+        {"name": "PRINT-Library", "id": 400}
     ]);
     datatile_init("school_info_box_container", "Heritage", 1558, 700, 17,  [9], [16],[
         {"name":"AD", "id": 16},
@@ -94,7 +122,9 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 168},
         {"name": "ESXI", "id": 167},
         {"name":"ROVER","id":66},
-        {"name": "PiEnvMon01", "id": 314}
+        {"name": "PiEnvMon01", "id": 314},
+        {"name": "PRINT-ComputerLab", "id": 442},
+        {"name": "PRINT-Off", "id": 441}
     ]);
     datatile_init("school_info_box_container", "Kerrobert",348,788, 18,  [10], [17],[
         {"name":"AD", "id": 17},
@@ -103,7 +133,12 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 169},
         {"name": "SCCM", "id": 171},
         {"name": "ESXI", "id": 170},
-        {"name": "PiEnvMon01", "id": 315}
+        {"name": "PiEnvMon01", "id": 315},
+        {"name": "PRINT-CompLab", "id": 353},
+        {"name": "PRINT-Lib", "id": 354},
+        {"name": "PRINT-Off", "id": 352},
+        {"name": "PRINT-ResRm", "id": 356},
+        {"name": "PRINT-StaffRm", "id": 355}
     ]);
     datatile_init("school_info_box_container", "Lawrence",1330,80, 3, [11], [3],[
         {"name":"AD", "id": 3},
@@ -112,7 +147,9 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 172},
         {"name": "SCCM", "id": 174},
         {"name": "ESXI", "id": 173},
-        {"name": "PiEnvMon01", "id": 316}
+        {"name": "PiEnvMon01", "id": 316},
+        {"name": "PRINT-Off", "id": 428},
+        {"name": "PRINT-StaffWrkRm", "id": 427}
     ]);
     datatile_init("school_info_box_container", "Leoville",630,30, 19, [12], [18],[
         {"name":"AD", "id": 18},
@@ -122,7 +159,11 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 177},
         {"name": "ESXI", "id": 176},
         {"name":"ROVER","id": 79},
-        {"name": "PiEnvMon01", "id": 317}
+        {"name": "PiEnvMon01", "id": 317},
+        {"name": "PRINT-Elem", "id": 367},
+        {"name": "PRINT-Lib", "id": 368},
+        {"name": "PRINT-Off", "id": 369},
+        {"name": "PRINT-SupplyRm", "id": 370}
     ]);
     datatile_init("school_info_box_container", "Luseland",50,690, 20,  [13], [19],[
         {"name":"AD", "id": 19},
@@ -131,7 +172,10 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 178},
         {"name": "SCCM", "id": 180},
         {"name": "ESXI", "id": 179},
-        {"name": "PiEnvMon01", "id": 318}
+        {"name": "PiEnvMon01", "id": 318},
+        {"name": "PRINT-Hall", "id": 392},
+        {"name": "PRINT-Lib", "id": 391},
+        {"name": "PRINT-Off", "id": 390}
     ]);
     datatile_init("school_info_box_container", "Macklin",16,512, 21,  [14,15], [20],[
         {"name":"AD", "id": 20},
@@ -141,7 +185,10 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 183},
         {"name": "ESXI", "id": 182},
         {"name": "Pi-ServerRack", "id": 319},
-        {"name": "Pi-HighSchoolLab", "id": 320}
+        {"name": "Pi-HighSchoolLab", "id": 320},
+        {"name": "PRINT-HS", "id": 351},
+        {"name": "PRINT-Lib", "id": 350},
+        {"name": "PRINT-Off", "id": 349}
     ]);
     datatile_init("school_info_box_container", "Maymont",715,530, 23,  [32], [21],[
         {"name":"AD", "id": 21},
@@ -150,7 +197,11 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 184},
         {"name": "SCCM", "id": 186},
         {"name": "ESXI", "id": 185},
-        {"name": "PiEnvMon01", "id": 321}
+        {"name": "PiEnvMon01", "id": 321},
+        {"name": "PRINT-Lab", "id": 393},
+        {"name": "PRINT-Libr", "id": 394},
+        {"name": "PRINT-Off", "id": 395},
+        {"name": "PRINT-SpecEd", "id": 396}
     ]);
     datatile_init("school_info_box_container", "McKitrick",1330,235, 24,  [16], [22],[
         {"name":"AD", "id": 22},
@@ -159,7 +210,10 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 187},
         {"name": "SCCM", "id": 189},
         {"name": "ESXI", "id": 188},
-        {"name": "PiEnvMon01", "id": 322}
+        {"name": "PiEnvMon01", "id": 322},
+        {"name": "PRINT-Downstairs", "id": 429},
+        {"name": "PRINT-Lib", "id": 431},
+        {"name": "PRINT-Upstairs", "id": 430}
     ]);
     datatile_init("school_info_box_container", "McLurg",478,345, 25,  [17,18], [23],[
         {"name":"AD", "id": 23},
@@ -169,7 +223,9 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 192},
         {"name": "ESXI", "id": 191},
         {"name": "Pi-Electrical", "id": 323},
-        {"name": "Pi-CompLab", "id": 324}
+        {"name": "Pi-CompLab", "id": 324},
+        {"name": "PRINT-Lib", "id": 362},
+        {"name": "PRINT-WrkRm", "id": 363}
     ]);
     datatile_init("school_info_box_container", "Medstead",500,188, 26, [19], [24],[
         {"name":"AD", "id": 24},
@@ -178,7 +234,10 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 193},
         {"name": "SCCM", "id": 195},
         {"name": "ESXI", "id": 194},
-        {"name": "PiEnvMon01", "id": 325}
+        {"name": "PiEnvMon01", "id": 325},
+        {"name": "PRINT-Lib", "id": 365},
+        {"name": "PRINT-Off", "id": 364},
+        {"name": "PRINT-StaffRm", "id": 366}
     ]);
 
     datatile_init("school_info_box_container", "NBCHS",1540,25, 35, [37,21,22,23,24], [25],[
@@ -193,7 +252,25 @@ $(document).ready(function(){
         {"name": "Pi-201-212", "id": 328},
         {"name": "Pi-TelephonyRm", "id": 329},
         {"name": "Pi-Maintenance", "id": 330},
-        {"name": "Pi-ServerRoom", "id": 337}
+        {"name": "Pi-ServerRoom", "id": 337},
+        {"name": "PRINT-Auto", "id": 386},
+        {"name": "PRINT-CAD", "id": 378},
+        {"name": "PRINT-CADPlotter", "id": 373},
+        {"name": "PRINT-CoCo", "id": 379},
+        {"name": "PRINT-Eng", "id": 385},
+        {"name": "PRINT-HSec", "id": 376},
+        {"name": "PRINT-Lib", "id": 383},
+        {"name": "PRINT-Maint", "id": 389},
+        {"name": "PRINT-Math", "id": 381},
+        {"name": "PRINT-Gym", "id": 387},
+        {"name": "PRINT-Off", "id": 388},
+        {"name": "PRINT-106", "id": 384},
+        {"name": "PRINT-206", "id": 374},
+        {"name": "PRINT-SSO", "id": 372},
+        {"name": "PRINT-Staff", "id": 375},
+        {"name": "PRINT-Staff2", "id": 382},
+        {"name": "PRINT-StudSrv", "id": 371},
+        {"name": "PRINT-VLC", "id": 380}
     ]);
 
     datatile_init("school_info_box_container", "NCES",478,502, 28,  [20], [26],[
@@ -204,7 +281,10 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 201},
         {"name": "ESXI", "id": 200},
         {"name":"ROVER","id":76},
-        {"name": "PiEnvMon01", "id": 326}
+        {"name": "PiEnvMon01", "id": 326},
+        {"name": "PRINT-Lab", "id": 397},
+        {"name": "PRINT-Lib", "id": 399},
+        {"name": "PRINT-WrkRm", "id": 398}
     ]);
     datatile_init("school_info_box_container", "SHS",700,197, 30,  [25,26], [28],[
         {"name":"AD", "id": 28},
@@ -214,7 +294,10 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 204},
         {"name": "ESXI", "id": 203},
         {"name": "PiEnvMon01", "id": 331},
-        {"name": "PiEnvMon02", "id": 332}
+        {"name": "PiEnvMon02", "id": 332},
+        {"name": "PRINT-Copier", "id": 359},
+        {"name": "PRINT-Lab", "id": 360},
+        {"name": "PRINT-WrkRm", "id": 361}
     ]);
     datatile_init("school_info_box_container", "St. Vital",1150,700, 33,  [27,28], [31],[
         {"name":"AD", "id": 31},
@@ -224,7 +307,9 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 207},
         {"name": "ESXI", "id": 206},
         {"name": "Pi-Library", "id": 333},
-        {"name": "Pi-Room104", "id": 334}
+        {"name": "Pi-Room104", "id": 334},
+        {"name": "PRINT-Off", "id": 422},
+        {"name": "PRINT-Upstairs", "id": 423}
     ]);
     datatile_init("school_info_box_container", "UCHS",265,508, 31,  [29,30], [29],[
         {"name":"AD", "id": 29},
@@ -234,7 +319,12 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 210},
         {"name": "ESXI", "id": 209},
         {"name": "Pi-ServerRack", "id": 335},
-        {"name": "Pi-BoilerRoom", "id": 336}
+        {"name": "Pi-BoilerRoom", "id": 336},
+        {"name": "PRINT-LL", "id": 407},
+        {"name": "PRINT-Lib", "id": 410},
+        {"name": "PRINT-OffCopier", "id": 409},
+        {"name": "PRINT-OffDell", "id": 408},
+        {"name": "PRINT-WrkRm", "id": 406}
     ]);
     datatile_init("school_info_box_container", "UPS", 265, 663, 32,  [31], [30],[
         {"name":"AD", "id": 30},
@@ -243,7 +333,10 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 211},
         {"name": "SCCM", "id": 213},
         {"name": "ESXI", "id": 212},
-        {"name": "PiEnvMon01", "id": 337}
+        {"name": "PiEnvMon01", "id": 337},
+        {"name": "PRINT-Lib", "id": 404},
+        {"name": "PRINT-StaffRm", "id": 405},
+        {"name": "PRINT-WrkRm", "id": 403}
     ]);
     datatile_update();
 
