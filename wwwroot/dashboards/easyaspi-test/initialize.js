@@ -2,6 +2,8 @@
 /* * Document onLoad stuff                    * */
 /* ******************************************** */
 $(document).ready(function(){
+    weather_init(WEATHER_UPDATE_URL);
+
     // 188 wide
     // 85 tall
     eap_init_tile("eap_sensor_container", 1125, 30, "00000000623713ca", "bottomleft"); // 001 - IT Warehouse 1
@@ -47,6 +49,12 @@ setInterval(function() {
 setInterval(function() {
     eap_update_names()
 }, 3600000);
+
+// Every 30 minutes
+setInterval(function() {
+    time_refresh_offsets(DATE_AND_TIME_URL);
+    weather_update(WEATHER_UPDATE_URL);
+}, 1800000);
 
 // Refresh the page periodically
 setInterval(function() {

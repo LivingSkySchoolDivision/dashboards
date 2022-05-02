@@ -76,6 +76,7 @@ function eap_update_data()
 
             if (minutes_since_update > 15) {                
                 console.log("Stale sensor: " + reading.deviceSerialNumber);
+                $("#eap_sensor_" + reading.deviceSerialNumber + "").removeClass("eap_sensor_good");
                 $("#eap_sensor_" + reading.deviceSerialNumber + "").addClass("eap_stale_sensor");
                 $("#eap_" + reading.deviceSerialNumber + "_temp").html("???");
                 $("#eap_" + reading.deviceSerialNumber + "_humid").html("???");
@@ -84,6 +85,7 @@ function eap_update_data()
                 return true;
             } else {
                 $("#eap_sensor_" + reading.deviceSerialNumber + "").removeClass("eap_stale_sensor");
+                $("#eap_sensor_" + reading.deviceSerialNumber + "").addClass("eap_sensor_good");
             }
 
             // If the data is over 10 minutes old, display warning
