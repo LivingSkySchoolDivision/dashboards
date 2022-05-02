@@ -16,7 +16,7 @@ $(document).ready(function(){
     eap_init_tile("eap_sensor_container", 1380, 430, "000000007b463ac5", "topleft"); // 008 - fitness
     eap_init_tile("eap_sensor_container", 1280, 330, "00000000b7deddad", "bottomleft"); // 095 - Busg break room    
     eap_init_tile("eap_sensor_container", 600, 60, "00000000ad7a9938", "bottomright"); // 013 - server room
-    eap_init_tile("eap_sensor_container", 500, 250, "00000000bffd768e", "topleft"); // 003 - Board room
+    eap_init_tile("eap_sensor_container", 500, 250, "00000000bffd768e", "topleft"); // 006 - Staff
     eap_init_tile("eap_sensor_container", 480, 150, "00000000d3d673a2", "none"); // 005 - accounting label room
     eap_init_tile("eap_sensor_container", 190, 230, "000000003e2e3911", "topright"); // 148 - SS hall
     eap_init_tile("eap_sensor_container", 115, 100, "0000000036553dc2", "bottomleft"); // 025 - SS back hall
