@@ -9,15 +9,14 @@ $(document).ready(function(){
     eap_init_tile("eap_sensor_container", "eap_pin_container", 1105, 110, "00000000623713ca", "bottomleft"); // 001 - IT Warehouse 1
     eap_init_tile("eap_sensor_container", "eap_pin_container", 1090, 335, "00000000ca8bced2", "bottomleft"); // 002 - Kobelsky
     eap_init_tile("eap_sensor_container", "eap_pin_container", 700, 230, "00000000e75f9b1c", "bottomleft"); // 003 - Board room
-    eap_init_tile("eap_sensor_container", "eap_pin_container", 1065, 110, "000000002200107e", "bottomright"); // 004 - IT fridge
+    eap_init_tile("eap_sensor_container", "eap_pin_container", 860, 170, "000000002200107e", "bottomright"); // 004 - IT fridge
     eap_init_tile("eap_sensor_container", "eap_pin_container", 545, 190, "00000000d3d673a2", "none"); // 005 - accounting label room
     eap_init_tile("eap_sensor_container", "eap_pin_container", 500, 220, "00000000bffd768e", "topleft"); // 006 - Board room
     eap_init_tile("eap_sensor_container", "eap_pin_container", 1380, 410, "000000007b463ac5", "topleft"); // 008 - fitness
     eap_init_tile("eap_sensor_container", "eap_pin_container", 800, 120, "00000000ad7a9938", "bottomright"); // 013 - server room
     eap_init_tile("eap_sensor_container", "eap_pin_container", 1070, 290, "0000000090b57373", "topright"); // 019 - IT Office 1
     eap_init_tile("eap_sensor_container", "eap_pin_container", 105, 170, "0000000036553dc2", "bottomleft"); // 025 - SS back hall
-    eap_init_tile("eap_sensor_container", "eap_pin_container", 1200, 370, "0000000008775767", "topright"); // 034 - Bus garage hall
-    eap_init_tile("eap_sensor_container", "eap_pin_container", 50, 430, "00000000bd4533ee", "none"); // 057 - Purposefully unplugged stale sensor
+    eap_init_tile("eap_sensor_container", "eap_pin_container", 1200, 370, "0000000008775767", "topright"); // 034 - Bus garage hall    
     eap_init_tile("eap_sensor_container", "eap_pin_container", 1240, 405, "00000000b7deddad", "bottomleft"); // 095 - Busg break room    
     eap_init_tile("eap_sensor_container", "eap_pin_container", 1820, 470, "00000000f62d67b8", "bottomright"); // 143 - Bus Garage SE wall
     eap_init_tile("eap_sensor_container", "eap_pin_container", 1105, 170, "00000000f3e4c91a", "bottomleft"); // 146 - IT ceiling
