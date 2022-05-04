@@ -37,7 +37,6 @@ $(document).ready(function(){
         {"name": "PiEnvMon01", "id": 303},
         {"name": "PRINT-Copier", "id": 418},
         {"name": "PRINT-Office", "id": 420},
-        {"name": "PRINT-StudSrv", "id": 419},
         {"name": "PRINT-Wrkrm", "id": 421}
     ]);
     datatile_init("school_info_box_container", "Bready",1140,145, 10,  [2], [9],[
@@ -199,7 +198,6 @@ $(document).ready(function(){
         {"name": "ESXI", "id": 185},
         {"name": "PiEnvMon01", "id": 321},
         {"name": "PRINT-Lab", "id": 393},
-        {"name": "PRINT-Libr", "id": 394},
         {"name": "PRINT-Off", "id": 395},
         {"name": "PRINT-SpecEd", "id": 396}
     ]);
@@ -254,13 +252,10 @@ $(document).ready(function(){
         {"name": "Pi-Maintenance", "id": 330},
         {"name": "Pi-ServerRoom", "id": 337},
         {"name": "PRINT-Auto", "id": 386},
-        {"name": "PRINT-CAD", "id": 378},
-        {"name": "PRINT-CADPlotter", "id": 373},
         {"name": "PRINT-CoCo", "id": 379},
         {"name": "PRINT-Eng", "id": 385},
         {"name": "PRINT-HSec", "id": 376},
         {"name": "PRINT-Lib", "id": 383},
-        {"name": "PRINT-Maint", "id": 389},
         {"name": "PRINT-Math", "id": 381},
         {"name": "PRINT-Gym", "id": 387},
         {"name": "PRINT-Off", "id": 388},
@@ -268,9 +263,7 @@ $(document).ready(function(){
         {"name": "PRINT-206", "id": 374},
         {"name": "PRINT-SSO", "id": 372},
         {"name": "PRINT-Staff", "id": 375},
-        {"name": "PRINT-Staff2", "id": 382},
-        {"name": "PRINT-StudSrv", "id": 371},
-        {"name": "PRINT-VLC", "id": 380}
+        {"name": "PRINT-Staff2", "id": 382}
     ]);
 
     datatile_init("school_info_box_container", "NCES",478,502, 28,  [20], [26],[
@@ -323,7 +316,6 @@ $(document).ready(function(){
         {"name": "PRINT-LL", "id": 407},
         {"name": "PRINT-Lib", "id": 410},
         {"name": "PRINT-OffCopier", "id": 409},
-        {"name": "PRINT-OffDell", "id": 408},
         {"name": "PRINT-WrkRm", "id": 406}
     ]);
     datatile_init("school_info_box_container", "UPS", 265, 663, 32,  [31], [30],[
