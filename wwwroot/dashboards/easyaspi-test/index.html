@@ -25,38 +25,19 @@
         <!-- Stylesheets unique to this dashboard -->        
 		<link rel="Stylesheet" type="text/css" href="easyaspi-test.css" />
 
-		<title>Easy As Pi demo dashboard</title>
+		<title>Easy As Pi</title>
 	</head>
 	<body>
-        <style type="text/css">
-
-        </style>
         <div id="container-1080p">
-            <div id="weather_conditions">
-                <div class="weather_title">Local conditions</div>
-                <div id="weather-container">
-                    <div id="weather-detail-icon"><img src="../../img/weather/default.png"></div>
-                    <div>
-                        <div id="weather-temperature">###&deg;C</div>
-                        <div id="weather-feelslike">Feels like ###&deg;C</div>
-                        <div id="weather-extra"> 
-                            Humid: <div id="weather-humidity"></div><br/>
-                            Wind: <div id="weather-wind"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="eap_map_title">Central Services</div>
-            <br/><br/>
-            <br/><br/>
-            <br/><br/>
-            <br/><br/>
-            <br/><br/>
-            <div class="eap_map_container">
-                <div id="eap_sensor_container"></div>
-                <img class="eap_map" src="maps/do.png">
+            
+            <!-- make these dynamic eventually -->
+            <div class="eap_navigation_buttons">
+                <!-- <div class="eap_nagivation_button">Central Services</div> -->
             </div>
 
+
+            <div id="weather_container"></div>
+            <div id="map_container"></div>
         </div>
 	</body>
 </html>
