@@ -101,14 +101,14 @@ function eap_update_data()
             var tempValue = Math.round(reading.temperatureCelsius * 10) / 10
             
             var reading_timestamp = Date.parse(reading.timestampUTC);
-            var minutes_since_update = Math.round((utc_timestamp - reading_timestamp) / 1000 / 60);
+            var minutes_since_update = Math.round((utc_timestamp - reading_timestamp) / 1000 / 60);            
             
             var sensorHasIssue = false;
 
             if (minutes_since_update > consider_stale_after_minutes) {     
                 $("#eap_" + reading.deviceSerialNumber + "_temp").html("???");
                 
-                $("#eap_sensor_tile_error_" + reading.deviceSerialNumber).html(stale_error_message);
+                $("#eap_sensor_tile_error_" + reading.deviceSerialNumber).html("Last seen: " + minutes_since_update + " minutes ago");
                 $("#eap_sensor_tile_value_area_" + reading.deviceSerialNumber + "").addClass("hidden");
                 $("#eap_sensor_tile_error_" + reading.deviceSerialNumber + "").removeClass("hidden");
 
