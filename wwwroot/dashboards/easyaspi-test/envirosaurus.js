@@ -20,9 +20,23 @@ function eap_show_map(mapcodename)
     $('#eap_map_' + mapcodename).removeClass("hidden");
 
     visible_map = mapcodename;
+    
     return true;
 }
 
+function eap_show_next_map() 
+{
+    if (visible_map != "")
+    {
+        $('#eap_map_' + visible_map).addClass("hidden");
+    }
+
+    // Find the next one to show
+
+    // Show the current
+    $('#eap_map_' + mapcodename).removeClass("hidden");
+
+}
 
 function eap_init_weather_box(containerid,weathercode)
 {
@@ -34,7 +48,7 @@ function eap_init_weather_box(containerid,weathercode)
     weatherhtml +='        <div>';
     weatherhtml +='            <div id="weather-temperature">###&deg;C</div>';
     weatherhtml +='            <div id="weather-feelslike">Feels like ###&deg;C</div>';
-    weatherhtml +='            <div id="weather-extra"> ';
+    weatherhtml +='            <div id="weather-extra">';
     weatherhtml +='                Humid: <div id="weather-humidity"></div><br/>';
     weatherhtml +='                Wind: <div id="weather-wind"></div>';
     weatherhtml +='            </div>';
@@ -124,8 +138,10 @@ function eap_update_names()
         // For each sensor reading returned, try to update a corresponding div
 
         $.each(data, function(sensors, sensor) {
-            $("#eap_" + sensor.deviceSerialNumber + "_name").html(('000' + sensor.assignedNumber).slice(-3));
-            $("#eap_pin_" + sensor.deviceSerialNumber).html(('000' + sensor.assignedNumber).slice(-3));
+            //$("#eap_" + sensor.deviceSerialNumber + "_name").html(('000' + sensor.assignedNumber).slice(-3));
+            //$("#eap_pin_" + sensor.deviceSerialNumber).html(('000' + sensor.assignedNumber).slice(-3));
+            $("#eap_" + sensor.deviceSerialNumber + "_name").html(sensor.deviceFriendlyName);
+            $("#eap_pin_" + sensor.deviceSerialNumber).html(sensor.deviceFriendlyName);
         });
     });
 }
