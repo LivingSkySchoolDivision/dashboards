@@ -5,7 +5,7 @@ $(document).ready(function(){
     weather_init(WEATHER_UPDATE_URL);
 
     // Central Office
-    eap_init_map("map_container", "do", "Central Services", "sk-34");
+    eap_init_map("map_container", "do", "Central Services", "eap_navigation_buttons", "sk-34");
     eap_init_sensor("do", 1105, 110, "00000000623713ca"); // 001 - IT Warehouse 1
     eap_init_sensor("do", 1090, 335, "00000000ca8bced2"); // 002 - Kobelsky
     eap_init_sensor("do", 700, 230, "00000000e75f9b1c"); // 003 - Board room
@@ -23,7 +23,7 @@ $(document).ready(function(){
     eap_init_sensor("do", 395, 210, "000000003e2e3911"); // 148 - SS hall
 
     // Connaught
-    eap_init_map("map_container", "connaught", "Connaught Elementary", "sk-34");
+    eap_init_map("map_container", "connaught", "Connaught Elementary", "eap_navigation_buttons", "sk-34");
     eap_init_sensor("connaught", 1098, 45, "00000000e60fdab9"); // 018 - Connaught - Room 13
     eap_init_sensor("connaught", 905, 250, "0000000092342574"); // 037 - Connaught - Room 07
     eap_init_sensor("connaught", 650, 380, "0000000072f3eb5a"); // 039 - Connaught - Office
@@ -31,9 +31,7 @@ $(document).ready(function(){
     eap_init_sensor("connaught", 650, 485, "000000002f9812c1"); // 058 - Connaught - Room 43
     eap_init_sensor("connaught", 1388,435, "00000000b64e54f7"); // 081 - Connaught - Gym
     eap_init_sensor("connaught", 905, 640, "000000008f7967fb"); // 090 - Connaught - Staff room
-
     eap_init_sensor("connaught", 700, 320, "000000003a0dbe59"); // 096 - Connaught - Speced (room 05)
-
     eap_init_sensor("connaught", 805, 250, "000000001a88fabe"); // 100 - Connaught - Room 06
     eap_init_sensor("connaught", 805, 600, "0000000090eb8a96"); // 104 - Connaught - Room 40
     eap_init_sensor("connaught", 1098, 245, "00000000c95114ca"); // 107 - Connaught - Room 09

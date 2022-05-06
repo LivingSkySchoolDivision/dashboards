@@ -3,9 +3,28 @@ const high_temp_value = 27;
 const stale_error_message = "COMMUNICATIONS FAILURE";
 const consider_stale_after_minutes = 25;
 
+var available_maps = [];
 var visible_map = "";
 
-function eap_init_weather_box(containerid,weathercode) 
+function eap_show_map(mapcodename)
+{
+    console.log("showing map: " + mapcodename);
+
+    // Hide the one currently being shown
+    if (visible_map != "")
+    {
+        $('#eap_map_' + visible_map).addClass("hidden");
+    }
+
+    // Show the current
+    $('#eap_map_' + mapcodename).removeClass("hidden");
+
+    visible_map = mapcodename;
+    return true;
+}
+
+
+function eap_init_weather_box(containerid,weathercode)
 {
     var weatherhtml = "";
     weatherhtml +='<div id="weather_conditions">';
@@ -25,25 +44,48 @@ function eap_init_weather_box(containerid,weathercode)
     $('#' + containerid).append(weatherhtml);
 }
 
-function eap_init_map(mapcontainerid, mapcodename, mapname, mapweathercode) 
+function eap_init_nav_button(containerid, mapcodename,mapfriendlyname)
 {
-    var maphtml = "";    
-    maphtml +='<div class="eap_map_screen">';    
-    maphtml +='    <div class="eap_map_title">' + mapname + '</div>';      
+    var navButtonHTML = "";
+    navButtonHTML = '<div class="eap_nagivation_button" onclick="eap_show_map(\''+mapcodename+'\');">' + mapfriendlyname + '</div>';
+    console.log("Creating nav button for '" + mapfriendlyname + "'/'" + mapcodename + "' in container " + containerid);
+    $('#' + containerid).append(navButtonHTML);
+}
+
+function eap_init_map(mapcontainerid, mapcodename, mapname, navcontainerid, mapweathercode)
+{
+    var maphtml = "";
+    maphtml +='<div class="eap_map_screen hidden" id="eap_map_' + mapcodename + '">';
+    maphtml +='    <div class="eap_map_title">' + mapname + '</div>';
     maphtml +='    <div class="eap_map_container">';
     maphtml += '     <img class="eap_map" src="maps/' + mapcodename + '.png">';
     maphtml +='      <div class="eap_pin_container" id="eap_pin_container_' + mapcodename + '"></div>';
-    maphtml += '   </div>';    
+    maphtml += '   </div>';
     maphtml +='    <div class="eap_tile_container" id="eap_sensor_container_'+mapcodename+'"></div>';
     maphtml +='</div>';
     $('#' + mapcontainerid).append(maphtml);
+
+    // Register a nav button if we've been given a div for it
+    if (navcontainerid != "")
+    {
+        eap_init_nav_button(navcontainerid,mapcodename,mapname);
+    }
+
+    // Register as an available map
+    available_maps.push(mapcodename);
+
+    // If no visible map exists, make this one the visible one
+    if (visible_map == "")
+    {
+        eap_show_map(mapcodename);
+    }
 }
 
 function eap_init_sensor(mapcodename, xpos, ypos, sensorserial)
 {
-    var pinhtml = "";    
+    var pinhtml = "";
     pinhtml += '<div class="eap_pin eap_pin_loading" id="eap_pin_' + sensorserial + '" style="top: ' + ypos + 'px; left: ' + xpos + 'px;">000</div>';
-    
+
     var pincontainerid = "eap_pin_container_" + mapcodename;
     $('#' + pincontainerid).append(pinhtml);
 
@@ -93,21 +135,21 @@ function eap_update_data()
     console.log("Updating EAP readings from " + EAP_API_PATH);
     $.getJSON(EAP_API_PATH + "/SensorReading", function(data) {
         // For each sensor reading returned, try to update a corresponding div
-        
+
         var local_timestamp = new Date();
         var utc_timestamp = Date.UTC(local_timestamp.getUTCFullYear(),local_timestamp.getUTCMonth(), local_timestamp.getUTCDate(), local_timestamp.getUTCHours(), local_timestamp.getUTCMinutes(), local_timestamp.getUTCSeconds(), local_timestamp.getUTCMilliseconds());
 
         $.each(data, function(readings, reading) {
             var tempValue = Math.round(reading.temperatureCelsius * 10) / 10
-            
+
             var reading_timestamp = Date.parse(reading.timestampUTC);
-            var minutes_since_update = Math.round((utc_timestamp - reading_timestamp) / 1000 / 60);            
-            
+            var minutes_since_update = Math.round((utc_timestamp - reading_timestamp) / 1000 / 60);
+
             var sensorHasIssue = false;
 
-            if (minutes_since_update > consider_stale_after_minutes) {     
+            if (minutes_since_update > consider_stale_after_minutes) {
                 $("#eap_" + reading.deviceSerialNumber + "_temp").html("???");
-                
+
                 $("#eap_sensor_tile_error_" + reading.deviceSerialNumber).html("Last seen: " + minutes_since_update + " minutes ago");
                 $("#eap_sensor_tile_value_area_" + reading.deviceSerialNumber + "").addClass("hidden");
                 $("#eap_sensor_tile_error_" + reading.deviceSerialNumber + "").removeClass("hidden");
@@ -117,16 +159,16 @@ function eap_update_data()
                 $("#eap_" + reading.deviceSerialNumber + "_humid").html("???");
                 $("#eap_" + reading.deviceSerialNumber + "_pressure").html("???");
                 $("#eap_" + reading.deviceSerialNumber + "_lux").html("???");
-                $("#eap_pin_" + reading.deviceSerialNumber + "").addClass("eap_pin_stale"); 
+                $("#eap_pin_" + reading.deviceSerialNumber + "").addClass("eap_pin_stale");
                 sensorHasIssue = true;
                 return true;
             } else {
                 $("#eap_sensor_tile_error_" + reading.deviceSerialNumber).html("");
                 $("#eap_sensor_tile_value_area_" + reading.deviceSerialNumber + "").removeClass("hidden");
                 $("#eap_sensor_tile_error_" + reading.deviceSerialNumber + "").addClass("hidden");
-                
+
                 $("#eap_sensor_" + reading.deviceSerialNumber + "").removeClass("eap_stale_sensor");
-                $("#eap_pin_" + reading.deviceSerialNumber + "").removeClass("eap_pin_stale");            
+                $("#eap_pin_" + reading.deviceSerialNumber + "").removeClass("eap_pin_stale");
             }
 
             // If the data is over 10 minutes old, display warning
@@ -160,9 +202,9 @@ function eap_update_data()
 
             // If there are no issues, show the "good" pin styles
             if (sensorHasIssue) {
-                $("#eap_pin_" + reading.deviceSerialNumber + "").removeClass("eap_pin_good");                 
+                $("#eap_pin_" + reading.deviceSerialNumber + "").removeClass("eap_pin_good");
             } else {
-                $("#eap_pin_" + reading.deviceSerialNumber + "").addClass("eap_pin_good");                  
+                $("#eap_pin_" + reading.deviceSerialNumber + "").addClass("eap_pin_good");
             }
 
 
