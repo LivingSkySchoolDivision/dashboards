@@ -20,34 +20,28 @@ $(document).ready(function(){
     eap_init_sensor("do", 1240, 405, "00000000b7deddad"); // 095 - Busg break room    
     eap_init_sensor("do", 1820, 470, "00000000f62d67b8"); // 143 - Bus Garage SE wall
     eap_init_sensor("do", 1105, 170, "00000000f3e4c91a"); // 146 - IT ceiling
-    eap_init_sensor("do", 395, 210, "000000003e2e3911"); // 148 - SS hall
 
     // Connaught
     eap_init_map("map_container", "connaught", "Connaught Elementary", "eap_navigation_buttons", "sk-34");    
     
-    eap_init_sensor("connaught", 650, 380, "0000000072f3eb5a"); // 039 - Connaught - Office
-    eap_init_sensor("connaught", 1388,435, "00000000b64e54f7"); // 081 - Connaught - Gym
-    eap_init_sensor("connaught", 905, 640, "000000008f7967fb"); // 090 - Connaught - Staff room
-    eap_init_sensor("connaught", 830, 440, "00000000d5fda0ee"); // 134 - Connaught - Library
-    eap_init_sensor("connaught", 700, 320, "000000003a0dbe59"); // 096 - Connaught - Speced (room 05)
-    eap_init_sensor("connaught", 805, 250, "000000001a88fabe"); // 100 - Connaught - Room 06
-    eap_init_sensor("connaught", 905, 250, "0000000092342574"); // 037 - Connaught - Room 07
-    eap_init_sensor("connaught", 1000, 250, "000000008151a13f"); // 139 - Connaught - Room 08
-    eap_init_sensor("connaught", 1098, 245, "00000000c95114ca"); // 107 - Connaught - Room 09
-    eap_init_sensor("connaught", 1098, 45, "00000000e60fdab9"); // 018 - Connaught - Room 13
-    eap_init_sensor("connaught", 1214, 45, "0000000070e41fe4"); // 145 - Connaught - Room 14
-    eap_init_sensor("connaught", 1336, 45, "00000000bdc00ac2"); // 055 - Connaught - Room 15
-    eap_init_sensor("connaught", 1288, 215, "000000003dad6417"); // 110 - Connaught - Room 17 
-    eap_init_sensor("connaught", 805, 600, "0000000090eb8a96"); // 104 - Connaught - Room 40
-    eap_init_sensor("connaught", 650, 485, "000000002f9812c1"); // 058 - Connaught - Room 43
+    eap_init_sensor("connaught", 150, 380, "0000000072f3eb5a"); // 039 - Connaught - Office
+    eap_init_sensor("connaught", 888,435, "00000000b64e54f7"); // 081 - Connaught - Gym
+    eap_init_sensor("connaught", 405, 640, "000000008f7967fb"); // 090 - Connaught - Staff room
+    eap_init_sensor("connaught", 330, 440, "00000000d5fda0ee"); // 134 - Connaught - Library
+    eap_init_sensor("connaught", 200, 320, "000000003a0dbe59"); // 096 - Connaught - Speced (room 05)
+    eap_init_sensor("connaught", 305, 250, "000000001a88fabe"); // 100 - Connaught - Room 06
+    eap_init_sensor("connaught", 405, 250, "0000000092342574"); // 037 - Connaught - Room 07
+    eap_init_sensor("connaught", 500, 250, "000000008151a13f"); // 139 - Connaught - Room 08
+
+    eap_init_sensor("connaught", 598, 245, "00000000c95114ca"); // 107 - Connaught - Room 09
+    eap_init_sensor("connaught", 598, 45, "00000000e60fdab9"); // 018 - Connaught - Room 13
+    eap_init_sensor("connaught", 714, 45, "0000000070e41fe4"); // 145 - Connaught - Room 14
+    eap_init_sensor("connaught", 836, 45, "00000000bdc00ac2"); // 055 - Connaught - Room 15
+    eap_init_sensor("connaught", 788, 215, "000000003dad6417"); // 110 - Connaught - Room 17 
+    eap_init_sensor("connaught", 305, 600, "0000000090eb8a96"); // 104 - Connaught - Room 40
+    eap_init_sensor("connaught", 150, 485, "000000002f9812c1"); // 058 - Connaught - Room 43
 
     
-    
-       
-    
-
-
-
     eap_update_names();
     eap_update_data();
 });
@@ -76,7 +70,6 @@ setInterval(function() {
 
 // Every 30 minutes
 setInterval(function() {
-    time_refresh_offsets(DATE_AND_TIME_URL);
     weather_update(WEATHER_UPDATE_URL);
 }, 1800000);
 

@@ -71,9 +71,11 @@ function eap_init_map(mapcontainerid, mapcodename, mapname, navcontainerid, mapw
     var maphtml = "";
     maphtml +='<div class="eap_map_screen hidden" id="eap_map_' + mapcodename + '">';
     maphtml +='    <div class="eap_map_title">' + mapname + '</div>';
-    maphtml +='    <div class="eap_map_container">';
-    maphtml += '     <img class="eap_map" src="maps/' + mapcodename + '.png">';
-    maphtml +='      <div class="eap_pin_container" id="eap_pin_container_' + mapcodename + '"></div>';
+    maphtml +='    <div class="eap_map_container_container">';
+    maphtml +='      <div class="eap_map_container">';
+    maphtml += '       <img class="eap_map" src="maps/' + mapcodename + '.png">';
+    maphtml +='        <div class="eap_pin_container" id="eap_pin_container_' + mapcodename + '"></div>';
+    maphtml += '     </div>';
     maphtml += '   </div>';
     maphtml +='    <div class="eap_tile_container" id="eap_sensor_container_'+mapcodename+'"></div>';
     maphtml +='</div>';
