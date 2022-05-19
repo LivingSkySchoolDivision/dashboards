@@ -65,7 +65,6 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "nscnet", 133);
     datatile_small_init("container-tilesensors", "ntp", 136);
     datatile_small_init("container-tilesensors", "ovpn - monday", 284);
-    datatile_small_init("container-tilesensors", "ovpn - wednesday", 285);
     datatile_small_init("container-tilesensors", "papercut ", 86);
     datatile_small_init("container-tilesensors", "prismcentral", 258);
     datatile_small_init("container-tilesensors", "public", 286);
