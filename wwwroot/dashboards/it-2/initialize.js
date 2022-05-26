@@ -22,7 +22,8 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "confluence", 292);
     datatile_small_init("container-tilesensors", "dc-backups", 87);
     datatile_small_init("container-tilesensors", "do-dashboards-it-1", 297);
-    datatile_small_init("container-tilesensors", "do-dashboards-it-2", 298);
+    datatile_small_init("container-tilesensors", "do-dashboards-it-2", 443);
+    datatile_small_init("container-tilesensors", "do-dashboards-it-3", 298);
     datatile_small_init("container-tilesensors", "do-dashboards-ss-1", 299);
     datatile_small_init("container-tilesensors", "do-dashboards-busgarage", 346);
     datatile_small_init("container-tilesensors", "dc-kube-ext-lb", 250);
