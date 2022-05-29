@@ -21,6 +21,7 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "chunkymonkey", 296);
     datatile_small_init("container-tilesensors", "confluence", 292);
     datatile_small_init("container-tilesensors", "dc-backups", 87);
+    datatile_small_init("container-tilesensors", "do-backups", 444);
     datatile_small_init("container-tilesensors", "do-dashboards-it-1", 297);
     datatile_small_init("container-tilesensors", "do-dashboards-it-2", 443);
     datatile_small_init("container-tilesensors", "do-dashboards-it-3", 298);
