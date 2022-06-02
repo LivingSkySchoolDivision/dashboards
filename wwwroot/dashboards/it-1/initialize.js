@@ -37,7 +37,9 @@ $(document).ready(function(){
         {"name": "PiEnvMon01", "id": 303},
         {"name": "PRINT-Copier", "id": 418},
         {"name": "PRINT-Office", "id": 420},
-        {"name": "PRINT-Wrkrm", "id": 421}
+        {"name": "PRINT-Wrkrm", "id": 421},
+        {"name": "SEC-1", "id": 445},
+        {"name": "SEC-2", "id": 446}
     ]);
     datatile_init("school_info_box_container", "Bready",1140,145, 10,  [2], [9],[
         {"name":"AD", "id": 9},
@@ -49,7 +51,8 @@ $(document).ready(function(){
         {"name": "PiEnvMon01", "id": 304},
         {"name": "PRINT-Library", "id": 434},
         {"name": "PRINT-Office", "id": 432},
-        {"name": "PRINT-Wrkrm", "id": 433}
+        {"name": "PRINT-Wrkrm", "id": 433},
+        {"name": "SEC", "id": 447}
     ]);
     datatile_init("school_info_box_container", "Cando",585,648, 11,  [33,34], [10],[
         {"name":"AD", "id": 10},
@@ -61,7 +64,8 @@ $(document).ready(function(){
         {"name": "Pi-MainRack", "id": 305},
         {"name": "Pi-ElementaryRack", "id": 306},
         {"name": "PRINT-Colour", "id": 358},
-        {"name": "PRINT-Copier", "id": 357}
+        {"name": "PRINT-Copier", "id": 357},
+        {"name": "SEC", "id": 448 }
     ]);
     datatile_init("school_info_box_container", "CKCS",222,330, 13,  [4,5], [12],[
         {"name":"AD", "id": 12},
@@ -75,7 +79,8 @@ $(document).ready(function(){
         {"name": "PRINT-Copier", "id": 437},
         {"name": "PRINT-Library", "id": 439},
         {"name": "PRINT-Secretary", "id": 438},
-        {"name": "PRINT-Upstairs", "id": 440}
+        {"name": "PRINT-Upstairs", "id": 440},
+        {"name": "SEC", "id": 449}
     ]);
     datatile_init("school_info_box_container", "Connaught",1370,410, 14,  [3], [13],[
         {"name":"AD", "id": 13},
@@ -87,7 +92,8 @@ $(document).ready(function(){
         {"name": "PiEnvMon01", "id": 307},
         {"name": "PRINT-Copier", "id": 424},
         {"name": "PRINT-Office", "id": 426},
-        {"name": "PRINT-StudSrv", "id": 425}
+        {"name": "PRINT-StudSrv", "id": 425},
+        {"name": "SEC", "id": 450}
     ]);
     datatile_init("school_info_box_container", "Hafford",801,423, 15,  [35], [14],[
         {"name":"AD", "id": 14},
@@ -98,7 +104,8 @@ $(document).ready(function(){
         {"name": "ESXI", "id": 161},
         {"name": "PiEnvMon01", "id": 312},
         {"name": "PRINT-BackRm", "id": 435},
-        {"name": "PRINT-Office", "id": 436}
+        {"name": "PRINT-Office", "id": 436},
+        {"name": "SEC", "id": 451 }
     ]);
     datatile_init("school_info_box_container", "HCES",890,197, 16,  [8], [15],[
         {"name":"AD", "id": 15},
@@ -110,7 +117,8 @@ $(document).ready(function(){
         {"name": "PiEnvMon01", "id": 313},
         {"name": "PRINT-ArtRm", "id": 401},
         {"name": "PRINT-Copier", "id": 402},
-        {"name": "PRINT-Library", "id": 400}
+        {"name": "PRINT-Library", "id": 400},
+        {"name": "SEC", "id": 452 }
     ]);
     datatile_init("school_info_box_container", "Heritage", 1558, 700, 17,  [9], [16],[
         {"name":"AD", "id": 16},
@@ -120,7 +128,8 @@ $(document).ready(function(){
         {"name": "ESXI", "id": 167},
         {"name": "PiEnvMon01", "id": 314},
         {"name": "PRINT-ComputerLab", "id": 442},
-        {"name": "PRINT-Off", "id": 441}
+        {"name": "PRINT-Off", "id": 441},
+        {"name": "SEC", "id": 453}
     ]);
     datatile_init("school_info_box_container", "Kerrobert",348,788, 18,  [10], [17],[
         {"name":"AD", "id": 17},
@@ -134,7 +143,9 @@ $(document).ready(function(){
         {"name": "PRINT-Lib", "id": 354},
         {"name": "PRINT-Off", "id": 352},
         {"name": "PRINT-ResRm", "id": 356},
-        {"name": "PRINT-StaffRm", "id": 355}
+        {"name": "PRINT-StaffRm", "id": 355},
+        {"name": "SEC", "id": 455 },
+        {"name": "SEC", "id": 456 }
     ]);
     datatile_init("school_info_box_container", "Lawrence",1330,80, 3, [11], [3],[
         {"name":"AD", "id": 3},
@@ -145,7 +156,8 @@ $(document).ready(function(){
         {"name": "ESXI", "id": 173},
         {"name": "PiEnvMon01", "id": 316},
         {"name": "PRINT-Off", "id": 428},
-        {"name": "PRINT-StaffWrkRm", "id": 427}
+        {"name": "PRINT-StaffWrkRm", "id": 427},
+        {"name": "SEC", "id": 457 }
     ]);
     datatile_init("school_info_box_container", "Leoville",630,30, 19, [12], [18],[
         {"name":"AD", "id": 18},
@@ -158,7 +170,8 @@ $(document).ready(function(){
         {"name": "PRINT-Elem", "id": 367},
         {"name": "PRINT-Lib", "id": 368},
         {"name": "PRINT-Off", "id": 369},
-        {"name": "PRINT-SupplyRm", "id": 370}
+        {"name": "PRINT-SupplyRm", "id": 370},
+        {"name": "SEC", "id": 458 }
     ]);
     datatile_init("school_info_box_container", "Luseland",50,690, 20,  [13], [19],[
         {"name":"AD", "id": 19},
@@ -170,7 +183,8 @@ $(document).ready(function(){
         {"name": "PiEnvMon01", "id": 318},
         {"name": "PRINT-Hall", "id": 392},
         {"name": "PRINT-Lib", "id": 391},
-        {"name": "PRINT-Off", "id": 390}
+        {"name": "PRINT-Off", "id": 390},
+        {"name": "SEC", "id": 459 }
     ]);
     datatile_init("school_info_box_container", "Macklin",16,512, 21,  [14,15], [20],[
         {"name":"AD", "id": 20},
@@ -183,7 +197,9 @@ $(document).ready(function(){
         {"name": "Pi-HighSchoolLab", "id": 320},
         {"name": "PRINT-HS", "id": 351},
         {"name": "PRINT-Lib", "id": 350},
-        {"name": "PRINT-Off", "id": 349}
+        {"name": "PRINT-Off", "id": 349},
+        {"name": "SEC-1", "id": 460},
+        {"name": "SEC-2", "id": 461}
     ]);
     datatile_init("school_info_box_container", "Maymont",715,530, 23,  [32], [21],[
         {"name":"AD", "id": 21},
@@ -195,7 +211,8 @@ $(document).ready(function(){
         {"name": "PiEnvMon01", "id": 321},
         {"name": "PRINT-Lab", "id": 393},
         {"name": "PRINT-Off", "id": 395},
-        {"name": "PRINT-SpecEd", "id": 396}
+        {"name": "PRINT-SpecEd", "id": 396},
+        {"name": "SEC", "id": 462 }
     ]);
     datatile_init("school_info_box_container", "McKitrick",1330,235, 24,  [16], [22],[
         {"name":"AD", "id": 22},
@@ -207,7 +224,9 @@ $(document).ready(function(){
         {"name": "PiEnvMon01", "id": 322},
         {"name": "PRINT-Downstairs", "id": 429},
         {"name": "PRINT-Lib", "id": 431},
-        {"name": "PRINT-Upstairs", "id": 430}
+        {"name": "PRINT-Upstairs", "id": 430},
+        {"name": "SEC-2", "id": 463 },
+        {"name": "SEC-1", "id": 464 }
     ]);
     datatile_init("school_info_box_container", "McLurg",478,345, 25,  [17,18], [23],[
         {"name":"AD", "id": 23},
@@ -219,7 +238,8 @@ $(document).ready(function(){
         {"name": "Pi-Electrical", "id": 323},
         {"name": "Pi-CompLab", "id": 324},
         {"name": "PRINT-Lib", "id": 362},
-        {"name": "PRINT-WrkRm", "id": 363}
+        {"name": "PRINT-WrkRm", "id": 363},
+        {"name": "SEC", "id": 465 }
     ]);
     datatile_init("school_info_box_container", "Medstead",500,188, 26, [19], [24],[
         {"name":"AD", "id": 24},
@@ -231,7 +251,8 @@ $(document).ready(function(){
         {"name": "PiEnvMon01", "id": 325},
         {"name": "PRINT-Lib", "id": 365},
         {"name": "PRINT-Off", "id": 364},
-        {"name": "PRINT-StaffRm", "id": 366}
+        {"name": "PRINT-StaffRm", "id": 366},
+        {"name": "SEC", "id": 466 }
     ]);
 
     datatile_init("school_info_box_container", "NBCHS",1540,25, 35, [37,21,22,23,24], [25],[
@@ -258,7 +279,12 @@ $(document).ready(function(){
         {"name": "PRINT-206", "id": 374},
         {"name": "PRINT-SSO", "id": 372},
         {"name": "PRINT-Staff", "id": 375},
-        {"name": "PRINT-Staff2", "id": 382}
+        {"name": "PRINT-Staff2", "id": 382},
+        {"name": "SEC-1", "id": 467 },
+        {"name": "SEC-2", "id": 468 },
+        {"name": "SEC-3", "id": 469 },
+        {"name": "SEC-4", "id": 470 },
+        {"name": "SEC-5", "id": 471 }
     ]);
 
     datatile_init("school_info_box_container", "NCES",478,502, 28,  [20], [26],[
@@ -271,7 +297,8 @@ $(document).ready(function(){
         {"name": "PiEnvMon01", "id": 326},
         {"name": "PRINT-Lab", "id": 397},
         {"name": "PRINT-Lib", "id": 399},
-        {"name": "PRINT-WrkRm", "id": 398}
+        {"name": "PRINT-WrkRm", "id": 398},
+        {"name": "SEC", "id": 472 }
     ]);
     datatile_init("school_info_box_container", "SHS",700,197, 30,  [25,26], [28],[
         {"name":"AD", "id": 28},
@@ -284,7 +311,8 @@ $(document).ready(function(){
         {"name": "PiEnvMon02", "id": 332},
         {"name": "PRINT-Copier", "id": 359},
         {"name": "PRINT-Lab", "id": 360},
-        {"name": "PRINT-WrkRm", "id": 361}
+        {"name": "PRINT-WrkRm", "id": 361},
+        {"name": "SEC", "id": 473 }
     ]);
     datatile_init("school_info_box_container", "St. Vital",1150,700, 33,  [27,28], [31],[
         {"name":"AD", "id": 31},
@@ -296,7 +324,8 @@ $(document).ready(function(){
         {"name": "Pi-Library", "id": 333},
         {"name": "Pi-Room104", "id": 334},
         {"name": "PRINT-Off", "id": 422},
-        {"name": "PRINT-Upstairs", "id": 423}
+        {"name": "PRINT-Upstairs", "id": 423},
+        {"name": "SEC", "id": 474 }
     ]);
     datatile_init("school_info_box_container", "UCHS",265,508, 31,  [29,30], [29],[
         {"name":"AD", "id": 29},
@@ -310,7 +339,9 @@ $(document).ready(function(){
         {"name": "PRINT-LL", "id": 407},
         {"name": "PRINT-Lib", "id": 410},
         {"name": "PRINT-OffCopier", "id": 409},
-        {"name": "PRINT-WrkRm", "id": 406}
+        {"name": "PRINT-WrkRm", "id": 406},
+        {"name": "SEC-1", "id": 475 },
+        {"name": "SEC-2", "id": 476 }
     ]);
     datatile_init("school_info_box_container", "UPS", 265, 663, 32,  [31], [30],[
         {"name":"AD", "id": 30},
@@ -322,7 +353,8 @@ $(document).ready(function(){
         {"name": "PiEnvMon01", "id": 337},
         {"name": "PRINT-Lib", "id": 404},
         {"name": "PRINT-StaffRm", "id": 405},
-        {"name": "PRINT-WrkRm", "id": 403}
+        {"name": "PRINT-WrkRm", "id": 403},
+        {"name": "SEC", "id": 477 }
     ]);
     datatile_update();
 
