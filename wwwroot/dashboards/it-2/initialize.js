@@ -26,12 +26,6 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "chunkymonkey", 296);
     datatile_small_init("container-tilesensors", "confluence", 292);
     datatile_small_init("container-tilesensors", "dc-backups", 87);
-    datatile_small_init("container-tilesensors", "do-backups", 444);
-    datatile_small_init("container-tilesensors", "do-dashboards-it-1", 297);
-    datatile_small_init("container-tilesensors", "do-dashboards-it-2", 443);
-    datatile_small_init("container-tilesensors", "do-dashboards-it-3", 298);
-    datatile_small_init("container-tilesensors", "do-dashboards-ss-1", 299);
-    datatile_small_init("container-tilesensors", "do-dashboards-busgarage", 346);
     datatile_small_init("container-tilesensors", "dc-kube-ext-lb", 250);
     datatile_small_init("container-tilesensors", "dc-kube-ext-m", 251);
     datatile_small_init("container-tilesensors", "dc-kube-ext-n1", 252);
@@ -41,6 +35,12 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "dc-nutanix-3", 266);
     datatile_small_init("container-tilesensors", "dc-nutanix", 263);
     datatile_small_init("container-tilesensors", "dc-sql2019", 278);
+    datatile_small_init("container-tilesensors", "do-backups", 444);
+    datatile_small_init("container-tilesensors", "do-dashboards-it-1", 297);
+    datatile_small_init("container-tilesensors", "do-dashboards-it-2", 443);
+    datatile_small_init("container-tilesensors", "do-dashboards-it-3", 298);
+    datatile_small_init("container-tilesensors", "do-dashboards-ss-1", 299);
+    datatile_small_init("container-tilesensors", "do-dashboards-busgarage", 346);
     datatile_small_init("container-tilesensors", "do-deploy", 155);
     datatile_small_init("container-tilesensors", "do-kube-int-lb", 246);
     datatile_small_init("container-tilesensors", "do-kube-test-m", 300);
@@ -83,6 +83,12 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "sync", 242);
     datatile_small_init("container-tilesensors", "UNMS", 256);
     datatile_small_init("container-tilesensors", "virtuallab", 347);
+    datatile_small_init("container-tilesensors", "VIRTUAL-LAB-001", 478);
+    datatile_small_init("container-tilesensors", "VIRTUAL-LAB-002", 479);
+    datatile_small_init("container-tilesensors", "VIRTUAL-LAB-003", 480);
+    datatile_small_init("container-tilesensors", "VIRTUAL-LAB-004", 481);
+    datatile_small_init("container-tilesensors", "VIRTUAL-LAB-005", 482);
+    datatile_small_init("container-tilesensors", "VIRTUAL-LAB-006", 483);
     datatile_small_init("container-tilesensors", "vpn2", 233);
     datatile_small_init("container-tilesensors", "Warrant", 268);
     datatile_small_init("container-tilesensors", "web-internal", 269);
