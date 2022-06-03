@@ -1,18 +1,23 @@
 /* ******************************************** */
 /* * Document onLoad stuff                    * */
 /* ******************************************** */
-$(document).ready(function(){    
+$(document).ready(function(){
     guests_init('guests-active-count', 'https://guests.lskysd.ca/json/');
     inout_group_init('inout-container', 'https://inoutapi.lskysd.ca/GroupMembers/5');
 
-    
     datatile_large_website_init("container-tilesensors-2", "GOOGLE", 1);
     datatile_large_website_init("container-tilesensors-2", "LIVINGSKYSD.CA", 2);
     datatile_large_website_init("container-tilesensors-2", "INSIGNIA", 8);
     datatile_large_website_init("container-tilesensors-2", "WEBPORTAL", 6);
     datatile_large_website_init("container-tilesensors-2", "MSS", 5);
     datatile_large_website_init("container-tilesensors-2", "EDSBY", 7);
-        
+
+    init_days_since_tile("days_until_container", "Sasktel caused an outage", 2022, 06, 02);
+
+    init_days_until_tile("days_until_container", "Summer", 2022, 07, 1);
+    init_days_until_tile("days_until_container", "MSS Rollover", 2022, 08, 4);
+    init_days_until_tile("days_until_container", "Next school year", 2022, 09, 01);
+
     datatile_small_init("container-tilesensors", "adsync2019", 236);
     datatile_small_init("container-tilesensors", "ansible", 257);
     datatile_small_init("container-tilesensors", "archive", 274);
@@ -59,8 +64,8 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "kube-storage-3", 289);
     datatile_small_init("container-tilesensors", "kube-storage-4", 290);
     datatile_small_init("container-tilesensors", "kwiktag", 282);
-    datatile_small_init("container-tilesensors", "l4u", 238);    
-    datatile_small_init("container-tilesensors", "lemons", 341); 
+    datatile_small_init("container-tilesensors", "l4u", 238);
+    datatile_small_init("container-tilesensors", "lemons", 341);
     datatile_small_init("container-tilesensors", "limes", 348);
     datatile_small_init("container-tilesensors", "mongo", 255);
     datatile_small_init("container-tilesensors", "navision", 283);

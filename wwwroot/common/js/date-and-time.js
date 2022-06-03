@@ -18,8 +18,8 @@ function time_init(URI) {
 
 function time_refresh_offsets(URI) {
     console.log("Refreshing time offsets from " + URI);
-    
-    // Query the server once to figure out the offset 
+
+    // Query the server once to figure out the offset
     $.getJSON(URI, function(data) {
         var currentSystemDateTime = new Date();
         // Javascript uses zero based month numbers, and the server uses 1 based, so subtract 1 from the month
@@ -30,7 +30,7 @@ function time_refresh_offsets(URI) {
         offset_hour = currentSystemDateTime.getHours() - currentServerDateTime.getHours();
         offset_minute = currentSystemDateTime.getMinutes() - currentServerDateTime.getMinutes();
         offset_second = currentSystemDateTime.getSeconds() - currentServerDateTime.getSeconds();
-        
+
     });
 }
 
@@ -67,5 +67,62 @@ function time_update() {
 
     $('#current-date').html(getDateString(displayDate));
     $('#current-time').html(getTimeString(displayDate));
+}
+
+function get_days_since(year, month, day) {
+    return get_days_until(year, month, day) * -1;
+}
+
+function get_days_until(year, month, day) {
+    var currentSystemDateTime = new Date();
+
+    // Figure out the offset for each increment
+    var currentAdjustedDate = new Date(
+        (currentSystemDateTime.getFullYear() - offset_year),
+        (currentSystemDateTime.getMonth() - offset_month),
+        (currentSystemDateTime.getDate() - offset_day),
+        (currentSystemDateTime.getHours() - offset_hour),
+        (currentSystemDateTime.getMinutes() - offset_minute),
+        (currentSystemDateTime.getSeconds() - offset_second));
+
+    // Javascript months start at zero for some reason
+    var specifiedDate = new Date(year, month-1, day);
+    var difference = specifiedDate.getTime() - currentAdjustedDate.getTime();
+    var difference_in_days = difference / (1000 * 3600 * 24);
+
+    return Math.floor(difference_in_days) + 1;
+}
+
+function init_days_until_tile(containerdiv, message, year, month, day)
+{
+    var day_value = get_days_until(year, month, day);
+    if (day_value >= 0)
+    {
+        var widgethtml = "";
+        widgethtml += "<div class=\"days-until-tile\" id=\"days_until_tile_"+year+"_"+month+"_"+day+"\">";
+        widgethtml += "<div class=\"days-until-tile-label\">SLEEPS UNTIL</div>";
+        widgethtml += "<div class=\"days-until-tile-text\">"+message+"</div>";
+        widgethtml += "<div class=\"days-until-tile-day\">" + day_value + "</div>";
+        widgethtml += "</div>";
+        $('#' + containerdiv).append(widgethtml);
+        if (day_value == 0)
+        {
+            $('#days_until_tile_'+year+'_'+month+'_'+day).addClass("days-until-today");
+        }
+    }
+}
+
+function init_days_since_tile(containerdiv, message, year, month, day)
+{
+    var day_value = get_days_since(year, month, day);
+    var widgethtml = "";
+    widgethtml += "<div class=\"days-until-tile\" id=\"days_until_tile_"+year+"_"+month+"_"+day+"\">";
+    widgethtml += "<div>";
+    widgethtml += "<div class=\"days-until-tile-label\">DAYS SINCE</div>";
+    widgethtml += "<div class=\"days-until-tile-text\">"+message+"</div>";
+    widgethtml += "</div>";
+    widgethtml += "<div class=\"days-until-tile-day\">" + day_value + "</div>";
+    widgethtml += "</div>";
+    $('#' + containerdiv).append(widgethtml);
 }
 

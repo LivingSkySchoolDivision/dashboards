@@ -42,7 +42,7 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .datatile_largesnmp { border-width: 2px; border-style: dashed; padding: 20px; margin: 5px;  color: rgba(255,255,0,0.4); border-radius: 5px;}
 .datatile_largesnmp_label { display: inline; }
 .datatile_largesnmp_data { display: inline;  font-size: 150%; font-weight: normal; }
-.datatile_largesnmp_datacontainer { } 
+.datatile_largesnmp_datacontainer { }
 
 .datatile_largewebsite_address { font-size: 10pt; }
 .datatile_largewebsite_icon_container img { filter: invert(100%); opacity: 25%; height: 32px; width: 32px;}
@@ -101,7 +101,7 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 }
 
 .color-ok { color: #444444;  border-color: #444444;}
-.color-warning { color: rgb(224, 108, 0);} 
+.color-warning { color: rgb(224, 108, 0);}
 .color-danger { animation: danger 1.5s infinite linear; }
 .color-high-utilization { color: white; }
 .danger-by-default {  }
@@ -140,3 +140,37 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 #small_ping_tile_container { position: absolute; bottom: 0px; right: 0px; display: flex; flex-wrap: wrap; max-width: 125px;}
 #small_ping_tile_container_2 { position: absolute; bottom: 0px; left: 890px; display: flex; flex-wrap: wrap; max-height: 400px; max-width: 125px; }
 #small_ping_tile_container_3 {  position: absolute; bottom: 0px; left: 1010px; display: flex; flex-wrap: wrap; max-height: 400px; max-width: 125px; }
+
+.days-until-tile { display: flex; flex-wrap: wrap; border-width: 2px; border-style: solid; padding: 10px; margin: 5px; width: 200px;  color: #444444; border-radius: 5px; text-align: center;}
+.days-until-tile-label { font-weight: normal; width: 100%; font-size: 100%;}
+.days-until-tile-text { font-size: 175%; width: 100%; font-weight: bold; }
+.days-until-tile-day { font-size: 400%; width: 100%; font-weight: bold; }
+.days-until-today { animation: rainbow 5s infinite linear;}
+
+
+@keyframes rainbow {
+    12.5% {
+      color: #FF0000;
+    }
+    25% {
+      color: #FFA500;
+    }
+    37.5% {
+      color: #FFFF00;
+    }
+    50% {
+      color: #7FFF00;
+    }
+    62.5% {
+      color: #00FFFF;
+    }
+    75% {
+      color: #0000FF;
+    }
+    87.5% {
+      color: #9932CC;
+    }
+    100% {
+      color: #FF1493;
+    }
+  }

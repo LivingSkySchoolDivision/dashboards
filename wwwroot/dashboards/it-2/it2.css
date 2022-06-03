@@ -30,3 +30,5 @@
 
 #container-guests-container { margin: 10px; padding:25px; color: #444444; box-sizing: border-box; border: 4px dashed #444444; border-radius: 15px;}
 #guests-active-count { font-size: 10em; font-weight: bold;}
+
+#days_until_container { padding-bottom: 10px; justify-content: space-evenly; position: absolute; bottom: 0; right: 0; max-height: 200px; width: 100%; display: flex; flex-wrap: wrap;  }
