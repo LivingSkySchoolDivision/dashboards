@@ -145,6 +145,7 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .days-until-tile-label { font-weight: normal; width: 100%; font-size: 100%;}
 .days-until-tile-text { font-size: 175%; width: 100%; font-weight: bold; }
 .days-until-tile-day { font-size: 400%; width: 100%; font-weight: bold; }
+.days-until-tile-date { font-size: 100%; width: 100%; font-weight: normal; }
 .days-until-today { animation: rainbow 5s infinite linear;}
 
 

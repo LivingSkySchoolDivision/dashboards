@@ -103,6 +103,7 @@ function init_days_until_tile(containerdiv, message, year, month, day)
         widgethtml += "<div class=\"days-until-tile-label\">SLEEPS UNTIL</div>";
         widgethtml += "<div class=\"days-until-tile-text\">"+message+"</div>";
         widgethtml += "<div class=\"days-until-tile-day\">" + day_value + "</div>";
+        widgethtml += "<div class=\"days-until-tile-date\">"+monthNames[month-1]+" "+ day+", "+year+"</div>";
         widgethtml += "</div>";
         $('#' + containerdiv).append(widgethtml);
         if (day_value == 0)
@@ -122,6 +123,7 @@ function init_days_since_tile(containerdiv, message, year, month, day)
     widgethtml += "<div class=\"days-until-tile-text\">"+message+"</div>";
     widgethtml += "</div>";
     widgethtml += "<div class=\"days-until-tile-day\">" + day_value + "</div>";
+    widgethtml += "<div class=\"days-until-tile-date\">"+monthNames[month-1]+" "+ day+", "+year+"</div>";
     widgethtml += "</div>";
     $('#' + containerdiv).append(widgethtml);
 }
