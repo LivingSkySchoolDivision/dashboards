@@ -14,6 +14,7 @@ $(document).ready(function(){
 
     init_days_since_tile("days_until_container", "Sasktel caused an outage", 2022, 06, 02);
 
+    init_days_until_tile("days_until_container", "Internet Explorer EOL", 2022, 06, 15);
     init_days_until_tile("days_until_container", "Summer", 2022, 07, 1);
     init_days_until_tile("days_until_container", "MSS Rollover", 2022, 08, 4);
     init_days_until_tile("days_until_container", "Next school year", 2022, 09, 01);
