@@ -70,7 +70,6 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "limes", 348);
     datatile_small_init("container-tilesensors", "mongo", 255);
     datatile_small_init("container-tilesensors", "navision", 283);
-    datatile_small_init("container-tilesensors", "nscnet", 133);
     datatile_small_init("container-tilesensors", "ntp", 136);
     datatile_small_init("container-tilesensors", "ovpn - monday", 284);
     datatile_small_init("container-tilesensors", "papercut ", 86);
