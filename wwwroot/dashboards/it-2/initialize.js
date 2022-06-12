@@ -44,8 +44,6 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "do-dashboards-busgarage", 346);
     datatile_small_init("container-tilesensors", "do-deploy", 155);
     datatile_small_init("container-tilesensors", "do-kube-int-lb", 246);
-    datatile_small_init("container-tilesensors", "do-kube-test-m", 300);
-    datatile_small_init("container-tilesensors", "do-kube-test-n1", 301);
     datatile_small_init("container-tilesensors", "do-kube-int-m", 247);
     datatile_small_init("container-tilesensors", "do-kube-int-n1", 248);
     datatile_small_init("container-tilesensors", "do-kube-int-n2", 249);
