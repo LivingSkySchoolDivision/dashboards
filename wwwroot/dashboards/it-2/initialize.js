@@ -12,7 +12,7 @@ $(document).ready(function(){
     datatile_large_website_init("container-tilesensors-2", "MSS", 5);
     datatile_large_website_init("container-tilesensors-2", "EDSBY", 7);
 
-    init_days_since_tile("days_until_container", "Sasktel caused an outage", 2022, 06, 02);
+    init_days_since_tile("days_until_container", "Sasktel caused an outage", 2022, 06, 24);
 
     init_days_until_tile("days_until_container", "Internet Explorer EOL", 2022, 06, 15);
     init_days_until_tile("days_until_container", "Summer", 2022, 07, 1);
