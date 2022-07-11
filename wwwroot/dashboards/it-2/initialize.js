@@ -63,7 +63,6 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "kube-storage-3", 289);
     datatile_small_init("container-tilesensors", "kube-storage-4", 290);
     datatile_small_init("container-tilesensors", "kwiktag", 282);
-    datatile_small_init("container-tilesensors", "l4u", 238);
     datatile_small_init("container-tilesensors", "lemons", 341);
     datatile_small_init("container-tilesensors", "limes", 348);
     datatile_small_init("container-tilesensors", "mongo", 255);
@@ -76,17 +75,24 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "public-vlan-dns", 344);
     datatile_small_init("container-tilesensors", "radius", 90);
     datatile_small_init("container-tilesensors", "sccm2012-dc", 145);
-    datatile_small_init("container-tilesensors", "sis", 294);
     datatile_small_init("container-tilesensors", "streaming", 293);
     datatile_small_init("container-tilesensors", "sync", 242);
     datatile_small_init("container-tilesensors", "UNMS", 256);
     datatile_small_init("container-tilesensors", "virtuallab", 347);
+    /*
     datatile_small_init("container-tilesensors", "VIRTUAL-LAB-001", 478);
     datatile_small_init("container-tilesensors", "VIRTUAL-LAB-002", 479);
     datatile_small_init("container-tilesensors", "VIRTUAL-LAB-003", 480);
     datatile_small_init("container-tilesensors", "VIRTUAL-LAB-004", 481);
     datatile_small_init("container-tilesensors", "VIRTUAL-LAB-005", 482);
     datatile_small_init("container-tilesensors", "VIRTUAL-LAB-006", 483);
+    datatile_small_init("container-tilesensors", "VIRTUAL-LAB-007", 484);
+    datatile_small_init("container-tilesensors", "VIRTUAL-LAB-008", 485);
+    datatile_small_init("container-tilesensors", "VIRTUAL-LAB-009", 486);
+    datatile_small_init("container-tilesensors", "VIRTUAL-LAB-010", 487);
+    datatile_small_init("container-tilesensors", "VIRTUAL-LAB-010", 488);
+    datatile_small_init("container-tilesensors", "VIRTUAL-LAB-012", 489);
+    */
     datatile_small_init("container-tilesensors", "vpn2", 233);
     datatile_small_init("container-tilesensors", "Warrant", 268);
     datatile_small_init("container-tilesensors", "web-internal", 269);
