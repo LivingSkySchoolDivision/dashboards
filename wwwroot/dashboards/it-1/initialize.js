@@ -89,11 +89,11 @@ $(document).ready(function(){
         {"name": "IDRAC", "id": 157},
         {"name": "SCCM", "id": 159},
         {"name": "ESXI", "id": 158},
-        {"name": "PiEnvMon01", "id": 307},
+        {"name": "PiEnvMon01", "id": 307}/*,
         {"name": "PRINT-Copier", "id": 424},
         {"name": "PRINT-Office", "id": 426},
         {"name": "PRINT-StudSrv", "id": 425},
-        {"name": "SEC", "id": 450}
+        {"name": "SEC", "id": 450}*/
     ]);
     datatile_init("school_info_box_container", "Hafford",801,423, 15,  [35], [14],[
         {"name":"AD", "id": 14},
