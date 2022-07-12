@@ -79,7 +79,7 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "sync", 242);
     datatile_small_init("container-tilesensors", "UNMS", 256);
     datatile_small_init("container-tilesensors", "virtuallab", 347);
-    /*
+    
     datatile_small_init("container-tilesensors", "VIRTUAL-LAB-001", 478);
     datatile_small_init("container-tilesensors", "VIRTUAL-LAB-002", 479);
     datatile_small_init("container-tilesensors", "VIRTUAL-LAB-003", 480);
@@ -92,7 +92,7 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "VIRTUAL-LAB-010", 487);
     datatile_small_init("container-tilesensors", "VIRTUAL-LAB-010", 488);
     datatile_small_init("container-tilesensors", "VIRTUAL-LAB-012", 489);
-    */
+    
     datatile_small_init("container-tilesensors", "vpn2", 233);
     datatile_small_init("container-tilesensors", "Warrant", 268);
     datatile_small_init("container-tilesensors", "web-internal", 269);
