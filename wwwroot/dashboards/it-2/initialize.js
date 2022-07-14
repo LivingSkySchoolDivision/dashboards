@@ -6,7 +6,6 @@ $(document).ready(function(){
     inout_group_init('inout-container', 'https://inoutapi.lskysd.ca/GroupMembers/5');
 
     datatile_large_website_init("container-tilesensors-2", "GOOGLE", 1);
-    datatile_large_website_init("container-tilesensors-2", "LIVINGSKYSD.CA", 2);
     datatile_large_website_init("container-tilesensors-2", "INSIGNIA", 8);
     datatile_large_website_init("container-tilesensors-2", "WEBPORTAL", 6);
     datatile_large_website_init("container-tilesensors-2", "MSS", 5);
