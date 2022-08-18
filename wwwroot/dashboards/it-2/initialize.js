@@ -74,7 +74,6 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "ovpn - monday", 284);
     datatile_small_init("container-tilesensors", "papercut ", 86);
     datatile_small_init("container-tilesensors", "prismcentral", 258);
-    datatile_small_init("container-tilesensors", "public", 286);
     datatile_small_init("container-tilesensors", "public-vlan-dns", 344);
     datatile_small_init("container-tilesensors", "radius", 90);
     datatile_small_init("container-tilesensors", "sccm2012-dc", 145);
