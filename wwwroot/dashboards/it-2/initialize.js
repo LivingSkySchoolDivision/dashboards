@@ -20,6 +20,7 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "adsync2019", 236);
     datatile_small_init("container-tilesensors", "ansible", 257);
     datatile_small_init("container-tilesensors", "archive", 274);
+    datatile_small_init("container-tilesensors", "arkime", 505);
     datatile_small_init("container-tilesensors", "blue", 343);
     datatile_small_init("container-tilesensors", "busplanner", 275);
     datatile_small_init("container-tilesensors", "chunkymonkey", 296);
@@ -79,6 +80,7 @@ $(document).ready(function(){
     datatile_small_init("container-tilesensors", "sccm2012-dc", 145);
     datatile_small_init("container-tilesensors", "streaming", 293);
     datatile_small_init("container-tilesensors", "sync", 242);
+    datatile_small_init("container-tilesensors", "tftp", 504);
     datatile_small_init("container-tilesensors", "UNMS", 256);
     datatile_small_init("container-tilesensors", "virtuallab", 347);     
     datatile_small_init("container-tilesensors", "VIRTUAL-LAB-001", 478);
