@@ -113,6 +113,8 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .tile-warning .color-ok { color: white; }
 .tile-danger .data_indicator_icon  {opacity: 80%; }
 .tile-warning .data_indicator_icon { opacity: 80%; }
+.tile-stale { border-style: solid; border-color: yellow; background-color: rgba(255,255,0,0.5); color: white;}
+
 
 @keyframes danger {
     0%  { color: inherit; }

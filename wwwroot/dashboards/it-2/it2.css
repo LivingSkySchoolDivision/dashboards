@@ -32,3 +32,6 @@
 #guests-active-count { font-size: 10em; font-weight: bold;}
 
 #days_until_container { padding-bottom: 10px; justify-content: space-evenly; position: absolute; bottom: 0; right: 0; max-height: 200px; width: 100%; display: flex; flex-wrap: wrap;  }
+
+
+.librenms_simple_ping { box-sizing: border-box; border-style: solid; border-radius: 5px; }
