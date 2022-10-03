@@ -15,7 +15,7 @@ $(document).ready(function(){
     init_days_until_tile("days_until_container", "SSL cert expires", 2023, 03, 25);
     init_days_until_tile("days_until_container", "Christmas break", 2022, 12, 23);
     init_days_until_tile("days_until_container", "Last day of school", 2023, 06, 28);
-    init_days_until_tile("days_until_container", "🎃", 2023, 10, 31);
+    init_days_until_tile("days_until_container", "🎃", 2022, 10, 31);
 
     datatile_small_init("container-tilesensors", "adsync2019", 236);
     datatile_small_init("container-tilesensors", "ansible", 257);
