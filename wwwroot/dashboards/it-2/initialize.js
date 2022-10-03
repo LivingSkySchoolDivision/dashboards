@@ -24,7 +24,6 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "blue", );
     librenms_simple_ping_tile("container-tilesensors", "busplanner", );
     librenms_simple_ping_tile("container-tilesensors", "chunkymonkey", );
-    librenms_simple_ping_tile("container-tilesensors", "confluence", );
     librenms_simple_ping_tile("container-tilesensors", "CSSM", 48);
     librenms_simple_ping_tile("container-tilesensors", "dc-backups", );
     librenms_simple_ping_tile("container-tilesensors", "dc-kube-ext-lb", );
@@ -59,7 +58,6 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "docker-registry", );
     librenms_simple_ping_tile("container-tilesensors", "doors2019", );
     librenms_simple_ping_tile("container-tilesensors", "doorsws", );
-    librenms_simple_ping_tile("container-tilesensors", "helpdesk", );
     librenms_simple_ping_tile("container-tilesensors", "jenkins", );
     librenms_simple_ping_tile("container-tilesensors", "JingleKeys", );
     librenms_simple_ping_tile("container-tilesensors", "kube-storage-1", );
