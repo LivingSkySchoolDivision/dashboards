@@ -1,4 +1,10 @@
-var authToken = "1b6a2849b3663fcbbbca10e8fa299425";
+/* 
+    Putting an API token in the code is bad... but:
+     - This is an internal server talking to an internal server
+     - The API token is read access only
+*/
+var authToken = "52f30846ecebbe235fbf81e2d61510d4";
+
 var librenms_API_path = "https://librenms.lskysd.ca/api/v0/";
 
 
@@ -46,6 +52,25 @@ function librenms_update()
                         }
                     }
                     
+                }
+
+                // Check if we need to put the actual ping value anywhere
+                var thisSensorValueID = "librenms-ping-" + device.device_id + "-value";
+                if ($("#" + thisSensorValueID).length)
+                {
+                    var last_ping_roundtrip = Math.round(device.last_ping_timetaken)
+                    $("#" + thisSensorValueID).html(last_ping_roundtrip + "ms");
+
+                    // Add health styles based on latency values
+                    // PING_LATENCY_WARNING_THRESHOLD
+                    if (last_ping_roundtrip < PING_LATENCY_WARNING_THRESHOLD) {
+                        $("#" + thisSensorValueID).removeClass("color-warning");
+                        $("#" + thisSensorValueID).addClass("color-ok");
+                    } else {
+                        $("#" + thisSensorValueID).removeClass("color-ok");
+                        $("#" + thisSensorValueID).addClass("color-warning");
+                    }
+
                 }
 
             });
