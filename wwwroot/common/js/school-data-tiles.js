@@ -81,10 +81,9 @@ function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorid, tempse
         html += "<div class=\"school_info_box_data_container\" id=\"datatile-ping-" + sensor + "-value-container\">";
         html += "  <div class=\"data_box\">";
         html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/heart-rate.svg\"></div>";
-        html += "    <div class=\"data_box_data\" id=\"datatile-ping-" + sensor + "-value\">---</div>";
+        html += "    <div class=\"data_box_data\" id=\"librenms-ping-" + sensor + "-value\">---</div>";
         html += "  </div>";
-        html += "</div>";
-        html += "<div class=\"data_box_error hidden\" id=\"datatile-ping-" + sensor + "-error\"></div>";
+        html += "</div>";        
     }
 
     html += "<div class=\"school_info_box_data_container\">";
