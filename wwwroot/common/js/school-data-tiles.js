@@ -116,8 +116,8 @@ function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorid, tempse
     if (extrapingsensors != null) {
         html += "<div class=\"datatile_small_site_ping_container\">";
         for (var sensor of extrapingsensors) {
-            html += "<div class=\"hidden hidden\" id=\"datatile-ping-" + sensor.id + "-hidden\">";
-            html += "<div class=\"datatile_small_site_ping_item\" id=\"datatile-ping-" + sensor.id + "-textonly\">";
+            html += "<div id=\"datatile-ping-" + sensor.id + "-hidden\">";
+            html += "<div class=\"color-uninitialized datatile_small_site_ping_item\" id=\"librenms-ping-" + sensor.id + "-textonly\">";
             html += "    <div>" + sensor.name + "</div>";
             html += "</div>";
             html += "</div>";
@@ -148,58 +148,6 @@ function datatile_update()
 
 function datatile_update_ping(url) 
 {
-    $.getJSON(url, function (data) {
-        $.each(data, function (allsensors, sensor) {
-            if (sensor.isEnabled == true) {
-                var divBase = "#datatile-ping-" + sensor.id;
-
-                $(divBase + "-ip").html(sensor.address);
-
-                if (sensor.lastRoundTrip != -1) {
-                    $(divBase + "-value").html(sensor.lastRoundTrip + " ms");
-                    $(divBase + "-value-container").removeClass("hidden");
-                } else {
-                    $(divBase + "-value-container").addClass("hidden");
-                    $(divBase + "-value").html("DOWN");
-                }
-
-                // Add health styles based on latency values
-                // PING_LATENCY_WARNING_THRESHOLD
-                if (sensor.lastRoundTrip < PING_LATENCY_WARNING_THRESHOLD) {
-                    $(divBase + "-value").removeClass("color-warning");
-                    $(divBase + "-value").addClass("color-ok");
-                } else {
-                    $(divBase + "-value").removeClass("color-ok");
-                    $(divBase + "-value").addClass("color-warning");
-                }
-                
-
-                // Check for errors or warnings
-                if (sensor.health <= 0) {
-                    $(divBase).addClass("tile-danger");
-                    $(divBase).removeClass("tile-warning");
-                    $(divBase).removeClass("tile-ok");
-                    $(divBase + "-textonly").addClass("color-danger");
-                    $(divBase + "-textonly").removeClass("color-warning");
-                    $(divBase + "-hidden").removeClass("hidden");
-                } else if (sensor.health <= 99) {
-                    $(divBase).removeClass("tile-danger");
-                    $(divBase).addClass("tile-warning");
-                    $(divBase).removeClass("tile-ok");
-                    $(divBase + "-textonly").removeClass("color-danger");
-                    $(divBase + "-textonly").addClass("color-warning");
-                    $(divBase + "-hidden").removeClass("hidden");
-                } else {
-                    $(divBase).addClass("tile-ok");
-                    $(divBase).removeClass("tile-danger");
-                    $(divBase).removeClass("tile-warning");
-                    $(divBase + "-textonly").removeClass("color-danger");
-                    $(divBase + "-textonly").removeClass("color-warning");
-                    $(divBase + "-hidden").addClass("hidden");
-                }
-            }
-        });
-    });
 
 }
 
