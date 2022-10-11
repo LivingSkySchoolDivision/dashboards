@@ -1,4 +1,4 @@
-/* 
+/*
     Putting an API token in the code is bad... but:
      - This is an internal server talking to an internal server
      - The API token is read access only
@@ -7,8 +7,15 @@ var authToken = "52f30846ecebbe235fbf81e2d61510d4";
 
 var librenms_API_path = "https://librenms.lskysd.ca/api/v0/";
 
+function minutes_since_last_poll_snmp(last_poll_value)
+{
+    var now = new Date();
+    var parsed_date = new Date(last_poll_value * 1000);
+    var minutes_since = Math.round((now - parsed_date) / 1000 / 60);
+    return minutes_since;
+}
 
-function days_since_last_poll(last_poll_value)
+function minutes_since_last_poll_ping(last_poll_value)
 {
     var now = new Date();
     var parsed_date = new Date(Date.parse(last_poll_value));
@@ -26,16 +33,65 @@ function librenms_update()
     // (ifInOctets_rate * 8) gets you the bits per second
     // (ifInOctets_rate * 8) / 1024 gets you the kbps
     // (ifInOctets_rate * 8) / 1024 / 1024 gets you the mpbs
-    // ifOutOctets_rate is the other direction   
+    // ifOutOctets_rate is the other direction
     // https://librenms.lskysd.ca/api/v0/ports?columns=device_id%2Cport_id%2CifOutOctets_rate%2CifInOctets_rate
 
     $.ajax({
         beforeSend: function(request) { request.setRequestHeader("X-Auth-Token", authToken);},
         dataType: "json",
-        url: librenms_API_path + "ports?columns=device_id%2Cport_id%2CifOutOctets_rate%2CifInOctets_rate",
+        url: librenms_API_path + "ports?columns=device_id%2Cport_id%2CifOutOctets_rate%2CifInOctets_rate%2Cpoll_time",
         success: function(data) {
             $.each(data.ports, function(ports, port) {
+                var thisPort_ContainerID = "librenms-snmp-" + port.port_id;
+                var thisPort_ContainerID_Value_In = "librenms-snmp-" + port.port_id + "-inbound";
+                var thisPort_ContainerID_Value_Out = "librenms-snmp-" + port.port_id + "-outbound";
+                if ($("#" + thisPort_ContainerID).length)
+                {
+                    var minutes_since_last_poll = minutes_since_last_poll_snmp(port.poll_time);
 
+                    // Style the tile to indicate we loaded data
+                    $("#" + thisPort_ContainerID).addClass("tile-ok");
+
+                    // Calculate traffic inbound
+                    // Calculate traffic ountbound
+                    var traffic_in_kbps = Math.round((port.ifInOctets_rate * 8) / 1024);
+                    var traffic_out_kbps = Math.round((port.ifOutOctets_rate * 8) / 1024);
+
+                    if (traffic_in_kbps == 0) {
+                        traffic_in = "IDLE";
+                    } else {
+                        if (traffic_in_kbps > 1024) {
+                            traffic_in = Math.round(traffic_in_kbps / 1024) + " Mbps";
+                        } else {
+                            traffic_in = traffic_in_kbps + " kbps";
+                        }
+                    }
+
+                    if (traffic_out_kbps == 0) {
+                        traffic_out = "IDLE";
+                    } else {
+                        if (traffic_out_kbps > 1024) {
+                            traffic_out = Math.round(traffic_out_kbps / 1024) + " Mbps";
+                        } else {
+                            traffic_out = traffic_out_kbps + " kbps";
+                        }
+                    }
+
+                    // Insert values into divs if they exist
+                    $("#" + thisPort_ContainerID_Value_In).html(traffic_in);
+                    $("#" + thisPort_ContainerID_Value_Out).html(traffic_out);
+
+                    // Apply warning styles to parent tile
+                    // If the port hasn't been polled for more than 10 minutes, call it down
+                    if (minutes_since_last_poll <= 10) 
+                    {
+                        $("#" + thisPort_ContainerID).removeClass("tile-danger");
+                        $("#" + thisPort_ContainerID).addClass("tile-ok");
+                    } else {                        
+                        $("#" + thisPort_ContainerID).addClass("tile-danger");
+                        $("#" + thisPort_ContainerID).removeClass("tile-ok");
+                    }
+                }
             });
         }
     });
@@ -48,26 +104,26 @@ function librenms_update()
         success: function(data) {
             $.each(data.devices, function(devices, device) {
                 var last_ping_roundtrip = Math.round(device.last_ping_timetaken)
-                var minutes_since_last_polled = days_since_last_poll(device.last_polled);
+                var minutes_since_last_polled = minutes_since_last_poll_ping(device.last_polled);
                 var last_ping_roundtrip = Math.round(device.last_ping_timetaken)
 
                 // If the device has never been polled, set it to something huge
-                if (isNaN(minutes_since_last_polled)) 
+                if (isNaN(minutes_since_last_polled))
                 {
                     minutes_since_last_polled = 9999;
                 }
-                
+
                 // ********************************
                 // * Handle any ping sensor tiles *
-                // ********************************                
+                // ********************************
                 var thisSensor_PotentialPingTileID = "librenms-ping-" + device.device_id
                 if ($("#" + thisSensor_PotentialPingTileID).length)
                 {
-                    if (minutes_since_last_polled > 10) 
-                    {    
+                    if (minutes_since_last_polled > 10)
+                    {
                         $("#" + thisSensor_PotentialPingTileID).removeClass("tile-ok");
-                        $("#" + thisSensor_PotentialPingTileID).removeClass("tile-danger"); 
-                        $("#" + thisSensor_PotentialPingTileID).removeClass("tile-warning");                        
+                        $("#" + thisSensor_PotentialPingTileID).removeClass("tile-danger");
+                        $("#" + thisSensor_PotentialPingTileID).removeClass("tile-warning");
                         $("#" + thisSensor_PotentialPingTileID).addClass("tile-stale");
                     } else {
                         // If the device is offline, indicate as such
@@ -79,7 +135,7 @@ function librenms_update()
                             $("#" + thisSensor_PotentialPingTileID).removeClass("tile-danger");
                             $("#" + thisSensor_PotentialPingTileID).addClass("tile-ok");
                         }
-                    }                    
+                    }
                 }
 
                 // *******************************************
@@ -108,8 +164,8 @@ function librenms_update()
 
                 var thisSensorTextOnlyID = "librenms-ping-" + device.device_id + "-textonly";
                 if ($("#" + thisSensorTextOnlyID).length)
-                {  
-                    $("#" + thisSensorTextOnlyID).removeClass("color-uninitialized");                  
+                {
+                    $("#" + thisSensorTextOnlyID).removeClass("color-uninitialized");
                     // This type of data box is just the name of the item with no ping value
                     // It changes color if there are issues
 
@@ -135,7 +191,7 @@ function librenms_update()
 
                     // Add health styles based on latency values
                     // PING_LATENCY_WARNING_THRESHOLD
-                    
+
                 }
 
             });
