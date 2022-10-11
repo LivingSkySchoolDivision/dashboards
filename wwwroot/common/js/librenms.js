@@ -20,6 +20,26 @@ function librenms_update()
 {
     console.log("Updating LibreNMS data...");
 
+    // Update SNMP ports
+    // SNMP data comes from the specific port ID so it's data won't be in the same loop as the ping data
+    // Calculating MBPS
+    // (ifInOctets_rate * 8) gets you the bits per second
+    // (ifInOctets_rate * 8) / 1024 gets you the kbps
+    // (ifInOctets_rate * 8) / 1024 / 1024 gets you the mpbs
+    // ifOutOctets_rate is the other direction   
+    // https://librenms.lskysd.ca/api/v0/ports?columns=device_id%2Cport_id%2CifOutOctets_rate%2CifInOctets_rate
+
+    $.ajax({
+        beforeSend: function(request) { request.setRequestHeader("X-Auth-Token", authToken);},
+        dataType: "json",
+        url: librenms_API_path + "ports?columns=device_id%2Cport_id%2CifOutOctets_rate%2CifInOctets_rate",
+        success: function(data) {
+            $.each(data.ports, function(ports, port) {
+
+            });
+        }
+    });
+
     // Update ping devices
     $.ajax({
         beforeSend: function(request) { request.setRequestHeader("X-Auth-Token", authToken);},
@@ -37,12 +57,6 @@ function librenms_update()
                     minutes_since_last_polled = 9999;
                 }
                 
-                // ********************************
-                // * Handle any SNMP sensor tiles *
-                // ********************************
-
-                // Code to be written goes here
-
                 // ********************************
                 // * Handle any ping sensor tiles *
                 // ********************************                
@@ -99,15 +113,9 @@ function librenms_update()
                     // This type of data box is just the name of the item with no ping value
                     // It changes color if there are issues
 
-                    // Debug
-                    if (device.device_id == 232) {
-                        console.log(minutes_since_last_polled);
-                    }
-
                     // Show warning if the ping is really high
                     // Show error if it hasn't responded in 5+ minutes
                     // Hide otherwise
-                    console.log("Threshold: " + PING_LATENCY_WARNING_THRESHOLD + ", Ping: " + last_ping_roundtrip);
                     if (minutes_since_last_polled > 10) {
                         $("#" + thisSensorTextOnlyID).removeClass("hidden");
                         $("#" + thisSensorTextOnlyID).removeClass("color-warning");
