@@ -33,7 +33,7 @@ $(document).ready(function(){
 
     ]);
 
-    datatile_init("school_info_box_container", "BCS", 1350, 700, 9999,[1], [5],[
+    datatile_init("school_info_box_container", "BCS", 1350, 700, 364,[1], [5],[
         {"name":"AD", "id": 276},
         {"name": "Alarm", "id": 116},
         {"name": "Mac Mini", "id": 121},
@@ -45,7 +45,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 338}
     ]);
 
-    datatile_init("school_info_box_container", "Bready",1140,145, 9999,  [2], [6],[
+    datatile_init("school_info_box_container", "Bready",1140,145, 328,  [2], [6],[
         {"name":"AD", "id": 277},
         {"name": "Alarm", "id": 122},
         {"name": "Mac Mini", "id": 127},
@@ -57,7 +57,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 337}
     ]);
 
-    datatile_init("school_info_box_container", "Cando",585,675, 9999,  [33,34], [7],[
+    datatile_init("school_info_box_container", "Cando",585,675, 604,  [33,34], [7],[
         {"name":"AD", "id": 278},
         {"name": "Alarm", "id": 128},
         {"name": "Mac Mini", "id": 132},
@@ -69,7 +69,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 339},
     ]);
 
-    datatile_init("school_info_box_container", "CKCS",222,330, 9999,  [4,5], [8],[
+    datatile_init("school_info_box_container", "CKCS",222,330, 621,  [4,5], [8],[
         {"name":"AD", "id": 279},
         {"name": "Alarm", "id": 134},
         {"name": "Mac Mini", "id": 137},
@@ -81,7 +81,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 342}
     ]);
 
-    datatile_init("school_info_box_container", "Connaught",1370,410, 9999,  [3], [9],[
+    datatile_init("school_info_box_container", "Connaught",1370,410, 246,  [3], [9],[
         {"name":"AD", "id": 280},
         {"name": "Alarm", "id": 138},
         {"name": "Mac Mini", "id": 144},
@@ -93,7 +93,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 341}
     ]);
 
-    datatile_init("school_info_box_container", "Hafford",801,403, 9999,  [35], [10],[
+    datatile_init("school_info_box_container", "Hafford",801,403, 1935,  [35], [10],[
         {"name":"AD", "id": 281},
         {"name": "Alarm", "id": 146},
         {"name": "Mac Mini", "id": 149},
@@ -104,7 +104,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 343}
     ]);
 
-    datatile_init("school_info_box_container", "HCES",898,197, 9999,  [8], [11],[
+    datatile_init("school_info_box_container", "HCES",898,197, 2059,  [8], [11],[
         {"name":"AD", "id": 282},
         {"name": "Alarm", "id": 150},
         {"name": "Mac Mini", "id": 151},
@@ -115,7 +115,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 344}
     ]);
 
-    datatile_init("school_info_box_container", "Heritage", 1558, 700, 9999,  [9], [12],[
+    datatile_init("school_info_box_container", "Heritage", 1558, 700, 1563,  [9], [12],[
         {"name":"AD", "id": 159},
         {"name": "Mac Mini", "id": 158},
         {"name": "IDRAC", "id": 156},
@@ -125,7 +125,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 345}
     ]);
 
-    datatile_init("school_info_box_container", "Kerrobert",348,788, 9999,  [10], [13],[
+    datatile_init("school_info_box_container", "Kerrobert",348,788, 1974,  [10], [13],[
         {"name":"AD", "id": 283},
         {"name": "Alarm", "id": 160},
         {"name": "Mac Mini", "id": 164},
@@ -136,7 +136,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 346}
     ]);
 
-    datatile_init("school_info_box_container", "Lawrence",1330,80, 9999, [11], [4],[
+    datatile_init("school_info_box_container", "Lawrence",1330,80, 522, [11], [4],[
         {"name":"AD", "id": 284},
         {"name": "Alarm", "id": 165},
         {"name": "Mac Mini", "id": 170},
@@ -148,7 +148,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 347}
     ]);
 
-    datatile_init("school_info_box_container", "Leoville",630,30, 9999, [12], [15],[
+    datatile_init("school_info_box_container", "Leoville",630,30, 2987, [12], [15],[
         {"name":"AD", "id": 285},
         {"name": "Alarm", "id": 171},
         {"name": "Mac Mini", "id": 175},
@@ -159,7 +159,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 348}
     ]);
 
-    datatile_init("school_info_box_container", "Luseland",50,690, 9999, [13], [14],[
+    datatile_init("school_info_box_container", "Luseland",50,690, 1873, [13], [14],[
         {"name":"AD", "id": 286},
         {"name": "Alarm", "id": 176},
         {"name": "Mac Mini", "id": 180},
@@ -170,7 +170,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 349}
     ]);
 
-    datatile_init("school_info_box_container", "Macklin",16,512, 9999, [14,15], [16],[
+    datatile_init("school_info_box_container", "Macklin",16,512, 1779, [14,15], [16],[
         {"name":"AD", "id": 287},
         {"name": "Alarm", "id": 181},
         {"name": "Mac Mini", "id": 185},
@@ -182,7 +182,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 336}
     ]);
 
-    datatile_init("school_info_box_container", "Maymont",715,530, 9999, [32], [19],[
+    datatile_init("school_info_box_container", "Maymont",715,530, 1519, [32], [19],[
         {"name":"AD", "id": 288},
         {"name": "Alarm", "id": 186},
         {"name": "Mac Mini", "id": 190},
@@ -193,7 +193,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 350}
     ]);
 
-    datatile_init("school_info_box_container", "McKitrick",1330,235, 9999, [16], [],[
+    datatile_init("school_info_box_container", "McKitrick",1330,235, 1394, [16], [],[
         {"name":"AD", "id": 289},
         {"name": "Alarm", "id": 191},
         {"name": "Mac Mini", "id": 196},
@@ -205,7 +205,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 351}
     ]);
 
-    datatile_init("school_info_box_container", "McLurg",478,345, 9999, [17,18], [20],[
+    datatile_init("school_info_box_container", "McLurg",478,345, 2111, [17,18], [20],[
         {"name":"AD", "id": 290},
         {"name": "Alarm", "id": 197},
         {"name": "Mac Mini", "id": 201},
@@ -217,7 +217,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 352}
     ]);
 
-    datatile_init("school_info_box_container", "Medstead",500,188, 9999, [19], [21],[
+    datatile_init("school_info_box_container", "Medstead",500,188, 1362, [19], [21],[
         {"name":"AD", "id": 291},
         {"name": "Alarm", "id": 202},
         {"name": "Mac Mini", "id": 206},
@@ -228,7 +228,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 353}
     ]);
 
-    datatile_init("school_info_box_container", "NBCHS",1540,25, 9999, [37,21,22,23,24], [17],[
+    datatile_init("school_info_box_container", "NBCHS",1540,25, 1301, [37,21,22,23,24], [17],[
         {"name":"AD", "id": 292},
         {"name": "Alarm", "id": 207},
         {"name": "Mac Mini", "id": 212},
@@ -244,7 +244,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 354}
     ]);
 
-    datatile_init("school_info_box_container", "NCES",484,502, 9999, [20], [22],[
+    datatile_init("school_info_box_container", "NCES",484,502, 2593, [20], [22],[
         {"name":"AD", "id": 293},
         {"name": "Alarm", "id": 213},
         {"name": "Mac Mini", "id": 217},        
@@ -255,7 +255,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 355}
     ]);
 
-    datatile_init("school_info_box_container", "SHS",700,197, 9999, [25,26], [23],[
+    datatile_init("school_info_box_container", "SHS",700,197, 2655, [25,26], [23],[
         {"name":"AD", "id": 294},
         {"name": "Alarm", "id": 253},
         {"name": "Mac Mini", "id": 258},
@@ -267,7 +267,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 356}
     ]);
 
-    datatile_init("school_info_box_container", "St. Vital",1115,700, 9999, [27,28], [26],[
+    datatile_init("school_info_box_container", "St. Vital",1115,700, 2343, [27,28], [26],[
         {"name":"AD", "id": 295},
         {"name": "Alarm", "id": 259},
         {"name": "Mac Mini", "id": 264},
@@ -280,7 +280,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 357}
     ]);
 
-    datatile_init("school_info_box_container", "UCHS",265,508, 9999, [29,30], [24],[
+    datatile_init("school_info_box_container", "UCHS",265,508, 2531, [29,30], [24],[
         {"name":"AD", "id": 296},
         {"name": "Alarm", "id": 270},
         {"name": "Mac Mini", "id": 269},
@@ -292,7 +292,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 257}
     ]);
 
-    datatile_init("school_info_box_container", "UPS", 265, 663, 9999, [31], [25],[
+    datatile_init("school_info_box_container", "UPS", 265, 663, 2405, [31], [25],[
         {"name":"AD", "id": 297},
         {"name": "Alarm", "id": 271},
         {"name": "Mac Mini", "id": 275},
