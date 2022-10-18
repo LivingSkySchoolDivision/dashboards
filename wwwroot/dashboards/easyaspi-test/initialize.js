@@ -20,6 +20,27 @@ $(document).ready(function(){
     eap_init_sensor("do", 1240, 405, "00000000b7deddad"); // 095 - Busg break room    
     eap_init_sensor("do", 1820, 470, "00000000f62d67b8"); // 143 - Bus Garage SE wall
     eap_init_sensor("do", 1105, 170, "00000000f3e4c91a"); // 146 - IT ceiling
+    
+    // BCS
+    eap_init_map("map_container", "bcs", "Battleford Central", "eap_navigation_buttons", "sk-34");
+    eap_init_sensor("bcs", 460, 150, "00000000e4fed23a"); // 7
+    eap_init_sensor("bcs", 65, 85, "00000000e2bd02f0"); // 33
+    eap_init_sensor("bcs", 390, 425, "0000000069ee2916"); // 45
+    eap_init_sensor("bcs", 770, 425, "00000000a2e78c08"); // 53
+    eap_init_sensor("bcs", 675, 290, "00000000675097ad"); // 68 - Library
+    eap_init_sensor("bcs", 250, 150, "00000000bcc8a7f2"); // 69
+    eap_init_sensor("bcs", 80, 260, "000000007c8dd75d"); // 76
+    eap_init_sensor("bcs", 250, 425, "00000000dd976761"); // 78
+    eap_init_sensor("bcs", 730, 360, "00000000b89d9826"); // 80
+    eap_init_sensor("bcs", 570, 425, "00000000b4028959"); // 86
+    eap_init_sensor("bcs", 920, 170, "00000000741921ef"); // 102
+    eap_init_sensor("bcs", 840, 310, "000000004b01517d"); // 111 - Staff room
+    eap_init_sensor("bcs", 920, 290, "00000000fcbeb830"); // 119
+    eap_init_sensor("bcs", 700, 150, "0000000054be5c61"); // 121
+    eap_init_sensor("bcs", 970, 350, "00000000ca3cfa6f"); // 124
+    eap_init_sensor("bcs", 665, 50, "000000007c9f3001"); // 126 - Mechanical Room
+    eap_init_sensor("bcs", 350, 280, "00000000b8bbd1de"); // 137 - Gym
+    eap_init_sensor("bcs", 45, 425, "00000000c859a5ee"); // 142
 
     // Connaught
     eap_init_map("map_container", "connaught", "Connaught Elementary", "eap_navigation_buttons", "sk-34");    
