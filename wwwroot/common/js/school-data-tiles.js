@@ -11,23 +11,37 @@ function datatile_small_init(containerid, tilename, pingsensorid)
     $('#' + containerid).append(html);
 }
 
-function datatile_largesnmp_init(containerid, tilename, snmpsensorid) 
+function datatile_largesnmp_init(containerid, tilename, portid, swap_in_and_out) 
 {
     var html = "";
-    html += "<div class=\"datatile datatile_largesnmp\" id=\"datatile-snmp-" + snmpsensorid + "\">";
+    html += "<div class=\"datatile datatile_largesnmp\" id=\"librenms-snmp-" + portid + "\">";
     html += "  <div class=\"datatile_largesnmp_name\">" + tilename + "</div>";
-    html += "<div id=\"datatile-snmp-" + snmpsensorid + "-error\"></div>";
-    html += "<div class=\"datatile_largesnmp_datacontainer\" id=\"datatile-snmp-" + snmpsensorid + "\">";
+    html += "<div id=\"datatile-snmp-" + portid + "-error\"></div>";
+    html += "<div class=\"datatile_largesnmp_datacontainer\" id=\"librenms-snmp-" + portid + "-container\">";
 
-    html += "  <div class=\"data_box network_data_box\">";
-    html += "    <div class=\"datatile_largesnmp_label\"><img class=\"data_indicator_icon\" src=\"../../img/download.svg\"></div>";
-    html += "    <div class=\"datatile_largesnmp_data\" id=\"datatile-snmp-" + snmpsensorid + "-inbound\">---</div>";
-    html += "  </div>";
+    if (swap_in_and_out === true) 
+    {
+        html += "  <div class=\"data_box network_data_box\">";
+        html += "    <div class=\"datatile_largesnmp_label\"><img class=\"data_indicator_icon\" src=\"../../img/download.svg\"></div>";
+        html += "    <div class=\"datatile_largesnmp_data\" id=\"librenms-snmp-" + portid + "-outbound\">---</div>";
+        html += "  </div>";
 
-    html += "  <div class=\"data_box network_data_box\">";
-    html += "    <div class=\"datatile_largesnmp_label\"><img class=\"data_indicator_icon\" src=\"../../img/upload.svg\"></div>";
-    html += "    <div class=\"datatile_largesnmp_data\" id=\"datatile-snmp-" + snmpsensorid + "-outbound\">---</div>";
-    html += "  </div>";
+        html += "  <div class=\"data_box network_data_box\">";
+        html += "    <div class=\"datatile_largesnmp_label\"><img class=\"data_indicator_icon\" src=\"../../img/upload.svg\"></div>";
+        html += "    <div class=\"datatile_largesnmp_data\" id=\"librenms-snmp-" + portid + "-inbound\">---</div>";
+        html += "  </div>";
+    } else {
+        html += "  <div class=\"data_box network_data_box\">";
+        html += "    <div class=\"datatile_largesnmp_label\"><img class=\"data_indicator_icon\" src=\"../../img/download.svg\"></div>";
+        html += "    <div class=\"datatile_largesnmp_data\" id=\"librenms-snmp-" + portid + "-inbound\">---</div>";
+        html += "  </div>";
+
+        html += "  <div class=\"data_box network_data_box\">";
+        html += "    <div class=\"datatile_largesnmp_label\"><img class=\"data_indicator_icon\" src=\"../../img/upload.svg\"></div>";
+        html += "    <div class=\"datatile_largesnmp_data\" id=\"librenms-snmp-" + portid + "-outbound\">---</div>";
+        html += "  </div>";
+    
+    }
 
     html += "</div>";
     html += "</div>";
@@ -74,7 +88,7 @@ function datatile_small_website_init(containerid, tilename, websitesensorid)
 
 function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorid, tempsensorids, shownpingsensors, extrapingsensors) {
     var html = "";
-    html += "<div class=\"datatile school_info_box\" style=\"top: " + ypos + "px; left: " + xpos + "px;\" id=\"datatile-snmp-" + snmpsensorid + "\">";
+    html += "<div class=\"datatile school_info_box\" style=\"top: " + ypos + "px; left: " + xpos + "px;\" id=\"librenms-snmp-" + snmpsensorid + "\">";
     html += "  <div class=\"school_name\">" + schoolname + "</div>";
 
     for (const sensor of shownpingsensors) {
@@ -89,14 +103,14 @@ function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorid, tempse
     html += "<div class=\"school_info_box_data_container\">";
     html += "  <div class=\"data_box network_data_box\">";
     html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/download.svg\"></div>";
-    html += "    <div class=\"data_box_data network_data_box\" id=\"datatile-snmp-" + snmpsensorid + "-inbound\">---</div>";
+    html += "    <div class=\"data_box_data network_data_box\" id=\"librenms-snmp-" + snmpsensorid + "-inbound\">---</div>";
     html += "  </div>";
     html += "  <div class=\"data_box network_data_box\">";
     html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/upload.svg\"></div>";
-    html += "    <div class=\"data_box_data network_data_box\" id=\"datatile-snmp-" + snmpsensorid + "-outbound\">---</div>";
+    html += "    <div class=\"data_box_data network_data_box\" id=\"librenms-snmp-" + snmpsensorid + "-outbound\">---</div>";
     html += "  </div>";
     html += "</div>";
-    html += "<div class=\"data_box_error hidden\" id=\"datatile-snmp-" + snmpsensorid + "-error\"></div>";
+    html += "<div class=\"data_box_error hidden\" id=\"librenms-snmp-" + snmpsensorid + "-error\"></div>";
     
 
     for (const sensor of tempsensorids) {
@@ -116,8 +130,8 @@ function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorid, tempse
     if (extrapingsensors != null) {
         html += "<div class=\"datatile_small_site_ping_container\">";
         for (var sensor of extrapingsensors) {
-            html += "<div class=\"hidden hidden\" id=\"datatile-ping-" + sensor.id + "-hidden\">";
-            html += "<div class=\"datatile_small_site_ping_item\" id=\"datatile-ping-" + sensor.id + "-textonly\">";
+            html += "<div id=\"datatile-ping-" + sensor.id + "-hidden\">";
+            html += "<div class=\"color-uninitialized datatile_small_site_ping_item\" id=\"librenms-ping-" + sensor.id + "-textonly\">";
             html += "    <div>" + sensor.name + "</div>";
             html += "</div>";
             html += "</div>";
@@ -148,58 +162,6 @@ function datatile_update()
 
 function datatile_update_ping(url) 
 {
-    $.getJSON(url, function (data) {
-        $.each(data, function (allsensors, sensor) {
-            if (sensor.isEnabled == true) {
-                var divBase = "#datatile-ping-" + sensor.id;
-
-                $(divBase + "-ip").html(sensor.address);
-
-                if (sensor.lastRoundTrip != -1) {
-                    $(divBase + "-value").html(sensor.lastRoundTrip + " ms");
-                    $(divBase + "-value-container").removeClass("hidden");
-                } else {
-                    $(divBase + "-value-container").addClass("hidden");
-                    $(divBase + "-value").html("DOWN");
-                }
-
-                // Add health styles based on latency values
-                // PING_LATENCY_WARNING_THRESHOLD
-                if (sensor.lastRoundTrip < PING_LATENCY_WARNING_THRESHOLD) {
-                    $(divBase + "-value").removeClass("color-warning");
-                    $(divBase + "-value").addClass("color-ok");
-                } else {
-                    $(divBase + "-value").removeClass("color-ok");
-                    $(divBase + "-value").addClass("color-warning");
-                }
-                
-
-                // Check for errors or warnings
-                if (sensor.health <= 0) {
-                    $(divBase).addClass("tile-danger");
-                    $(divBase).removeClass("tile-warning");
-                    $(divBase).removeClass("tile-ok");
-                    $(divBase + "-textonly").addClass("color-danger");
-                    $(divBase + "-textonly").removeClass("color-warning");
-                    $(divBase + "-hidden").removeClass("hidden");
-                } else if (sensor.health <= 99) {
-                    $(divBase).removeClass("tile-danger");
-                    $(divBase).addClass("tile-warning");
-                    $(divBase).removeClass("tile-ok");
-                    $(divBase + "-textonly").removeClass("color-danger");
-                    $(divBase + "-textonly").addClass("color-warning");
-                    $(divBase + "-hidden").removeClass("hidden");
-                } else {
-                    $(divBase).addClass("tile-ok");
-                    $(divBase).removeClass("tile-danger");
-                    $(divBase).removeClass("tile-warning");
-                    $(divBase + "-textonly").removeClass("color-danger");
-                    $(divBase + "-textonly").removeClass("color-warning");
-                    $(divBase + "-hidden").addClass("hidden");
-                }
-            }
-        });
-    });
 
 }
 
@@ -250,6 +212,8 @@ function datatile_update_websites(url)
 
 function datatile_update_snmp(url) 
 {
+    return;
+
     $.getJSON(url, function(data) {        
         $.each(data, function (allsensors, sensor) {
             if (sensor.isEnabled == true) {
