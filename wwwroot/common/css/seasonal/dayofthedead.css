@@ -1,0 +1,13 @@
+#container-top {
+    background-image: url(../../../img/seasonal/dayofthedead/bg.jpeg) !important;
+    background-size: cover;
+}
+
+#container-top .header-tile { background: rgba(0,0,0,0.5);}
+
+
+#dashboard-container-it2 {
+    background-image: url(../../../img/seasonal/dayofthedead/bg-trans.png) !important;
+    background-size: cover;
+    background-position: center;
+}
