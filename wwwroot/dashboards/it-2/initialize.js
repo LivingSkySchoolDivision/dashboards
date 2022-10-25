@@ -5,11 +5,11 @@ $(document).ready(function(){
     guests_init('guests-active-count', 'https://guests.lskysd.ca/json/');
     inout_group_init('inout-container', 'https://inoutapi.lskysd.ca/GroupMembers/5');
 
-    datatile_large_website_init("container-tilesensors-2", "GOOGLE", 1);
-    datatile_large_website_init("container-tilesensors-2", "INSIGNIA", 8);
-    datatile_large_website_init("container-tilesensors-2", "WEBPORTAL", 6);
-    datatile_large_website_init("container-tilesensors-2", "MSS", 5);
-    datatile_large_website_init("container-tilesensors-2", "EDSBY", 7);
+    datatile_large_website_init("container-tilesensors-2", "GOOGLE", 362);
+    datatile_large_website_init("container-tilesensors-2", "INSIGNIA", 361);
+    datatile_large_website_init("container-tilesensors-2", "WEBPORTAL", 57);
+    datatile_large_website_init("container-tilesensors-2", "MSS", 363);
+    datatile_large_website_init("container-tilesensors-2", "EDSBY", 359);
 
     init_days_since_tile("days_until_container", "Sasktel caused an outage", 2022, 08, 12);    
     init_days_until_tile("days_until_container", "Halloween", 2022, 10, 31);    

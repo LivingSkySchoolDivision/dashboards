@@ -25,8 +25,6 @@ function minutes_since_last_poll_ping(last_poll_value)
 
 function librenms_update()
 {
-    console.log("Updating LibreNMS data...");
-
     // Update SNMP ports
     // SNMP data comes from the specific port ID so it's data won't be in the same loop as the ping data
     // Calculating MBPS
@@ -36,6 +34,7 @@ function librenms_update()
     // ifOutOctets_rate is the other direction
     // https://librenms.lskysd.ca/api/v0/ports?columns=device_id%2Cport_id%2CifOutOctets_rate%2CifInOctets_rate
 
+    console.log("Updating LibreNMS SNMP data...");
     $.ajax({
         beforeSend: function(request) { request.setRequestHeader("X-Auth-Token", authToken);},
         dataType: "json",
@@ -83,11 +82,11 @@ function librenms_update()
 
                     // Apply warning styles to parent tile
                     // If the port hasn't been polled for more than 10 minutes, call it down
-                    if (minutes_since_last_poll <= 10) 
+                    if (minutes_since_last_poll <= 10)
                     {
                         $("#" + thisPort_ContainerID).removeClass("tile-danger");
                         $("#" + thisPort_ContainerID).addClass("tile-ok");
-                    } else {                        
+                    } else {
                         $("#" + thisPort_ContainerID).addClass("tile-danger");
                         $("#" + thisPort_ContainerID).removeClass("tile-ok");
                     }
@@ -97,6 +96,7 @@ function librenms_update()
     });
 
     // Update ping devices
+    console.log("Updating LibreNMS ping data...");
     $.ajax({
         beforeSend: function(request) { request.setRequestHeader("X-Auth-Token", authToken);},
         dataType: "json",
@@ -122,17 +122,20 @@ function librenms_update()
                     if (minutes_since_last_polled > 10)
                     {
                         $("#" + thisSensor_PotentialPingTileID).removeClass("tile-ok");
-                        $("#" + thisSensor_PotentialPingTileID).removeClass("tile-danger");
                         $("#" + thisSensor_PotentialPingTileID).removeClass("tile-warning");
-                        $("#" + thisSensor_PotentialPingTileID).addClass("tile-stale");
+                        $("#" + thisSensor_PotentialPingTileID).addClass("tile-danger");
                     } else {
                         // If the device is offline, indicate as such
                         if (device.status != true)
                         {
-                            $("#" + thisSensor_PotentialPingTileID).removeClass("tile-ok");
-                            $("#" + thisSensor_PotentialPingTileID).addClass("tile-danger");
-                        } else {
+                            $("#" + thisSensor_PotentialPingTileID).removeClass("tile-warning");
                             $("#" + thisSensor_PotentialPingTileID).removeClass("tile-danger");
+                            $("#" + thisSensor_PotentialPingTileID).removeClass("tile-ok");
+                            $("#" + thisSensor_PotentialPingTileID).addClass("tile-stale");
+                        } else {
+                            $("#" + thisSensor_PotentialPingTileID).removeClass("tile-warning");
+                            $("#" + thisSensor_PotentialPingTileID).removeClass("tile-danger");
+                            $("#" + thisSensor_PotentialPingTileID).removeClass("tile-ok");
                             $("#" + thisSensor_PotentialPingTileID).addClass("tile-ok");
                         }
                     }
@@ -198,8 +201,54 @@ function librenms_update()
         }
     });
 
-    // Update SNMP devices
+    // Update service data (http checks, etc)
+    console.log("Updating LibreNMS HTTP data...");
+    $.ajax({
+        beforeSend: function(request) { request.setRequestHeader("X-Auth-Token", authToken);},
+        dataType: "json",
+        url: librenms_API_path + "services",
+        success: function(data) {
+            $.each(data.services, function(outers, outer) {
+                $.each(outer, function(services, service) {
+                    // Update fields that need to be updated
+                    var thisSensor = "#librenms-service-" + service.device_id;
+                    var thisSensor_Icon = "#librenms-service-" + service.device_id + "-icon";
+                    var thisSensor_Address = "#librenms-service-" + service.device_id + "-address";
 
+                    
+
+                    // Update status
+                    if ($(thisSensor).length)
+                    {
+                        // Update the web address, if displayed
+                        if ($(thisSensor_Address).length)
+                        {
+                            $(thisSensor_Address).html(service.service_ip);
+                        }
+
+                        // apply styles based on status
+                        if (service.service_status == 0)
+                        {
+                            // All good
+                            $(thisSensor).removeClass("tile-danger");
+                            $(thisSensor).addClass("tile-ok");
+                            $(thisSensor_Icon).attr("src","../../img/smile.svg");
+
+                        } else {
+                            // Something wrong
+                            $(thisSensor).addClass("tile-danger");
+                            $(thisSensor).removeClass("tile-ok");
+                            $(thisSensor_Icon).attr("src","../../img/frown.svg");
+                        }
+                    }
+
+
+
+                });
+
+            });
+        }
+    });
 }
 
 function librenms_simple_ping_tile(containerid,tilename,deviceid)

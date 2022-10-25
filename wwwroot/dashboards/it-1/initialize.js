@@ -7,7 +7,7 @@ $(document).ready(function(){
 
     datatile_largesnmp_init("large_snmp_tile_container", "CORE 1", 22, true);
     datatile_largesnmp_init("large_snmp_tile_container", "CORE 2", 23, true);
-    datatile_large_website_init("large_snmp_tile_container", "INTERNET", 1);
+    datatile_large_website_init("large_snmp_tile_container", "INTERNET", 362);
    
     // Initialize school tiles 
     datatile_init("school_info_box_container", "DIV. OFFICE",1570,455, 87, [6,36,7], [1],[
