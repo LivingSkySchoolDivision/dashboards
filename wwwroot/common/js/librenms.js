@@ -150,6 +150,7 @@ function librenms_update()
                 if ($("#" + thisSensorValueID).length)
                 {
                     $("#" + thisSensorValueID).html(last_ping_roundtrip + "ms");
+                    
                     // Add health styles based on latency values
                     // PING_LATENCY_WARNING_THRESHOLD
                     if (last_ping_roundtrip < PING_LATENCY_WARNING_THRESHOLD) {

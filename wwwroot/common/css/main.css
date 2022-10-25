@@ -103,6 +103,7 @@ body { padding: 0; margin: 0; overflow: hidden; background-color: black; font-fa
 .color-ok { color: #444444;  border-color: #444444;}
 .color-warning { color: rgb(224, 108, 0);}
 .color-danger { animation: danger 1.5s infinite linear; }
+.color-stale { color: yellow}
 .color-high-utilization { color: white; }
 .color-uninitialized { color: yellow; }
 .danger-by-default {  }
