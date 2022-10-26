@@ -105,7 +105,7 @@ function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorid, tempse
         html += "<div class=\"school_info_box_data_container\" id=\"datatile-enviro-" + sensor.id + "\">";
         if (sensor.hasOwnProperty('label'))
         {
-            if (sensor.label.length != 0) 
+            if (sensor.label.length != 0)
             {
                 html += "  <div class=\"data_box\">";
                 html += "    <div class=\"data_box_label\">" + sensor.label + "</div>";
@@ -148,7 +148,7 @@ function datatile_update()
 }
 
 function minutes_since_utc_unix_timestamp(this_unix_timestamp)
-{    
+{
     var now = new Date().getTime();
     var minutes_since = Math.floor((now - this_unix_timestamp) / 1000 / 60);
     return minutes_since;
@@ -161,48 +161,57 @@ function datatile_update_environmentsensors(url)
             if (sensor.isEnabled == true) {
                 var divBase = "#datatile-enviro-" + sensor.databaseId + "-";
 
-                var minutes_since_last_update = minutes_since_utc_unix_timestamp(new Date(sensor.lastTempTimeUTC + "Z").getTime());                
+                var minutes_since_last_update = minutes_since_utc_unix_timestamp(new Date(sensor.lastTempTimeUTC + "Z").getTime());
 
-                // Remove any warning or danger styles
-                // We'll reapply them on a refresh
-                $(divBase + "temp").removeClass("color-danger");
-                $(divBase + "temp").removeClass("color-warning");
-                $(divBase + "temp").removeClass("color-stale");
-
-                if (minutes_since_last_update > 30) 
+                // Do a sanity check on the temp and humidity values.
+                // Sometimes the sensors report impossible temperatures, and these mess up the page formatting.
+                if (
+                    (sensor.lastTempCelsius < 500) &&
+                    (sensor.lastTempCelsius > -60) &&
+                    (sensor.lastHumidityPercent < 101) &&
+                    (sensor.lastHumidityPercent > -1)
+                    )
                 {
-                    $(divBase + "temp").addClass("color-stale");
-                    $(divBase + "humid").addClass("color-stale");
-                    $(divBase + "temp").html("???");
-                    $(divBase + "humid").html("???");
+                    // Remove any warning or danger styles
+                    // We'll reapply them on a refresh
+                    $(divBase + "temp").removeClass("color-danger");
+                    $(divBase + "temp").removeClass("color-warning");
+                    $(divBase + "temp").removeClass("color-stale");
 
-                } else {
-                    // Update temperature and humidity values
-                    $(divBase + "temp").html(sensor.lastTempCelsius + "&deg;C");
-                    $(divBase + "humid").html(sensor.lastHumidityPercent + "%");
+                    if (minutes_since_last_update > ENVIRONMENT_STALE_MINUTES_THRESHOLD)
+                    {
+                        $(divBase + "temp").addClass("color-stale");
+                        $(divBase + "humid").addClass("color-stale");
+                        $(divBase + "temp").html("???");
+                        $(divBase + "humid").html("???");
 
-                    // Check for temperature warnings
-                    if (sensor.lastTempCelsius > ENVIRONMENT_TEMP_DANGER_THRESHOLD) {
-                        $(divBase + "temp").addClass("color-danger");
-                    } else if (sensor.lastTempCelsius > ENVIRONMENT_TEMP_WARNING_THRESHOLD) {
-                        $(divBase + "temp").addClass("color-warning");
+                    } else {
+                        // Update temperature and humidity values
+                        $(divBase + "temp").html(sensor.lastTempCelsius + "&deg;C");
+                        $(divBase + "humid").html(sensor.lastHumidityPercent + "%");
+
+                        // Check for temperature warnings
+                        if (sensor.lastTempCelsius > ENVIRONMENT_TEMP_DANGER_THRESHOLD) {
+                            $(divBase + "temp").addClass("color-danger");
+                        } else if (sensor.lastTempCelsius > ENVIRONMENT_TEMP_WARNING_THRESHOLD) {
+                            $(divBase + "temp").addClass("color-warning");
+                        }
+
+                        // Check for high humidity warnings
+                        if (sensor.lastHumidityPercent > ENVIRONMENT_HIGH_HUMIDITY_DANGER_THRESHOLD) {
+                            $(divBase + "humid").addClass("color-danger");
+                        } else if (sensor.lastHumidityPercent > ENVIRONMENT_HIGH_HUMIDITY_WARNING_THRESHOLD) {
+                            $(divBase + "humid").addClass("color-warning");
+                        }
+
+                        // Check for low humidity warnings
+                        if (sensor.lastHumidityPercent < ENVIRONMENT_LOW_HUMIDITY_DANGER_THRESHOLD) {
+                            $(divBase + "humid").addClass("color-danger");
+                        } else if (sensor.lastHumidityPercent < ENVIRONMENT_LOW_HUMIDITY_WARNING_THRESHOLD) {
+                            $(divBase + "humid").addClass("color-warning");
+                        }
                     }
-
-                    // Check for high humidity warnings                
-                    if (sensor.lastHumidityPercent > ENVIRONMENT_HIGH_HUMIDITY_DANGER_THRESHOLD) {
-                        $(divBase + "humid").addClass("color-danger");
-                    } else if (sensor.lastHumidityPercent > ENVIRONMENT_HIGH_HUMIDITY_WARNING_THRESHOLD) {
-                        $(divBase + "humid").addClass("color-warning");
-                    }
-                    
-
-                    // Check for low humidity warnings                
-                    if (sensor.lastHumidityPercent < ENVIRONMENT_LOW_HUMIDITY_DANGER_THRESHOLD) {
-                        $(divBase + "humid").addClass("color-danger");
-                    } else if (sensor.lastHumidityPercent < ENVIRONMENT_LOW_HUMIDITY_WARNING_THRESHOLD) {
-                        $(divBase + "humid").addClass("color-warning");
-                    }
-                }
+                }                
             }
         });
     });

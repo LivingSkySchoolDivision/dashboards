@@ -57,7 +57,7 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 337}
     ]);
 
-    datatile_init("school_info_box_container", "Cando",585,675, 604,  [ { id: 33, label: "SRV"},{ id: 34, label: "ELEM"} ], [7],[
+    datatile_init("school_info_box_container", "Cando",585,675, 604,  [ { id: 33, label: "SRVR"},{ id: 34, label: "ELEM"} ], [7],[
         {"name":"AD", "id": 278},
         {"name": "Alarm", "id": 128},
         {"name": "Mac Mini", "id": 132},
