@@ -102,17 +102,26 @@ function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorid, tempse
 
 
     for (const sensor of tempsensorids) {
-        html += "<div class=\"school_info_box_data_container\" id=\"datatile-enviro-" + sensor + "\">";
+        html += "<div class=\"school_info_box_data_container\" id=\"datatile-enviro-" + sensor.id + "\">";
+        if (sensor.hasOwnProperty('label'))
+        {
+            if (sensor.label.length != 0) 
+            {
+                html += "  <div class=\"data_box\">";
+                html += "    <div class=\"data_box_label\">" + sensor.label + "</div>";
+                html += "  </div>";
+            }
+        }
         html += "  <div class=\"data_box\">";
         html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/thermometer-half.svg\"></div>";
-        html += "    <div class=\"data_box_data\" id=\"datatile-enviro-" + sensor + "-temp\">---</div>";
+        html += "    <div class=\"data_box_data\" id=\"datatile-enviro-" + sensor.id + "-temp\">---</div>";
         html += "  </div>";
         html += "  <div class=\"data_box\">";
         html += "    <div class=\"data_box_title\"><img class=\"data_indicator_icon\" src=\"../../img/humidity.svg\"></div>";
-        html += "    <div class=\"data_box_data\" id=\"datatile-enviro-" + sensor + "-humid\">---</div>";
+        html += "    <div class=\"data_box_data\" id=\"datatile-enviro-" + sensor.id + "-humid\">---</div>";
         html += "  </div>";
         html += "</div>";
-        html += "<div class=\"data_box_error hidden\" id=\"datatile-enviro-" + sensor + "-error\"></div>";
+        html += "<div class=\"data_box_error hidden\" id=\"datatile-enviro-" + sensor.id + "-error\"></div>";
     }
 
     if (extrapingsensors != null) {
