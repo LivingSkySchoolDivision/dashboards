@@ -177,6 +177,9 @@ function datatile_update_environmentsensors(url)
                     $(divBase + "temp").removeClass("color-danger");
                     $(divBase + "temp").removeClass("color-warning");
                     $(divBase + "temp").removeClass("color-stale");
+                    $(divBase + "humid").removeClass("color-danger");
+                    $(divBase + "humid").removeClass("color-warning");
+                    $(divBase + "humid").removeClass("color-stale");
 
                     if (minutes_since_last_update > ENVIRONMENT_STALE_MINUTES_THRESHOLD)
                     {
