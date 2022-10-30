@@ -30,7 +30,7 @@
 #halloween-ghost-6 { position: absolute; bottom: 25px; right: 25px; z-index: 9999; animation: ghost2 15s infinite linear; }
 
 /* Bus garage */
-#halloween-ghost-7 { position: absolute; bottom: 25px; right: 25px; z-index: 9999; animation: ghost2 15s infinite linear; }
+#halloween-ghost-7 { position: absolute; top: 155px; right: 355px; z-index: 9999; animation: ghost2 15s infinite linear; }
 
 
 .presence_user_unknown { color: white !important; opacity: 1;}
