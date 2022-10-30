@@ -14,6 +14,9 @@
     background-size: cover;
 }
 
+#halloween-cobweb-left { position: absolute; top: 0; left: 0; z-index: 9999;}
+#halloween-cobweb-right { position: absolute; top: 0; right: 0; z-index: 9999;}
+
 /* on IT-1 */
 #halloween-ghost-1 { position: absolute; top: 300px; left: 0; z-index: 9999; animation: ghost 15s infinite linear; }
 #halloween-ghost-2 { position: absolute; top: 350px; right: 25px; z-index: 9999; animation: ghost2 15s infinite linear;  }
@@ -26,8 +29,14 @@
 #halloween-ghost-5 { position: absolute; bottom: 25px; left: 25px; z-index: 9999; animation: ghost 15s infinite linear;  }
 #halloween-ghost-6 { position: absolute; bottom: 25px; right: 25px; z-index: 9999; animation: ghost2 15s infinite linear; }
 
+/* Bus garage */
+#halloween-ghost-7 { position: absolute; bottom: 25px; right: 25px; z-index: 9999; animation: ghost2 15s infinite linear; }
+
+
 .presence_user_unknown { color: white !important; opacity: 1;}
 .inout-user-name { color: white; }
+
+#dashboard-container-busgarage #container-top { background-image: url(../../../img/seasonal/halloween/jackolantern-tile.png); }
 
 @keyframes ghost {
   10%  {
