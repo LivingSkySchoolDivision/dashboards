@@ -38,6 +38,8 @@
 
 #dashboard-container-busgarage #container-top { background-image: url(../../../img/seasonal/halloween/jackolantern-tile.png); }
 
+.days-until-today { animation: rainbow_halloween 2s infinite linear !important; }
+
 @keyframes ghost {
   10%  {
     transform:scale(1) rotate(-2deg);
@@ -64,4 +66,19 @@
   90%  {
     transform:scale(1) rotate(-3deg);
     }
+}
+
+@keyframes rainbow_halloween {
+  0% {
+    color: orangered;
+    transform:scale(1) rotate(-2deg);
+  }
+  50% {
+    color: orange;
+    transform:scale(1.1) rotate(2deg);
+  }
+  100% {
+    color: orangered;
+    transform:scale(1) rotate(-2deg);
+  }
 }
