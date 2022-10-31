@@ -129,13 +129,11 @@ function librenms_update()
                         if (device.status != true)
                         {
                             $("#" + thisSensor_PotentialPingTileID).removeClass("tile-warning");
-                            $("#" + thisSensor_PotentialPingTileID).removeClass("tile-danger");
                             $("#" + thisSensor_PotentialPingTileID).removeClass("tile-ok");
-                            $("#" + thisSensor_PotentialPingTileID).addClass("tile-stale");
+                            $("#" + thisSensor_PotentialPingTileID).addClass("tile-danger");
                         } else {
                             $("#" + thisSensor_PotentialPingTileID).removeClass("tile-warning");
                             $("#" + thisSensor_PotentialPingTileID).removeClass("tile-danger");
-                            $("#" + thisSensor_PotentialPingTileID).removeClass("tile-ok");
                             $("#" + thisSensor_PotentialPingTileID).addClass("tile-ok");
                         }
                     }
