@@ -44,7 +44,7 @@ if (currentMonth == 10) {
 
 // Day of the dead
 if (currentMonth == 11) {
-    if ((currentDay >= 1) && (currentDay <= 2)) {
+    if (currentDay == 1) {
         LoadCSSFile("../../common/css/seasonal/dayofthedead.css");
         LoadJSFile("../../common/js/seasonal/dayofthedead.js");
     }
@@ -57,3 +57,4 @@ if (currentMonth == 11) {
         LoadJSFile("../../common/js/seasonal/remembranceday.js");
     }
 }
+
