@@ -20,7 +20,6 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "adsync2019", 55);
     librenms_simple_ping_tile("container-tilesensors", "ansible", 29);
     librenms_simple_ping_tile("container-tilesensors", "archive", 62);
-    librenms_simple_ping_tile("container-tilesensors", "arkime", 81);
     librenms_simple_ping_tile("container-tilesensors", "blue", 73);
     librenms_simple_ping_tile("container-tilesensors", "busplanner", 30);
     librenms_simple_ping_tile("container-tilesensors", "chunkymonkey", 71);
