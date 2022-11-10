@@ -200,6 +200,7 @@ function datatile_update_environmentsensors(url)
                             $(divBase + "temp").addClass("color-warning");
                         }
 
+                        /*
                         // Check for high humidity warnings
                         if (sensor.lastHumidityPercent > ENVIRONMENT_HIGH_HUMIDITY_DANGER_THRESHOLD) {
                             $(divBase + "humid").addClass("color-danger");
@@ -213,6 +214,7 @@ function datatile_update_environmentsensors(url)
                         } else if (sensor.lastHumidityPercent < ENVIRONMENT_LOW_HUMIDITY_WARNING_THRESHOLD) {
                             $(divBase + "humid").addClass("color-warning");
                         }
+                        */
                     }
                 }                
             }
