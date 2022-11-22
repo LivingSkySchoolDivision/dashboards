@@ -41,55 +41,44 @@ function librenms_update()
         url: librenms_API_path + "ports?columns=device_id%2Cport_id%2CifOutOctets_rate%2CifInOctets_rate%2Cpoll_time",
         success: function(data) {
             $.each(data.ports, function(ports, port) {
-                var thisPort_ContainerID = "librenms-snmp-" + port.port_id;
                 var thisPort_ContainerID_Value_In = "librenms-snmp-" + port.port_id + "-inbound";
                 var thisPort_ContainerID_Value_Out = "librenms-snmp-" + port.port_id + "-outbound";
-                if ($("#" + thisPort_ContainerID).length)
+
+                var minutes_since_last_poll = minutes_since_last_poll_snmp(port.poll_time);
+
+                // Calculate traffic inbound
+                // Calculate traffic ountbound
+                var traffic_in_kbps = Math.round((port.ifInOctets_rate * 8) / 1024);
+                var traffic_out_kbps = Math.round((port.ifOutOctets_rate * 8) / 1024);
+
+                if (traffic_in_kbps == 0) {
+                    traffic_in = "IDLE";
+                } else {
+                    if (traffic_in_kbps > 1024) {
+                        traffic_in = Math.round(traffic_in_kbps / 1024) + " Mbps";
+                    } else {
+                        traffic_in = traffic_in_kbps + " kbps";
+                    }
+                }
+                
+                if (traffic_out_kbps == 0) {
+                    traffic_out = "IDLE";
+                } else {
+                    if (traffic_out_kbps > 1024) {
+                        traffic_out = Math.round(traffic_out_kbps / 1024) + " Mbps";
+                    } else {
+                        traffic_out = traffic_out_kbps + " kbps";
+                    }
+                } 
+                
+                if ($("#" + thisPort_ContainerID_Value_In).length)
                 {
-                    var minutes_since_last_poll = minutes_since_last_poll_snmp(port.poll_time);
-
-                    // Style the tile to indicate we loaded data
-                    $("#" + thisPort_ContainerID).addClass("tile-ok");
-
-                    // Calculate traffic inbound
-                    // Calculate traffic ountbound
-                    var traffic_in_kbps = Math.round((port.ifInOctets_rate * 8) / 1024);
-                    var traffic_out_kbps = Math.round((port.ifOutOctets_rate * 8) / 1024);
-
-                    if (traffic_in_kbps == 0) {
-                        traffic_in = "IDLE";
-                    } else {
-                        if (traffic_in_kbps > 1024) {
-                            traffic_in = Math.round(traffic_in_kbps / 1024) + " Mbps";
-                        } else {
-                            traffic_in = traffic_in_kbps + " kbps";
-                        }
-                    }
-
-                    if (traffic_out_kbps == 0) {
-                        traffic_out = "IDLE";
-                    } else {
-                        if (traffic_out_kbps > 1024) {
-                            traffic_out = Math.round(traffic_out_kbps / 1024) + " Mbps";
-                        } else {
-                            traffic_out = traffic_out_kbps + " kbps";
-                        }
-                    }
-
-                    // Insert values into divs if they exist
                     $("#" + thisPort_ContainerID_Value_In).html(traffic_in);
-                    $("#" + thisPort_ContainerID_Value_Out).html(traffic_out);
+                }
 
-                    // Apply warning styles to parent tile
-                    // If the port hasn't been polled for more than 10 minutes, call it down
-                    if (minutes_since_last_poll <= 10)
-                    {
-                        $("#" + thisPort_ContainerID).removeClass("tile-danger");
-                        $("#" + thisPort_ContainerID).addClass("tile-ok");
-                    } else {
-                        $("#" + thisPort_ContainerID).addClass("tile-danger");
-                        $("#" + thisPort_ContainerID).removeClass("tile-ok");
-                    }
+                if ($("#" + thisPort_ContainerID_Value_Out).length)
+                {
+                    $("#" + thisPort_ContainerID_Value_Out).html(traffic_out);
                 }
             });
         }
@@ -113,31 +102,37 @@ function librenms_update()
                     minutes_since_last_polled = 9999;
                 }
 
-                // ********************************
-                // * Handle any ping sensor tiles *
-                // ********************************
-                var thisSensor_PotentialPingTileID = "librenms-ping-" + device.device_id
-                if ($("#" + thisSensor_PotentialPingTileID).length)
+                // **************************************
+                // * Handle any large ping sensor tiles *
+                // **************************************
+                var thisSensor_Large_Ping_Tile_ID = "librenms-large-ping-tile-" + device.device_id;
+                if ($("#" + thisSensor_Large_Ping_Tile_ID).length)
                 {
-                    if (minutes_since_last_polled > 10)
+                    // Set to default OK style to indicate that data loaded
+                    $("#" + thisSensor_Large_Ping_Tile_ID).addClass("tile-ok");
+
+                    // If status == 0, the last ping was a failure
+                    // If status == 0 AND it's been over 10 minutes since the last success, then its a bigger issue
+                    if ((minutes_since_last_polled > 10) &&(device.status == 0))
                     {
-                        $("#" + thisSensor_PotentialPingTileID).removeClass("tile-ok");
-                        $("#" + thisSensor_PotentialPingTileID).removeClass("tile-warning");
-                        $("#" + thisSensor_PotentialPingTileID).addClass("tile-danger");
+                        // Down
+                        $("#" + thisSensor_Large_Ping_Tile_ID).removeClass("tile-ok");
+                        $("#" + thisSensor_Large_Ping_Tile_ID).removeClass("tile-warning");
+                        $("#" + thisSensor_Large_Ping_Tile_ID).addClass("tile-danger");
+
+                    } else if (device.status == 0) {
+                        // Super down
+                        $("#" + thisSensor_Large_Ping_Tile_ID).removeClass("tile-ok");
+                        $("#" + thisSensor_Large_Ping_Tile_ID).removeClass("tile-danger");
+                        $("#" + thisSensor_Large_Ping_Tile_ID).addClass("tile-warning");
                     } else {
-                        // If the device is offline, indicate as such
-                        if (device.status != true)
-                        {
-                            $("#" + thisSensor_PotentialPingTileID).removeClass("tile-warning");
-                            $("#" + thisSensor_PotentialPingTileID).removeClass("tile-ok");
-                            $("#" + thisSensor_PotentialPingTileID).addClass("tile-danger");
-                        } else {
-                            $("#" + thisSensor_PotentialPingTileID).removeClass("tile-warning");
-                            $("#" + thisSensor_PotentialPingTileID).removeClass("tile-danger");
-                            $("#" + thisSensor_PotentialPingTileID).addClass("tile-ok");
-                        }
+                        // All OK
+                        $("#" + thisSensor_Large_Ping_Tile_ID).removeClass("tile-warning");
+                        $("#" + thisSensor_Large_Ping_Tile_ID).removeClass("tile-danger");
+                        $("#" + thisSensor_Large_Ping_Tile_ID).addClass("tile-ok");
                     }
                 }
+
 
                 // *******************************************
                 // * Handle ping sensor tiles that show data *
@@ -148,7 +143,7 @@ function librenms_update()
                 if ($("#" + thisSensorValueID).length)
                 {
                     $("#" + thisSensorValueID).html(last_ping_roundtrip + "ms");
-                    
+
                     // Add health styles based on latency values
                     // PING_LATENCY_WARNING_THRESHOLD
                     if (last_ping_roundtrip < PING_LATENCY_WARNING_THRESHOLD) {
@@ -163,7 +158,6 @@ function librenms_update()
                 // ************************************************************
                 // * Handle ping sensor inline names that show up/down status *
                 // ************************************************************
-
                 var thisSensorTextOnlyID = "librenms-ping-" + device.device_id + "-textonly";
                 if ($("#" + thisSensorTextOnlyID).length)
                 {
@@ -174,26 +168,23 @@ function librenms_update()
                     // Show warning if the ping is really high
                     // Show error if it hasn't responded in 5+ minutes
                     // Hide otherwise
-                    if (minutes_since_last_polled > 10) {
+
+                    if ((minutes_since_last_polled > 10) && (device.status == 0)) {
                         $("#" + thisSensorTextOnlyID).removeClass("hidden");
-                        $("#" + thisSensorTextOnlyID).removeClass("color-warning");
                         $("#" + thisSensorTextOnlyID).removeClass("color-ok");
+                        $("#" + thisSensorTextOnlyID).removeClass("color-warning");
                         $("#" + thisSensorTextOnlyID).addClass("color-danger");
-                    } else if (last_ping_roundtrip > PING_LATENCY_WARNING_THRESHOLD) {
+                    } else if (device.status == 0) {
                         $("#" + thisSensorTextOnlyID).removeClass("hidden");
-                        $("#" + thisSensorTextOnlyID).addClass("color-warning");
+                        $("#" + thisSensorTextOnlyID).removeClass("color-danger");
                         $("#" + thisSensorTextOnlyID).removeClass("color-ok");
-                        $("#" + thisSensorTextOnlyID).removeClass("color-danger");
+                        $("#" + thisSensorTextOnlyID).addClass("color-warning");                    
                     } else {
-                        $("#" + thisSensorTextOnlyID).addClass("hidden");
                         $("#" + thisSensorTextOnlyID).removeClass("color-warning");
-                        $("#" + thisSensorTextOnlyID).addClass("color-ok");
                         $("#" + thisSensorTextOnlyID).removeClass("color-danger");
+                        $("#" + thisSensorTextOnlyID).addClass("color-ok");
+                        $("#" + thisSensorTextOnlyID).addClass("hidden");
                     }
-
-                    // Add health styles based on latency values
-                    // PING_LATENCY_WARNING_THRESHOLD
-
                 }
 
             });
@@ -214,7 +205,7 @@ function librenms_update()
                     var thisSensor_Icon = "#librenms-service-" + service.device_id + "-icon";
                     var thisSensor_Address = "#librenms-service-" + service.device_id + "-address";
 
-                    
+
 
                     // Update status
                     if ($(thisSensor).length)

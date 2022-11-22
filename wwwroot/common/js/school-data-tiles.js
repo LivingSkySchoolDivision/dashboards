@@ -11,10 +11,10 @@ function datatile_small_init(containerid, tilename, pingsensorid)
     $('#' + containerid).append(html);
 }
 
-function datatile_largesnmp_init(containerid, tilename, portid, swap_in_and_out)
+function datatile_largesnmp_init(containerid, tilename, portid, pingid, swap_in_and_out)
 {
     var html = "";
-    html += "<div class=\"datatile datatile_largesnmp\" id=\"librenms-snmp-" + portid + "\">";
+    html += "<div class=\"datatile datatile_largesnmp tile-ok\">";
     html += "  <div class=\"datatile_largesnmp_name\">" + tilename + "</div>";
     html += "<div id=\"datatile-snmp-" + portid + "-error\"></div>";
     html += "<div class=\"datatile_largesnmp_datacontainer\" id=\"librenms-snmp-" + portid + "-container\">";
@@ -74,9 +74,9 @@ function datatile_large_website_init(containerid, tilename, websitesensorid)
 }
 
 
-function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorid, tempsensorids, shownpingsensors, extrapingsensors) {
+function datatile_init(containerid, schoolname, xpos, ypos, snmpsensorid, mainpingsensorid, tempsensorids, shownpingsensors, extrapingsensors) {
     var html = "";
-    html += "<div class=\"datatile school_info_box\" style=\"top: " + ypos + "px; left: " + xpos + "px;\" id=\"librenms-snmp-" + snmpsensorid + "\">";
+    html += "<div class=\"datatile school_info_box\" style=\"top: " + ypos + "px; left: " + xpos + "px;\" id=\"librenms-large-ping-tile-" + mainpingsensorid + "\">";
     html += "  <div class=\"school_name\">" + schoolname + "</div>";
 
     for (const sensor of shownpingsensors) {
