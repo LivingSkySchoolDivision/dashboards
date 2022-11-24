@@ -187,6 +187,37 @@ function librenms_update()
                     }
                 }
 
+
+
+                // ************************************************************
+                // * Handle ping sensor tiles that only show status colour    *
+                // ************************************************************
+                var thisSensorSimpleTileID = "librenms-ping-" + device.device_id ;
+                if ($("#" + thisSensorSimpleTileID).length)
+                {
+                    $("#" + thisSensorSimpleTileID).removeClass("color-uninitialized");
+                    // This type of data box is just the name of the item with no ping value
+                    // It changes color if there are issues
+
+                    // Show warning if the ping is really high
+                    // Show error if it hasn't responded in 5+ minutes
+                    // Hide otherwise
+
+                    if ((minutes_since_last_polled > 10) && (device.status == 0)) {
+                        $("#" + thisSensorSimpleTileID).removeClass("color-ok");
+                        $("#" + thisSensorSimpleTileID).removeClass("color-warning");
+                        $("#" + thisSensorSimpleTileID).addClass("color-danger");
+                    } else if (device.status == 0) {
+                        $("#" + thisSensorSimpleTileID).removeClass("color-danger");
+                        $("#" + thisSensorSimpleTileID).removeClass("color-ok");
+                        $("#" + thisSensorSimpleTileID).addClass("color-warning");                    
+                    } else {
+                        $("#" + thisSensorSimpleTileID).removeClass("color-warning");
+                        $("#" + thisSensorSimpleTileID).removeClass("color-danger");
+                        $("#" + thisSensorSimpleTileID).addClass("color-ok");
+                    }
+                }
+
             });
         }
     });
