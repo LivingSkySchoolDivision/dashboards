@@ -23,7 +23,6 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "blue", 73);
     librenms_simple_ping_tile("container-tilesensors", "busplanner", 30);
     librenms_simple_ping_tile("container-tilesensors", "chunkymonkey", 71);
-    librenms_simple_ping_tile("container-tilesensors", "CSSM", 48);
     librenms_simple_ping_tile("container-tilesensors", "dc-backups", 28);
     librenms_simple_ping_tile("container-tilesensors", "dc-kube-ext-lb", 108);
     librenms_simple_ping_tile("container-tilesensors", "dc-kube-ext-m", 109);
