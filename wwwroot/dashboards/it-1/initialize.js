@@ -11,7 +11,6 @@ $(document).ready(function(){
    
     // Initialize school tiles 
     datatile_init("school_info_box_container", "DIV. OFFICE",1570,455, 87, 1, [{ id: 6, label: "BUSG" },{ id: 36, label: "SRVR"},{ id: 7, label: "LS"}], [1],[
-        {"name":"AD", "id": 3},
         {"name": "DEPLOY-DO", "id": 32}, 
         {"name": "Mac Mini", "id": 31}, 
         {"name": "SCCM", "id": 33}, 
@@ -34,7 +33,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "BCS", 1350, 700, 364, 5, [{ id: 1}], [5],[
-        {"name":"AD", "id": 276},
         {"name": "Alarm", "id": 116},
         {"name": "Mac Mini", "id": 121},
         {"name": "IDRAC", "id": 118},
@@ -46,7 +44,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "Bready",1140,145, 328, 6,  [{ id: 2}], [6],[
-        {"name":"AD", "id": 277},
         {"name": "Alarm", "id": 122},
         {"name": "Mac Mini", "id": 127},
         {"name": "IDRAC", "id": 124},
@@ -58,7 +55,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "Cando",585,675, 604, 7, [ { id: 33, label: "SRVR"},{ id: 34, label: "ELEM"} ], [7],[
-        {"name":"AD", "id": 278},
         {"name": "Alarm", "id": 128},
         {"name": "Mac Mini", "id": 132},
         {"name": "IDRAC", "id": 130},
@@ -70,7 +66,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "CKCS",222,330, 621, 8, [{ id: 4, label: "SRVR"},{ id: 5, label: "STOR"}], [8],[
-        {"name":"AD", "id": 279},
         {"name": "Alarm", "id": 134},
         {"name": "Mac Mini", "id": 137},
         {"name": "IDRAC", "id": 135},
@@ -82,7 +77,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "Connaught",1370,410, 246, 9, [{ id: 3}], [9],[
-        {"name":"AD", "id": 280},
         {"name": "Alarm", "id": 138},
         {"name": "Mac Mini", "id": 144},
         {"name": "IDRAC", "id": 140},
@@ -94,7 +88,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "Hafford",801,403, 1935, 10, [{ id: 35}], [10],[
-        {"name":"AD", "id": 281},
         {"name": "Alarm", "id": 146},
         {"name": "Mac Mini", "id": 149},
         {"name": "IDRAC", "id": 147},
@@ -105,7 +98,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "HCES",898,197, 2059, 11, [{ id: 8}], [11],[
-        {"name":"AD", "id": 282},
         {"name": "Alarm", "id": 150},
         {"name": "Mac Mini", "id": 151},
         {"name": "IDRAC", "id": 153},
@@ -116,7 +108,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "Heritage", 1558, 700, 1563, 12, [{ id: 9}], [12],[
-        {"name":"AD", "id": 159},
         {"name": "Mac Mini", "id": 158},
         {"name": "IDRAC", "id": 156},
         {"name": "SCCM", "id": 157},
@@ -126,7 +117,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "Kerrobert",348,788, 1974, 13, [{ id: 10}], [13],[
-        {"name":"AD", "id": 283},
         {"name": "Alarm", "id": 160},
         {"name": "Mac Mini", "id": 164},
         {"name": "IDRAC", "id": 162},
@@ -137,7 +127,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "Lawrence",1330,80, 522, 4, [{ id: 11}], [4],[
-        {"name":"AD", "id": 284},
         {"name": "Alarm", "id": 165},
         {"name": "Mac Mini", "id": 170},
         {"name": "IDRAC", "id": 167},
@@ -149,7 +138,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "Leoville",630,30, 2987, 15, [{ id: 12}], [15],[
-        {"name":"AD", "id": 285},
         {"name": "Alarm", "id": 171},
         {"name": "Mac Mini", "id": 175},
         {"name": "IDRAC", "id": 173},
@@ -160,7 +148,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "Luseland",50,690, 1873, 14, [{ id: 13}], [14],[
-        {"name":"AD", "id": 286},
         {"name": "Alarm", "id": 176},
         {"name": "Mac Mini", "id": 180},
         {"name": "IDRAC", "id": 178},
@@ -171,7 +158,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "Macklin",16,512, 1779, 16, [{ id: 14, label: "SRVR"},{ id: 15, label: "HIGHS"}], [16],[
-        {"name":"AD", "id": 287},
         {"name": "Alarm", "id": 181},
         {"name": "Mac Mini", "id": 185},
         {"name": "IDRAC", "id": 183},
@@ -183,7 +169,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "Maymont",715,530, 1519, 18, [{ id: 32}], [18],[
-        {"name":"AD", "id": 288},
         {"name": "Alarm", "id": 186},
         {"name": "Mac Mini", "id": 190},
         {"name": "IDRAC", "id": 188},
@@ -194,7 +179,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "McKitrick",1330,235, 1394, 19, [{ id: 16}], [19],[
-        {"name":"AD", "id": 289},
         {"name": "Alarm", "id": 191},
         {"name": "Mac Mini", "id": 196},
         {"name": "IDRAC", "id": 193},
@@ -206,7 +190,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "McLurg",478,345, 2111, 20, [{ id: 17, label: "ELEC"},{ id: 18, label: "LAB"}], [20],[
-        {"name":"AD", "id": 290},
         {"name": "Alarm", "id": 197},
         {"name": "Mac Mini", "id": 201},
         {"name": "IDRAC", "id": 199},
@@ -218,7 +201,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "Medstead",500,188, 1362, 21, [{ id: 19}], [21],[
-        {"name":"AD", "id": 291},
         {"name": "Alarm", "id": 202},
         {"name": "Mac Mini", "id": 206},
         {"name": "IDRAC", "id": 204},
@@ -229,7 +211,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "NBCHS",1540,25, 1301, 17, [{ id: 37, label: "SRVR"},{ id: 21, label: "R206"},{ id: 22, label: "CHEM"},{ id: 23, label: "TELE"},{ id: 24, label: "MAINT"}], [17],[
-        {"name":"AD", "id": 292},
         {"name": "Alarm", "id": 207},
         {"name": "Mac Mini", "id": 212},
         {"name": "IDRAC", "id": 209},
@@ -245,7 +226,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "NCES",484,502, 2593, 22, [{ id: 20}], [22],[
-        {"name":"AD", "id": 293},
         {"name": "Alarm", "id": 213},
         {"name": "Mac Mini", "id": 217},        
         {"name": "IDRAC", "id": 215},
@@ -256,7 +236,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "SHS",700,197, 2655, 23, [{ id: 25, label: "SRVR"},{ id: 26, label: "LAB"}], [23],[
-        {"name":"AD", "id": 294},
         {"name": "Alarm", "id": 253},
         {"name": "Mac Mini", "id": 258},
         {"name": "IDRAC", "id": 255},
@@ -268,7 +247,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "St. Vital",1115,700, 2343, 26, [{ id: 27, label: "LIB"},{ id: 28, label: "R104"}], [26],[
-        {"name":"AD", "id": 295},
         {"name": "Alarm", "id": 259},
         {"name": "Mac Mini", "id": 264},
         {"name": "IDRAC", "id": 261},
@@ -281,7 +259,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "UCHS",265,508, 2531, 24, [{ id: 29, label: "SRVR"},{ id: 30, label: "BOIL"}], [24],[
-        {"name":"AD", "id": 296},
         {"name": "Alarm", "id": 270},
         {"name": "Mac Mini", "id": 269},
         {"name": "IDRAC", "id": 267},
@@ -293,7 +270,6 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "UPS", 265, 663, 2405, 25, [{ id: 31}], [25],[
-        {"name":"AD", "id": 297},
         {"name": "Alarm", "id": 271},
         {"name": "Mac Mini", "id": 275},
         {"name": "IDRAC", "id": 273},
