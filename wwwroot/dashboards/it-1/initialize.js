@@ -113,7 +113,9 @@ $(document).ready(function(){
         {"name": "SCCM", "id": 157},
         {"name": "ESXI", "id": 155},
         {"name": "PiEnvMon01", "id": 227},
-        {"name": "Informacast", "id": 345}
+        {"name": "Informacast", "id": 345},
+        {"name": "QB-HER", "id": 386},
+        {"name": "HCS-SEC-2", "id": 387}
     ]);
 
     datatile_init("school_info_box_container", "Kerrobert",348,788, 1974, 13, [{ id: 10}], [13],[
