@@ -10,10 +10,9 @@ $(document).ready(function(){
     datatile_large_website_init("container-tilesensors-2", "WEBPORTAL", 57);
     datatile_large_website_init("container-tilesensors-2", "MSS", 363);
     datatile_large_website_init("container-tilesensors-2", "EDSBY", 359);
+    datatile_large_website_init("container-tilesensors-2", "GRAYLOG", 388);
 
-    init_days_since_tile("days_until_container", "Sasktel caused an outage", 2022, 08, 12);    
-    init_days_until_tile("days_until_container", "Next PD Day", 2022, 11, 28);    
-    init_days_until_tile("days_until_container", "Christmas break", 2022, 12, 23);
+    init_days_since_tile("days_until_container", "Sasktel caused an outage", 2022, 11, 28);
     init_days_until_tile("days_until_container", "SSL cert expires", 2023, 03, 25);
     init_days_until_tile("days_until_container", "Last day of school", 2023, 06, 28);
     
@@ -57,6 +56,7 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "docker-registry", 301);
     librenms_simple_ping_tile("container-tilesensors", "doors2019", 65);
     librenms_simple_ping_tile("container-tilesensors", "doorsws", 64);
+    librenms_simple_ping_tile("container-tilesensors", "graylog", 388);
     librenms_simple_ping_tile("container-tilesensors", "jenkins", 56);
     librenms_simple_ping_tile("container-tilesensors", "JingleKeys", 77);
     librenms_simple_ping_tile("container-tilesensors", "kube-storage-1", 112);
@@ -66,7 +66,7 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "kwiktag", 66);
     librenms_simple_ping_tile("container-tilesensors", "lemons", 72);
     librenms_simple_ping_tile("container-tilesensors", "librenms", 334);
-    librenms_simple_ping_tile("container-tilesensors", "limes", 76);
+    librenms_simple_ping_tile("container-tilesensors", "limes", 76);    
     librenms_simple_ping_tile("container-tilesensors", "mongo", 59);
     librenms_simple_ping_tile("container-tilesensors", "navision", 67);
     librenms_simple_ping_tile("container-tilesensors", "ntp", 51);
