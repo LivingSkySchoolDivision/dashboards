@@ -191,14 +191,13 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 351}
     ]);
 
-    datatile_init("school_info_box_container", "McLurg",478,345, 2111, 20, [{ id: 17, label: "ELEC"},{ id: 18, label: "LAB"}], [20],[
+    datatile_init("school_info_box_container", "McLurg",478,345, 2111, 20, [{ id: 17, label: "ELEC"}], [20],[
         {"name": "Alarm", "id": 197},
         {"name": "Mac Mini", "id": 201},
         {"name": "IDRAC", "id": 199},
         {"name": "SCCM", "id": 200},
         {"name": "ESXI", "id": 198},
         {"name": "Pi-Electrical", "id": 236},
-        {"name": "Pi-CompLab", "id": 237},
         {"name": "Informacast", "id": 352}
     ]);
 
