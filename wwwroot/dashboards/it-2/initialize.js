@@ -108,7 +108,6 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "webportal", 57);
     librenms_simple_ping_tile("container-tilesensors", "WTS2-DO", 70);
     librenms_simple_ping_tile("container-tilesensors", "xibo", 52);   
-    librenms_simple_ping_tile("container-tilesensors", "zabbix", 82);
 
     datatile_update();
     librenms_update();
