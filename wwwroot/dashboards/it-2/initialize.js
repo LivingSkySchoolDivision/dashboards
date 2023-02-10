@@ -43,6 +43,7 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "do-kube-int-m", 105);
     librenms_simple_ping_tile("container-tilesensors", "do-kube-int-n1", 106);
     librenms_simple_ping_tile("container-tilesensors", "do-kube-int-n2", 107);
+    librenms_simple_ping_tile("container-tilesensors", "do-kube-int-storage", 389);
     librenms_simple_ping_tile("container-tilesensors", "do-nutanix-1", 85);
     librenms_simple_ping_tile("container-tilesensors", "do-nutanix-2", 86);
     librenms_simple_ping_tile("container-tilesensors", "do-nutanix-3", 87);
@@ -59,10 +60,6 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "graylog", 388);
     librenms_simple_ping_tile("container-tilesensors", "jenkins", 56);
     librenms_simple_ping_tile("container-tilesensors", "JingleKeys", 77);
-    librenms_simple_ping_tile("container-tilesensors", "kube-storage-1", 112);
-    librenms_simple_ping_tile("container-tilesensors", "kube-storage-2", 113);
-    librenms_simple_ping_tile("container-tilesensors", "kube-storage-3", 114);
-    librenms_simple_ping_tile("container-tilesensors", "kube-storage-4", 115);
     librenms_simple_ping_tile("container-tilesensors", "kwiktag", 66);
     librenms_simple_ping_tile("container-tilesensors", "lemons", 72);
     librenms_simple_ping_tile("container-tilesensors", "librenms", 334);
