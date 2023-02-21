@@ -93,14 +93,18 @@ function get_days_until(year, month, day) {
     return Math.floor(difference_in_days) + 1;
 }
 
-function init_days_until_tile(containerdiv, message, year, month, day)
+function init_days_until_tile(containerdiv, preamble, message, year, month, day)
 {
     var day_value = get_days_until(year, month, day);
     if (day_value >= 0)
     {
         var widgethtml = "";
         widgethtml += "<div class=\"days-until-tile\" id=\"days_until_tile_"+year+"_"+month+"_"+day+"\">";
-        widgethtml += "<div class=\"days-until-tile-label\">SLEEPS UNTIL</div>";
+        if (null == preamble) {
+            widgethtml += "<div class=\"days-until-tile-label\">SLEEPS UNTIL</div>";
+        } else {
+            widgethtml += "<div class=\"days-until-tile-label\">"+preamble+"</div>";
+        }
         widgethtml += "<div class=\"days-until-tile-text\">"+message+"</div>";
         widgethtml += "<div class=\"days-until-tile-day\">" + day_value + "</div>";
         widgethtml += "<div class=\"days-until-tile-date\">"+monthNames[month-1]+" "+ day+", "+year+"</div>";
@@ -112,14 +116,17 @@ function init_days_until_tile(containerdiv, message, year, month, day)
         }
     }
 }
-
-function init_days_since_tile(containerdiv, message, year, month, day)
+function init_days_since_tile(containerdiv, preamble, message, year, month, day)
 {
     var day_value = get_days_since(year, month, day);
     var widgethtml = "";
     widgethtml += "<div class=\"days-until-tile\" id=\"days_until_tile_"+year+"_"+month+"_"+day+"\">";
     widgethtml += "<div>";
-    widgethtml += "<div class=\"days-until-tile-label\">DAYS SINCE</div>";
+    if (null == preamble) {
+        widgethtml += "<div class=\"days-until-tile-label\">DAYS SINCE</div>";
+    } else {
+        widgethtml += "<div class=\"days-until-tile-label\">"+preamble+"</div>";
+    }
     widgethtml += "<div class=\"days-until-tile-text\">"+message+"</div>";
     widgethtml += "</div>";
     widgethtml += "<div class=\"days-until-tile-day\">" + day_value + "</div>";
