@@ -12,7 +12,6 @@ $(document).ready(function(){
     datatile_large_website_init("container-tilesensors-2", "EDSBY", 359);
     datatile_large_website_init("container-tilesensors-2", "GRAYLOG", 388);
 
-    init_days_since_tile("days_until_container", "DAYS OF", "wasted firewall warranty", 2022, 07, 1);
     init_days_since_tile("days_until_container", "DAYS SINCE", "Sasktel caused an outage", 2023, 01, 31);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "IT Job ad closes", 2023, 03, 2);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2023, 03, 25);
