@@ -13,9 +13,9 @@ $(document).ready(function(){
     datatile_large_website_init("container-tilesensors-2", "GRAYLOG", 388);
 
     init_days_since_tile("days_until_container", "DAYS SINCE", "Sasktel caused an outage", 2023, 01, 31);
-    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2023, 03, 25);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Last day of school", 2023, 06, 28);
-
+    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2024, 01, 29);
+    
     librenms_simple_ping_tile("container-tilesensors", "adsync2019", 55);
     librenms_simple_ping_tile("container-tilesensors", "ansible", 29);
     librenms_simple_ping_tile("container-tilesensors", "archive", 62);
