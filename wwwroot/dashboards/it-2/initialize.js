@@ -16,6 +16,8 @@ $(document).ready(function(){
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Last day of school", 2023, 06, 28);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2024, 01, 29);
     
+    librenms_simple_ping_tile("container-tilesensors", "aapc-1", 393);
+    librenms_simple_ping_tile("container-tilesensors", "aapc-2", 394);
     librenms_simple_ping_tile("container-tilesensors", "adsync2019", 55);
     librenms_simple_ping_tile("container-tilesensors", "ansible", 29);
     librenms_simple_ping_tile("container-tilesensors", "archive", 62);
