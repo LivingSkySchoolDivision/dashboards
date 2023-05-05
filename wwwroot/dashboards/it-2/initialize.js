@@ -62,7 +62,6 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "doors2019", 65);
     librenms_simple_ping_tile("container-tilesensors", "doorsws", 64);
     librenms_simple_ping_tile("container-tilesensors", "graylog", 388);
-    librenms_simple_ping_tile("container-tilesensors", "jenkins", 56);
     librenms_simple_ping_tile("container-tilesensors", "JingleKeys", 77);
     librenms_simple_ping_tile("container-tilesensors", "kwiktag", 66);
     librenms_simple_ping_tile("container-tilesensors", "lemons", 72);
