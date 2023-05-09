@@ -57,8 +57,7 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "do-tv-2", 40);
     librenms_simple_ping_tile("container-tilesensors", "do-tv-3", 41);
     librenms_simple_ping_tile("container-tilesensors", "do-tv-4", 42);
-    librenms_simple_ping_tile("container-tilesensors", "do3dprinter", 43);
-    librenms_simple_ping_tile("container-tilesensors", "docker-registry", 301);
+    librenms_simple_ping_tile("container-tilesensors", "do3dprinter", 43);    
     librenms_simple_ping_tile("container-tilesensors", "doors2019", 65);
     librenms_simple_ping_tile("container-tilesensors", "doorsws", 64);
     librenms_simple_ping_tile("container-tilesensors", "graylog", 388);
