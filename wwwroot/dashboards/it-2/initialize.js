@@ -13,8 +13,8 @@ $(document).ready(function(){
     datatile_large_website_init("container-tilesensors-2", "GRAYLOG", 388);
 
     init_days_since_tile("days_until_container", "DAYS SINCE", "Sasktel caused an outage", 2023, 01, 31);
-    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Last day of school", 2023, 06, 28);
-    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "2023/2024 School year", 2023, 09, 5);
+    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Christmas Break", 2023, 12, 23);
+    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Last day of school", 2024, 06, 26);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2024, 01, 29);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Win10 EOS", 2025, 10, 14);
     
