@@ -26,6 +26,7 @@ $(document).ready(function(){
         {"name": "HALL-TV-2", "id": 40},
         {"name": "HALL-TV-3", "id": 41},
         {"name": "HALL-TV-4", "id": 42},
+        {"name": "HALL-TV-5", "id": 395},
         {"name": "do3dprinter", "id": 43},
         {"name": "Informacast", "id": 340}
 
