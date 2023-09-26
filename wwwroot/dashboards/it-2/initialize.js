@@ -17,6 +17,7 @@ $(document).ready(function(){
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Last day of school", 2024, 06, 26);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2024, 01, 29);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Win10 EOS", 2025, 10, 14);
+    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Navision EOL", 2026, 10, 31);
     
     librenms_simple_ping_tile("container-tilesensors", "aapc-1", 393);
     librenms_simple_ping_tile("container-tilesensors", "aapc-2", 394);
