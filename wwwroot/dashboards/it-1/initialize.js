@@ -342,7 +342,6 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 358},
         {"name": "ROUTER", "id": 25},
         {"name": "sw250", "id": 332},
-        {"name": "sw251", "id": 271},
         {"name": "sw253", "id": 416}
     ]);
 
