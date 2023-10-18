@@ -33,8 +33,7 @@ $(document).ready(function(){
         {"name": "sw248", "id": 374},
         {"name": "sw252", "id": 375},
         {"name": "sw253", "id": 376},
-        {"name": "ROUTER", "id": 1},
-        {"name": "DEPLOY", "id": 32}
+        {"name": "ROUTER", "id": 1}
     ]);
 
     datatile_init("school_info_box_container", "BCS", 1350, 700, 364, 5, [{ id: 1}], [5],[
@@ -341,9 +340,10 @@ $(document).ready(function(){
         {"name": "ESXI", "id": 272},
         {"name": "PiEnvMon01", "id": 252},
         {"name": "Informacast", "id": 358},
-        {"name": "ROUTER", "id": 24},
-        {"name": "sw252", "id": 399},
-        {"name": "sw253", "id": 398}
+        {"name": "ROUTER", "id": 25},
+        {"name": "sw250", "id": 332},
+        {"name": "sw251", "id": 271},
+        {"name": "sw253", "id": 416}
     ]);
 
     datatile_update();
