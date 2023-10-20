@@ -252,7 +252,7 @@ $(document).ready(function(){
         {"name": "sw253", "id": 409}
     ]);
 
-    datatile_init("school_info_box_container", "NBCHS",1540,25, 1301, 17, [{ id: 37, label: "SRVR"},{ id: 21, label: "R206"},{ id: 22, label: "CHEM"},{ id: 23, label: "TELE"},{ id: 24, label: "MAINT"},{ id: 38, label: "VIRTLAB"}], [17],[
+    datatile_init("school_info_box_container", "NBCHS",1540,25, 1301, 17, [{ id: 37, label: "SRVR"},{ id: 21, label: "R206"},{ id: 22, label: "CHEM"},{ id: 23, label: "TELE"},{ id: 24, label: "MAINT"},{ id: 38, label: "VLAB"}], [17],[
         {"name": "Alarm", "id": 207},
         {"name": "IDRAC", "id": 209},
         {"name": "SCCM", "id": 210},
