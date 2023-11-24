@@ -110,6 +110,7 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "Warrant", 78);
     librenms_simple_ping_tile("container-tilesensors", "web-internal", 79);
     librenms_simple_ping_tile("container-tilesensors", "webportal", 57);
+    librenms_simple_ping_tile("container-tilesensors", "WLCL5520", 437);
     librenms_simple_ping_tile("container-tilesensors", "WTS2-DO", 70);
     librenms_simple_ping_tile("container-tilesensors", "xibo", 52);
 
