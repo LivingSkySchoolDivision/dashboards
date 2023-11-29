@@ -1,0 +1,36 @@
+
+#dashboard-container-it1 {
+    background-image: url(../../../img/seasonal/xmas/bg1.jpg) !important;
+    background-size: cover;
+}
+
+#dashboard-container-it2 {
+    background-image: url(../../../img/seasonal/xmas/bg7.jpg) !important;
+    background-size: cover;
+}
+
+#dashboard-container-studsrv {
+    background-image: url(../../../img/seasonal/xmas/bg5.jpg) !important;
+    background-size: cover;
+}
+
+#dashboard-container-busgarage #container-top { background-image: url(../../../img/seasonal/xmas/candycane.gif); }
+#dashboard-container-busgarage #container-top .tile #current-time #time-second { color: white; opacity: 1; }
+#dashboard-container-busgarage #container-top .tile { background: rgba(0,0,0,0); color: black;  
+    text-shadow:
+       3px 3px 0 #fff,
+       -3px -3px 0 #fff,  
+       3px -3px 0 #fff,
+       -3px 3px 0 #fff,
+       3px 3px 0 #fff;
+    }
+#dashboard-container-busgarage #container-top .tile #time-second { color: black !important;  }
+
+
+.presence_user_unknown { color: white !important; opacity: 1;}
+.inout-user-name { color: white; }
+
+
+#container-top .header-tile { background: rgba(0,0,0,0.5);}
+
+#dashboard-container-busgarage  { background-color: #002200;}
