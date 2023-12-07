@@ -300,7 +300,6 @@ $(document).ready(function(){
         {"name": "ROUTER", "id": 23},
         {"name": "sw253", "id": 405},
         {"name": "sw252", "id": 406},
-        {"name": "sw251", "id": 407},
         {"name": "sw250", "id": 372},
         {"name": "sw248", "id": 330}
     ]);
