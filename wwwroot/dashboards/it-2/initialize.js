@@ -63,8 +63,8 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "doors2019", 65);
     librenms_simple_ping_tile("container-tilesensors", "doorsws", 64);
     librenms_simple_ping_tile("container-tilesensors", "firepower", 310);
-    librenms_simple_ping_tile("container-tilesensors", "firewall-01", 433);
-    librenms_simple_ping_tile("container-tilesensors", "firewall-02", 434);
+    librenms_simple_ping_tile("container-tilesensors", "firewall-01", 443);
+    librenms_simple_ping_tile("container-tilesensors", "firewall-02", 444);
     librenms_simple_ping_tile("container-tilesensors", "graylog", 388);
     librenms_simple_ping_tile("container-tilesensors", "JingleKeys", 77);
     librenms_simple_ping_tile("container-tilesensors", "kwiktag", 66);
