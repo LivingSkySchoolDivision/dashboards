@@ -136,7 +136,6 @@ $(document).ready(function(){
         {"name": "QB-HER", "id": 386},
         {"name": "HCS-SEC-2", "id": 387},
         {"name": "ROUTER", "id": 12},
-        {"name": "sw252", "id": 427},
         {"name": "sw253", "id": 428}
     ]);
 
