@@ -77,6 +77,7 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "ovpn - monday", 68);
     librenms_simple_ping_tile("container-tilesensors", "papercut ", 49);
     librenms_simple_ping_tile("container-tilesensors", "prismcentral", 83);
+    librenms_simple_ping_tile("container-tilesensors", "pienvmon-virt-01", 445);
     librenms_simple_ping_tile("container-tilesensors", "public-vlan-dns", 335);
     librenms_simple_ping_tile("container-tilesensors", "radius1", 50);
     librenms_simple_ping_tile("container-tilesensors", "redirectomatic", 75);
