@@ -11,7 +11,7 @@ function datatile_small_init(containerid, tilename, pingsensorid)
     $('#' + containerid).append(html);
 }
 
-function datatile_largesnmp_init(containerid, tilename, portid, pingid, swap_in_and_out)
+function datatile_largesnmp_init(containerid, tilename, portid, swap_in_and_out)
 {
     var html = "";
     html += "<div class=\"datatile datatile_largesnmp tile-ok\">";

@@ -5,8 +5,10 @@ $(document).ready(function(){
     weather_init(WEATHER_UPDATE_URL);
     time_init(DATE_AND_TIME_URL);
 
-    datatile_largesnmp_init("large_snmp_tile_container", "CORE 1", 22, 2, true);
-    datatile_largesnmp_init("large_snmp_tile_container", "CORE 2", 23, 2, true);
+    // function datatile_largesnmp_init(containerid, tilename, portid, swap_in_and_out)
+    datatile_largesnmp_init("large_snmp_tile_container", "INTERSITE-RURAL", 13475, false);
+    datatile_largesnmp_init("large_snmp_tile_container", "INTERSITE-CITY", 12793, false);   
+    datatile_largesnmp_init("large_snmp_tile_container", "INTERNET", 13480, false); // Port on outside switch
     datatile_large_website_init("large_snmp_tile_container", "INTERNET", 362);
    
     // Initialize school tiles 
