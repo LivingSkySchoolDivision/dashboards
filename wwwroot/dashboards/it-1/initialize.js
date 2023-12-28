@@ -86,7 +86,6 @@ $(document).ready(function(){
         {"name": "Pi-AcrossFromOffice", "id": 223},
         {"name": "Informacast", "id": 342},
         {"name": "ROUTER", "id": 8},
-        {"name": "sw248", "id": 314},
         {"name": "sw251", "id": 431},
         {"name": "sw252", "id": 401},
         {"name": "sw253", "id": 400}
