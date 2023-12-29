@@ -61,7 +61,7 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "do3dprinter", 43);    
     librenms_simple_ping_tile("container-tilesensors", "doors2019", 65);
     librenms_simple_ping_tile("container-tilesensors", "doorsws", 64);
-    librenms_simple_ping_tile("container-tilesensors", "firepower", 310);
+    librenms_simple_ping_tile("container-tilesensors", "firepower FMC", 448);
     librenms_simple_ping_tile("container-tilesensors", "firepower-01", 443);
     librenms_simple_ping_tile("container-tilesensors", "firepower-02", 444);
     librenms_simple_ping_tile("container-tilesensors", "graylog", 388);
