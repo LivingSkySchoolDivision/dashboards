@@ -1,46 +1,60 @@
+var _shopvision_api_url = "";
+
 var _shopvision_all_workorders = [];
 var _shopvision_visible_workorders = [];
 var _shopvision_workorder_container = "";
-var _shopvision_workorder_url = "";
-
-var _shopvision_messages_normal = [];
-var _shopvision_messages_highpriority = [];
-var _shopvision_message_container = "";
-var _shopvision_message_container_highpriority = "";
-var _shopvision_message_url = "";
 
 var _shopvision_inspections_thismonth = [];
 var _shopvision_inspections_overdue = [];
 var _shopvision_inspections_nextmonth = [];
-var _shopvision_inspections_visible_inspections = [];
-var _shopvision_inspection_url = "";
 var _shopvision_inspection_container = "";
+
+var _shopvision_priority_urgent_text = "Immediate - Today";
+var _shopvision_priority_highpriority_text = "Medium - 1 to 2 Day";
 
 // How many tickets disappear and reappear per "tick"
 var _shopvision_workorders_shown_at_once = 5;
 
 
 /* ********************************************************** */
+// * Init
+/* ********************************************************** */
+
+function shopvision_init(API_URL)
+{
+    _shopvision_api_url = API_URL;
+}
+
+
+/* ********************************************************** */
 // * Workorders
 /* ********************************************************** */
 
-function shopvision_init_workorders(DIVID, URL)
-{
+function shopvision_init_workorders(DIVID)
+{   
+
     console.log("Initializing ShopVision workorders into DIV " + DIVID);
-    console.log(" ShopVision workorder source: " + URL);
-    _shopvision_workorder_url = URL;
     _shopvision_workorder_container = DIVID;
 
     shopvision_refresh_workorders();
 }
 
-function shopvision_refresh_workorders() {
+function shopvision_refresh_workorders() {    
     _shopvision_all_workorders = [];
-    if (_shopvision_workorder_url.length > 0) {
-        $.getJSON(_shopvision_workorder_url, function(data) {
-            $.each(data.WorkOrders, function(workorders, workorder) {
+    if (_shopvision_api_url.length > 0) {
+        $.getJSON(_shopvision_api_url + "/OpenWorkOrders", function(data) {
+            
+            console.log(data);
+
+            $.each(data, function(workorders, workorder) {
                 _shopvision_all_workorders.push(workorder);
+
+                // Debug stuff - show alternate priorities
+                if (workorder.priority !== '') {
+                    console.log(workorder);
+                }
             });
+            shopvision_tick_workorders();
         });
     }
 }
@@ -82,83 +96,52 @@ function shopvision_tick_workorders()
 function shopvision_add_workorder_div(workorder)
 {
     var widgethtml = "";
+    var extraClasses = "";
+
     if (workorder != null) {
-        widgethtml += '<div class="work_order" id="workorder_' + workorder.number + '">'
-        widgethtml += '<div class="work_order_number">' + workorder.vehicle + '</div>'
-        widgethtml += '<div class="work_order_text">' + workorder.workrequested + '</div>'
-        widgethtml += '</div>'
+        if (workorder.priority == _shopvision_priority_urgent_text) 
+        {
+            extraClasses = "workorder_urgent";
+        }
+    
+        if (workorder.priority == _shopvision_priority_highpriority_text)
+        {
+            extraClasses = "workorder_highpriority";
+        }
+
+        // Container
+        widgethtml += '<div class="work_order ' + extraClasses + '" id="workorder_' + workorder.number + '">'
+
+        // WO Number
+        widgethtml += '<div class="work_order_number">'
+        if (workorder.priority == _shopvision_priority_urgent_text) 
+        {
+            widgethtml += "<div class=\"shopvision_wo_icon\">🛑</div>";
+        }
+        if (workorder.priority == _shopvision_priority_highpriority_text)
+        {
+            widgethtml += "<div class=\"shopvision_wo_icon\">🚩</div>";
+        } 
+        widgethtml += workorder.vehicleNumber + '</div>'
+
+        // WO Text
+        widgethtml += '<div class="work_order_text">';
+        if (workorder.priority == _shopvision_priority_urgent_text) 
+        {
+            widgethtml += "<div class=\"shopvision_status_text_urgent\">TODAY: </div>";
+        }
+        if (workorder.priority == _shopvision_priority_highpriority_text)
+        {
+            widgethtml += "<div class=\"shopvision_status_text_highpriority\">1-2 DAY: </div>";
+        }
+
+        widgethtml += workorder.workRequested;
+        widgethtml += '</div>';
+
+        widgethtml += '</div>';
 
         //$('#' + _shopvision_workorder_container).append(widgethtml);
     }
-    return widgethtml;
-}
-
-/* ********************************************************** */
-// * Messages
-/* ********************************************************** */
-
-function shopvision_init_messages(DIVID, DIVIDHP, URL)
-{
-    console.log("Initializing ShopVision messages into DIV " + DIVID + " and " + DIVIDHP);
-    console.log(" ShopVision messages source: " + URL);
-    
-    _shopvision_message_url = URL;
-    _shopvision_message_container = DIVID;
-    _shopvision_message_container_highpriority = DIVIDHP;
-}
-
-
-function shopvision_tick_messages()
-{
-    if (_shopvision_message_url.length > 0) {
-        $.getJSON(_shopvision_message_url, function(data) {
-            
-            var normalMsgHTML = "";
-            $.each(data.Normal, function(messages, message) {
-                _shopvision_messages_normal += message;
-                console.log(message);
-                normalMsgHTML += shopvision_add_normal_priority_message(message);
-            });            
-            $('#' + _shopvision_message_container).html(normalMsgHTML);
-
-            
-            $('#' + _shopvision_message_container_highpriority).html("");
-            $.each(data.High, function(messages, message) {
-                _shopvision_messages_highpriority += message;                
-                shopvision_show_high_priority_message(message);
-            });
-        });
-    }
-}
-
-
-function shopvision_show_high_priority_message(message)
-{
-    var widgethtml = "";
-    if (message != null) {
-
-        widgethtml += '<div class="high_priority_message">';
-        widgethtml += '    <div class="high_priority_message_icon"></div>';
-        widgethtml += '    <div class="high_priority_message_content">' + message.Content + '</div>';
-        widgethtml += '    <div class="high_priority_message_sender">-' + message.Sender + '</div>';
-        widgethtml += '</div>';        
-    }
-
-    $('#' + _shopvision_message_container_highpriority).html(widgethtml);
-}
-
-function shopvision_add_normal_priority_message(message)
-{
-    var widgethtml = "";
-    if (message != null) {
-
-        widgethtml += '<div class="normal_priority_message">';
-        widgethtml += '    <div class="normal_priority_message_icon"></div>';
-        widgethtml += '    <div class="normal_priority_message_content">' + message.Content + '</div>';
-        widgethtml += '    <div class="normal_priority_message_sender">-' + message.Sender + '</div>';
-        widgethtml += '</div>';        
-    }
-
     return widgethtml;
 }
 
@@ -167,42 +150,105 @@ function shopvision_add_normal_priority_message(message)
 // * Inspections
 /* ********************************************************** */
 
-function shopvision_init_inspections(DIVID, URL)
+function shopvision_init_inspections(DIVID)
 {
     console.log("Initializing ShopVision inspections into DIV " + DIVID);
-    console.log(" ShopVision inspections source: " + URL);
-    _shopvision_inspection_url = URL;
     _shopvision_inspection_container = DIVID;
+    shopvision_tick_inspections();
 }
 
 function shopvision_tick_inspections()
 {
-    if (_shopvision_inspection_url.length > 0) {
-        $.getJSON(_shopvision_inspection_url, function(data) {
-            _shopvision_inspections_visible_inspections = [];
+    if (_shopvision_api_url.length > 0) {
+        // Fade out whatever is in the div and clear it's contents
+        
+        $('#' + _shopvision_inspection_container).html(""); 
 
-            var newHTML = "";
-            $.each(data.Overdue, function(inspections, inspection) {
-                _shopvision_inspections_overdue += inspection;
-                _shopvision_inspections_visible_inspections += inspection.vehicle;
-                newHTML += shopvision_add_inspection_div(inspection, 2);
-            });
-
-            $.each(data.ThisMonth, function(inspections, inspection) {
-                _shopvision_inspections_thismonth += inspection;
-                _shopvision_inspections_visible_inspections += inspection.vehicle;
-                newHTML += shopvision_add_inspection_div(inspection, 0);
-            });
-
-            $.each(data.NextMonth, function(inspections, inspection) {
-                _shopvision_inspections_nextmonth += inspection;
-                _shopvision_inspections_visible_inspections += inspection.vehicle;
-                newHTML += shopvision_add_inspection_div(inspection, 1);
-            });
-
-            $('#' + _shopvision_inspection_container).html(newHTML);
-        });
+        // Kick off updating inspections.
+        // This needs to be a chain of methods so that they all have time to complete, and add their piece to the one div.
+        shopvision_load_overdue_inspection();
     }
+}
+
+// Unhide the inspections div
+function shopvision_show_inspections() 
+{
+    $('#' + _shopvision_inspection_container).fadeIn("slow")
+}
+
+function shopvision_load_overdue_inspection() 
+{
+    var curDate = new Date();
+    var curMonth = curDate.getMonth() + 1;
+    var curYear = curDate.getFullYear();
+    var URL = _shopvision_api_url + "/BusInspections/overdue/" + curYear + "/" + curMonth;
+
+    // This month's inspections
+    $.getJSON(URL, function(data) {
+        _shopvision_inspections_visible_inspections = [];
+
+        var newHTML = "";
+        $.each(data, function(inspections, inspection) {
+            _shopvision_inspections_overdue += inspection;
+            _shopvision_inspections_visible_inspections += inspection.vehicle;
+            newHTML += shopvision_add_inspection_div(inspection, 2);
+        });
+        
+        $('#' + _shopvision_inspection_container).append(newHTML);
+
+        // Next chain - this month's inpections
+        shopvision_load_thismonth_inspection();
+    });    
+}
+
+function shopvision_load_thismonth_inspection(URL) 
+{
+    var curDate = new Date();
+    var curMonth = curDate.getMonth() + 1;
+    var curYear = curDate.getFullYear();
+    var URL = _shopvision_api_url + "/BusInspections/" + curYear + "/" + curMonth;
+
+    // This month's inspections
+    $.getJSON(URL, function(data) {
+        _shopvision_inspections_visible_inspections = [];
+
+        var newHTML = "";
+        $.each(data, function(inspections, inspection) {
+            _shopvision_inspections_overdue += inspection;
+            _shopvision_inspections_visible_inspections += inspection.vehicle;
+            newHTML += shopvision_add_inspection_div(inspection, 0);
+        });
+        
+        $('#' + _shopvision_inspection_container).append(newHTML);
+        
+        // Next chain - this month's inpections
+        shopvision_load_nextmonth_inspection();
+    });    
+}
+
+function shopvision_load_nextmonth_inspection(URL) 
+{
+    var curDate = new Date();
+    var curMonth = curDate.getMonth() + 2;
+    var curYear = curDate.getFullYear();
+    var URL = _shopvision_api_url + "/BusInspections/" + curYear + "/" + curMonth;
+
+    // This month's inspections
+    $.getJSON(URL, function(data) {
+        _shopvision_inspections_visible_inspections = [];
+
+        var newHTML = "";
+        $.each(data, function(inspections, inspection) {
+            _shopvision_inspections_overdue += inspection;
+            _shopvision_inspections_visible_inspections += inspection.vehicle;
+            newHTML += shopvision_add_inspection_div(inspection, 1);
+        });
+        
+        $('#' + _shopvision_inspection_container).append(newHTML);
+
+        // Nmext chain - show the div        
+        shopvision_show_inspections();
+    });     
 }
 
 function shopvision_add_inspection_div(inspection, priority)
@@ -214,13 +260,13 @@ function shopvision_add_inspection_div(inspection, priority)
 
     var widgethtml = "";
     if (priority === 1) {
-        widgethtml += '<div id="inspection_' + inspection.vehicle + '" class="inspection inspection_nextmonth">'
+        widgethtml += '<div id="inspection_' + inspection.vehicleNumber + '" class="inspection inspection_nextmonth">'
     } else if (priority === 2) {
         widgethtml += '<div class="inspection inspection_overdue">'
     } else {
         widgethtml += '<div class="inspection">'
     }
-    widgethtml += '<div class="inspection_number">' + inspection.Vehicle + '</div>'
+    widgethtml += '<div class="inspection_number">' + inspection.vehicleNumber + '</div>'
     widgethtml += '</div>'
 
     return widgethtml;
