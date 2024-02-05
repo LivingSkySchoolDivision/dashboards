@@ -32,6 +32,7 @@
     border-radius: 5px;
     margin-right: 25px;
     text-align: center;
+    position: relative;
 }
 
 .work_order_text {
@@ -138,4 +139,43 @@
 .normal_priority_message_sender {
     display: inline;
 
+}
+
+.workorder_highpriority .work_order_number {
+    background:orange;
+}
+
+.workorder_urgent .work_order_number {
+    background-color: rgba(255,0,0,1);
+    color: white;
+}
+
+.shopvision_status_text_urgent {
+    display: inline;
+    font-weight: bold;
+    color: white;
+    background: red;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-right: 5px;
+}
+
+.shopvision_status_text_highpriority {
+    display: inline;
+    font-weight: bold;
+    color: #353865;
+    background: orange;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-right: 5px;
+}
+
+.shopvision_wo_icon {
+    position: absolute;
+    top: 10px;
+    left: -35px;
 }
