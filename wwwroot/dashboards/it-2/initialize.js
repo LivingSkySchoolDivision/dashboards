@@ -24,8 +24,7 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "aapc-2", 394);
     librenms_simple_ping_tile("container-tilesensors", "adsync2019", 55);
     librenms_simple_ping_tile("container-tilesensors", "ansible", 29);
-    librenms_simple_ping_tile("container-tilesensors", "archive", 62);
-    librenms_simple_ping_tile("container-tilesensors", "blue", 73);
+        librenms_simple_ping_tile("container-tilesensors", "blue", 73);
     librenms_simple_ping_tile("container-tilesensors", "busplanner", 30);
     librenms_simple_ping_tile("container-tilesensors", "chunkymonkey", 71);
     librenms_simple_ping_tile("container-tilesensors", "dc-backups", 28);
