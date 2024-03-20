@@ -247,19 +247,38 @@ function librenms_update()
                             $(thisSensor_Address).html(service.service_ip);
                         }
 
+                        // service_status values
+                        //  0 = OK
+                        //  1 = Warning
+                        //  2 = Critical
+                        // Anything else = Unknown
+
                         // apply styles based on status
                         if (service.service_status == 0)
                         {
                             // All good
                             $(thisSensor).removeClass("tile-danger");
+                            $(thisSensor).removeClass("tile-warning");
                             $(thisSensor).addClass("tile-ok");
                             $(thisSensor_Icon).attr("src","../../img/smile.svg");
-
-                        } else {
-                            // Something wrong
-                            $(thisSensor).addClass("tile-danger");
+                        } else if (service.service_status == 1){
+                            // Warning
+                            $(thisSensor).removeClass("tile-danger");
                             $(thisSensor).removeClass("tile-ok");
+                            $(thisSensor).addClass("tile-warning");
                             $(thisSensor_Icon).attr("src","../../img/frown.svg");
+                        } else if (service.service_status == 1){
+                            // Critical
+                            $(thisSensor).removeClass("tile-ok");
+                            $(thisSensor).removeClass("tile-warning");
+                            $(thisSensor).addClass("tile-danger");
+                            $(thisSensor_Icon).attr("src","../../img/frown.svg");
+                        } else {
+                            // Unknown
+                            $(thisSensor).removeClass("tile-ok");
+                            $(thisSensor).removeClass("tile-warning");
+                            $(thisSensor).removeClass("tile-danger");
+                            $(thisSensor_Icon).attr("src","../../img/question-circle.svg");
                         }
                     }
 
