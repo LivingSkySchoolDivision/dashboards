@@ -267,7 +267,7 @@ function librenms_update()
                             $(thisSensor).removeClass("tile-ok");
                             $(thisSensor).addClass("tile-warning");
                             $(thisSensor_Icon).attr("src","../../img/frown.svg");
-                        } else if (service.service_status == 1){
+                        } else if (service.service_status == 2){
                             // Critical
                             $(thisSensor).removeClass("tile-ok");
                             $(thisSensor).removeClass("tile-warning");
