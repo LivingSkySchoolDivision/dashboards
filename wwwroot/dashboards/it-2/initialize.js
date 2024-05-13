@@ -13,7 +13,8 @@ $(document).ready(function(){
     datatile_large_website_init("container-tilesensors-2", "GRAYLOG", 388);
 
     init_days_since_tile("days_until_container", "DAYS SINCE", "Sasktel caused an outage", 2024, 3, 15);    
-    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Last day of school", 2024, 6, 26);    
+    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Last day of school", 2024, 6, 26);      
+    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "NBCHS Power out for 20 days", 2024, 7, 8);    
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2025, 2, 3);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Win10 EOS", 2025, 10, 14);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Navision EOL", 2026, 10, 31);
