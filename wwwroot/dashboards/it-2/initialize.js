@@ -12,9 +12,10 @@ $(document).ready(function(){
     datatile_large_website_init("container-tilesensors-2", "EDSBY", 359);
     datatile_large_website_init("container-tilesensors-2", "GRAYLOG", 388);
 
-    init_days_since_tile("days_until_container", "DAYS SINCE", "Sasktel caused an outage", 2024, 3, 15);    
+    //init_days_since_tile("days_until_container", "DAYS SINCE", "Sasktel caused an outage", 2024, 3, 15);    
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Last day of school", 2024, 6, 26);      
-    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "NBCHS Power out for 20 days", 2024, 7, 8);    
+    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "NBCHS Power out for 20 days", 2024, 7, 8)
+    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "NBCHS Power restored", 2024, 7, 28);    
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2025, 2, 3);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Win10 EOS", 2025, 10, 14);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Navision EOL", 2026, 10, 31);
@@ -23,7 +24,7 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "aapc-2", 394);
     librenms_simple_ping_tile("container-tilesensors", "adsync2019", 55);
     librenms_simple_ping_tile("container-tilesensors", "ansible", 29);
-        librenms_simple_ping_tile("container-tilesensors", "blue", 73);
+    librenms_simple_ping_tile("container-tilesensors", "blue", 73);
     librenms_simple_ping_tile("container-tilesensors", "busplanner", 30);
     librenms_simple_ping_tile("container-tilesensors", "chunkymonkey", 71);
     librenms_simple_ping_tile("container-tilesensors", "dc-backups", 28);
