@@ -12,6 +12,7 @@ $(document).ready(function(){
     datatile_large_website_init("container-tilesensors-2", "EDSBY", 359);
     datatile_large_website_init("container-tilesensors-2", "GRAYLOG", 388);
 
+    init_days_since_tile("days_until_container", "DAYS SINCE", "Last CNET Outage", 2024, 7, 31);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Teachers return", 2024, 8, 26);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Students return", 2024, 9, 3);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2025, 2, 3);
