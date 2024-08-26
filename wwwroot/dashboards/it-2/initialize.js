@@ -16,6 +16,8 @@ $(document).ready(function(){
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Teachers return", 2024, 8, 26);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Students return", 2024, 9, 3);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2025, 2, 3);
+    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Christmas Break", 2024,12, 21);
+    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Summer Holidays", 2025, 6, 30);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Win10 EOS", 2025, 10, 14);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Navision EOL", 2026, 10, 31);
 
