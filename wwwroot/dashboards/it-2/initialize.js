@@ -90,7 +90,6 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "streaming", 69);
     librenms_simple_ping_tile("container-tilesensors", "sync", 58);
     librenms_simple_ping_tile("container-tilesensors", "tftp", 80);
-    librenms_simple_ping_tile("container-tilesensors", "TEST-WIN10-WKSTN", 438);
     librenms_simple_ping_tile("container-tilesensors", "UNMS", 60);
     librenms_simple_ping_tile("container-tilesensors", "veeamfree", 304);
     librenms_simple_ping_tile("container-tilesensors", "veeamone", 307);
