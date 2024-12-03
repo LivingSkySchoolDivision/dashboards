@@ -60,7 +60,7 @@ if (currentMonth == 11) {
 
 // xmas
 if ((currentMonth == 12)) { 
-    if ((currentDay >= 4) && (currentDay <= 26)) {
+    if ((currentDay >= 3) && (currentDay <= 26)) {
         
         LoadCSSFile("../../common/css/seasonal/xmas.css");
         LoadJSFile("../../common/js/seasonal/xmas.js");
