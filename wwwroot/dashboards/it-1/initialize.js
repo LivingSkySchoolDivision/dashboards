@@ -262,7 +262,6 @@ $(document).ready(function(){
         {"name": "Pi-TelephonyRm", "id": 241},
         {"name": "Pi-Maintenance", "id": 242},
         {"name": "Pi-ServerRoom", "id": 243},
-        {"name": "DOOR Site Controller", "id": 211},
         {"name": "Informacast", "id": 354},
         {"name": "sw253", "id": 17},
         {"name": "sw252", "id": 384},
