@@ -33,7 +33,6 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 340},
         {"name": "sw247", "id": 377},
         {"name": "sw248", "id": 374},
-        {"name": "sw252", "id": 375},
         {"name": "sw253", "id": 376},
         {"name": "ROUTER", "id": 1}
     ]);
