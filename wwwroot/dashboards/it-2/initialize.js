@@ -12,14 +12,14 @@ $(document).ready(function(){
     datatile_large_website_init("container-tilesensors-2", "EDSBY", 359);
     datatile_large_website_init("container-tilesensors-2", "GRAYLOG", 388);
 
-    init_days_since_tile("days_until_container", "DAYS SINCE", "Sasktel caused an outage", 2025, 1, 8);
-    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Teachers return", 2024, 8, 26);
-    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Students return", 2024, 9, 3);
-    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2025, 2, 3);
-    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Christmas Break", 2024,12, 21);
+    init_days_since_tile("days_until_container", "DAYS SINCE", "CNET caused an outage", 2025, 1, 8);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Summer Holidays", 2025, 6, 30);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Win10 EOS", 2025, 10, 14);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Navision EOL", 2026, 10, 31);
+    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2026, 3, 5);
+    //init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Teachers return", 2024, 8, 26);
+    //init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Students return", 2024, 9, 3);    
+    //init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Christmas Break", 2024,12, 21);
 
     librenms_simple_ping_tile("container-tilesensors", "aapc-1", 393);
     librenms_simple_ping_tile("container-tilesensors", "aapc-2", 394);
