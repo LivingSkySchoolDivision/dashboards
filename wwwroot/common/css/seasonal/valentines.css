@@ -1,0 +1,103 @@
+
+#dashboard-container-it1 {
+    background-image: url(../../../img/seasonal/valentines/flower-02.jpg) !important;
+    background-size: cover;
+}
+
+#dashboard-container-it2 {
+    background-image: url(../../../img/seasonal/valentines/flower-01.jpg) !important;
+    background-size: cover;
+}
+
+#dashboard-container-studsrv {
+    background-image: url(../../../img/seasonal/valentines/cookies.webp) !important;
+    background-size: cover;
+}
+
+/* on IT-1 */
+#seasonal-floater-1 { position: absolute; top: 370px; left: 10px; z-index: 9999; animation: ghost 15s infinite linear; }
+#seasonal-floater-2 { position: absolute; bottom: 10px; right: 10px; z-index: 9999; animation: ghost2 15s infinite linear;  }
+
+/* on IT-2 */
+#seasonal-floater-3 { position: absolute; bottom: 10px; left: 10px; z-index: 9999; animation: ghost 15s infinite linear;  }
+#seasonal-floater-4 { position: absolute; bottom: 10px; right: 10px; z-index: 9999; animation: ghost2 15s infinite linear; }
+#seasonal-floater-5 { position: absolute; top: 10px; right: 10px; z-index: 9999; animation: ghost3 15s infinite linear; }
+
+#dashboard-container-busgarage #container-top .tile #current-time #time-second { color: white; opacity: 1; }
+#dashboard-container-busgarage #container-top .tile { background: rgba(0,0,0,0); color: black;  
+    text-shadow:
+       3px 3px 0 #fff,
+       -3px -3px 0 #fff,  
+       3px -3px 0 #fff,
+       -3px 3px 0 #fff,
+       3px 3px 0 #fff;
+    }
+#dashboard-container-busgarage #container-top .tile #time-second { color: black !important;  }
+
+
+.presence_user_unknown { color: white !important; opacity: 1;}
+.inout-user-name { color: white; }
+
+
+#container-top .header-tile { background: rgba(0,0,0,0.5);}
+
+#dashboard-container-busgarage  { background-color: #002200;}
+
+
+
+@keyframes ghost {
+  10%  {
+    transform:scale(1) rotate(-2deg);
+    }
+
+  50%  {
+    transform:scale(1.1) rotate(6deg);
+    }
+
+  90%  {
+    transform:scale(1) rotate(-2deg);
+    }
+}
+
+@keyframes ghost2 {
+  10%  {
+    transform:scale(1) rotate(-7deg);
+    }
+
+  50%  {
+    transform:scale(1.2) rotate(3deg);
+    }
+
+  90%  {
+    transform:scale(1) rotate(-3deg);
+    }
+}
+
+@keyframes ghost3 {
+  10%  {
+    transform:scale(1) rotate(8deg);
+    }
+
+  50%  {
+    transform:scale(1.2) rotate(-9deg);
+    }
+
+  90%  {
+    transform:scale(1) rotate(8deg);
+    }
+}
+
+@keyframes rainbow_halloween {
+  0% {
+    color: orangered;
+    transform:scale(1) rotate(-2deg);
+  }
+  50% {
+    color: orange;
+    transform:scale(1.1) rotate(2deg);
+  }
+  100% {
+    color: orangered;
+    transform:scale(1) rotate(-2deg);
+  }
+}
