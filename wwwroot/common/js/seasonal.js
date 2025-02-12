@@ -66,3 +66,12 @@ if ((currentMonth == 12)) {
         LoadJSFile("../../common/js/seasonal/xmas.js");
     }
 }
+
+// Valentines
+if ((currentMonth == 2)) { 
+    if ((currentDay >= 10) && (currentDay <= 14)) {
+        
+        LoadCSSFile("../../common/css/seasonal/valentines.css");
+        LoadJSFile("../../common/js/seasonal/valentines.js");
+    }
+}
