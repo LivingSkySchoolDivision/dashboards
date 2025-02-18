@@ -389,7 +389,35 @@ $(document).ready(function(){
         {"name": "ROUTER", "id": 16},
         {"name": "sw252", "id": 397},
         {"name": "sw253", "id": 396},
-        {"name": "sw249", "id": 319}
+        {"name": "sw249", "id": 319},
+        {"name": "AP:RM201", "id": 516},
+        {"name": "AP:RM15", "id": 517},
+        {"name": "AP:RM203", "id": 518},
+        {"name": "AP:RM25", "id": 519},
+        {"name": "AP:RM102", "id": 790},
+        {"name": "AP:RM113", "id": 791},
+        {"name": "AP:RM101", "id": 792},
+        {"name": "AP:RM213", "id": 793},
+        {"name": "AP:RM175", "id": 794},
+        {"name": "AP:Hall007", "id": 795},
+        {"name": "AP:RM105", "id": 796},
+        {"name": "AP:RM106", "id": 797},
+        {"name": "AP:RM217", "id": 798},
+        {"name": "AP:RM107", "id": 799},
+        {"name": "AP:RM114", "id": 800},
+        {"name": "AP:RM14", "id": 801},
+        {"name": "AP:RM161", "id": 802},
+        {"name": "AP:RM100", "id": 803},
+        {"name": "AP:RM212", "id": 804},
+        {"name": "AP:RM165", "id": 805},
+        {"name": "AP:RM16", "id": 806},
+        {"name": "AP:RM202", "id": 807},
+        {"name": "AP:RM214", "id": 808},
+        {"name": "AP:RM160", "id": 809},
+        {"name": "AP:RM219", "id": 810},
+        {"name": "AP:RM166", "id": 811},
+        {"name": "AP:RM86", "id": 812},
+        {"name": "AP:RM56", "id": 813}
     ]);
 
     datatile_init("school_info_box_container", "Maymont",715,530, 1519, 18, [{ id: 32}], [18],[
@@ -401,7 +429,20 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 350},
         {"name": "ROUTER", "id": 18},
         {"name": "sw248", "id": 320},
-        {"name": "sw253", "id": 413}
+        {"name": "sw253", "id": 413},
+        {"name": "AP:LIBRARY", "id": 745},
+        {"name": "AP:RM7", "id": 746},
+        {"name": "AP:RM6", "id": 747},
+        {"name": "AP:RM18", "id": 748},
+        {"name": "AP:RM21", "id": 749},
+        {"name": "AP:RM5", "id": 750},
+        {"name": "AP:RM28", "id": 751},
+        {"name": "AP:RM20", "id": 752},
+        {"name": "AP:RM19", "id": 753},
+        {"name": "AP:RM11", "id": 754},
+        {"name": "AP:RM47", "id": 755},
+        {"name": "AP:RM15", "id": 756}
+
 
     ]);
 
@@ -415,7 +456,24 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 351},
         {"name": "ROUTER", "id": 19},
         {"name": "sw252", "id": 424},
-        {"name": "sw253", "id": 423}
+        {"name": "sw253", "id": 423},
+        {"name": "AP:RM7", "id": 757},
+        {"name": "AP:RM207", "id": 758},
+        {"name": "AP:RM217", "id": 759},
+        {"name": "AP:RM221", "id": 760},
+        {"name": "AP:RM33", "id": 761},
+        {"name": "AP:RM218", "id": 762},
+        {"name": "AP:RM15", "id": 763},
+        {"name": "AP:RM219", "id": 764},
+        {"name": "AP:RM206", "id": 765},
+        {"name": "AP:RM210", "id": 766},
+        {"name": "AP:RM209", "id": 767},
+        {"name": "AP:RM213", "id": 768},
+        {"name": "AP:RM205", "id": 769},
+        {"name": "AP:LIBRARY", "id": 770},
+        {"name": "AP:RM23", "id": 771},
+        {"name": "AP:RM6", "id": 772}
+
     ]);
 
     datatile_init("school_info_box_container", "McLurg",478,345, 2111, 20, [{ id: 17, label: "ELEC"}], [20],[
@@ -426,7 +484,24 @@ $(document).ready(function(){
         {"name": "Pi-Electrical", "id": 236},
         {"name": "Informacast", "id": 352},
         {"name": "ROUTER", "id": 20},
-        {"name": "sw253", "id": 408}
+        {"name": "sw253", "id": 408},
+        {"name": "AP:RM41", "id": 505},
+        {"name": "AP:RM43", "id": 507},
+        {"name": "AP:RM37", "id": 503},
+        {"name": "AP:RM29", "id": 502},
+        {"name": "AP:RM45", "id": 509},
+        {"name": "AP:RM53", "id": 513},
+        {"name": "AP:RM52-E", "id": 511},
+        {"name": "AP:RM13", "id": 501},
+        {"name": "AP:RM44", "id": 508},
+        {"name": "AP:RM03", "id": 500},
+        {"name": "AP:RM40", "id": 504},
+        {"name": "AP:RM42", "id": 506},
+        {"name": "AP:RM49", "id": 510},
+        {"name": "AP:RM52-W", "id": 512},
+        {"name": "AP:RM56", "id": 514},
+        {"name": "AP:RM60", "id":515 }
+
     ]);
 
     datatile_init("school_info_box_container", "Medstead",500,188, 1362, 21, [{ id: 19}], [21],[
@@ -438,7 +513,25 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 353},
         {"name": "ROUTER", "id": 21},
         {"name": "sw250", "id": 323},
-        {"name": "sw253", "id": 409}
+        {"name": "sw253", "id": 409},
+        {"name": "AP:RM41", "id": 773},
+        {"name": "AP:RM27", "id": 774},
+        {"name": "AP:RM20", "id": 775},
+        {"name": "AP:RM7", "id": 776},
+        {"name": "AP:RM6", "id": 777},
+        {"name": "AP:GYM", "id": 778},
+        {"name": "AP:RM31", "id": 779},
+        {"name": "AP:RM11", "id": 780},
+        {"name": "AP:LIBRARY", "id": 781},
+        {"name": "AP:RM37", "id": 782},
+        {"name": "AP:RM17", "id": 783},
+        {"name": "AP:RM39", "id": 784},
+        {"name": "AP:RM40", "id": 785},
+        {"name": "AP:RM26", "id": 786},
+        {"name": "AP:RM9", "id": 787},
+        {"name": "AP:RM28", "id": 788},
+        {"name": "AP:RM35", "id": 789}
+
     ]);
 
     datatile_init("school_info_box_container", "NBCHS",1540,25, 1301, 17, [{ id: 37, label: "SRVR"},{ id: 21, label: "R206"},{ id: 22, label: "CHEM"},{ id: 23, label: "TELE"},{ id: 24, label: "MAINT"},{ id: 38, label: "VLAB"}], [17],[
@@ -463,7 +556,80 @@ $(document).ready(function(){
         {"name": "sw228", "id": 326},
         {"name": "sw227", "id": 328},
         {"name": "sw226", "id": 327},
-        {"name": "sw244", "id": 429}
+        {"name": "sw244", "id": 429},
+        {"name": "AP:LIB-ENTR", "id": 839},
+        {"name": "AP:RM043", "id": 840},
+        {"name": "AP:RM208A", "id": 841},
+        {"name": "AP:RMT131", "id": 842},
+        {"name": "AP:RM022", "id": 843},
+        {"name": "AP:RM028", "id": 844},
+        {"name": "AP:RM021", "id":845 },
+        {"name": "AP:RM233", "id": 846},
+        {"name": "AP:RM139", "id": 847},
+        {"name": "AP:RM150", "id": 848},
+        {"name": "AP:RM222", "id": 849},
+        {"name": "AP:RM116", "id": 850},
+        {"name": "AP:RM262", "id": 851},
+        {"name": "AP:RM143", "id": 853},
+        {"name": "AP:LIB-WEST", "id": 854},
+        {"name": "AP:RM032", "id": 855},
+        {"name": "AP:RM238", "id": 856},
+        {"name": "AP:RM045", "id": 857},
+        {"name": "AP:RM046", "id": 858},
+        {"name": "AP:RM023", "id": 859},
+        {"name": "AP:RM239", "id": 860},
+        {"name": "AP:RM210", "id": 861},
+        {"name": "AP:RM047", "id": 862},
+        {"name": "AP:RM203", "id": 863},
+        {"name": "AP:GYM-2", "id": 864},
+        {"name": "AP:HALL093", "id": 865},
+        {"name": "AP:GYM-1", "id": 866},
+        {"name": "AP:RM117", "id": 867},
+        {"name": "AP:RM138", "id": 868},
+        {"name": "AP:CAFETERIA", "id": 869},
+        {"name": "AP:RM209", "id": 870},
+        {"name": "AP:RMC206", "id": 871},
+        {"name": "AP:RM221", "id": 872},
+        {"name": "AP:RM218", "id": 873},
+        {"name": "AP:RM213", "id": 874},
+        {"name": "AP:RM257", "id": 875},
+        {"name": "AP:CAF-STAGE", "id": 876},
+        {"name": "AP:RM004", "id": 877},
+        {"name": "AP:RM051", "id": 878},
+        {"name": "AP:RM208", "id": 879},
+        {"name": "AP:SRVRRM", "id": 880},
+        {"name": "AP:RM148", "id": 881},
+        {"name": "AP:RM273", "id": 882},
+        {"name": "AP:RM038", "id": 883},
+        {"name": "AP:RM119", "id": 884},
+        {"name": "AP:RM149", "id": 885},
+        {"name": "AP:RM226", "id": 886},
+        {"name": "AP:RM225", "id": 887},
+        {"name": "AP:RM115", "id": 852},
+        {"name": "AP:RM048", "id": 816},
+        {"name": "AP:RM224", "id": 817},
+        {"name": "AP:RM203A", "id": 818},
+        {"name": "AP:RM202", "id": 819},
+        {"name": "AP:RM219", "id": 820},
+        {"name": "AP:RM016", "id": 821},
+        {"name": "AP:RM212", "id": 822},
+        {"name": "AP:RM035", "id": 823},
+        {"name": "AP:RM201", "id": 824},
+        {"name": "AP:RM211", "id": 825},
+        {"name": "AP:RM232", "id": 826},
+        {"name": "AP:RM220", "id": 827},
+        {"name": "AP:MAINTENANCE", "id": 828},
+        {"name": "AP:LIB-CENTER", "id": 829},
+        {"name": "AP:RM128", "id": 830},
+        {"name": "AP:CARPENTRY", "id": 831},
+        {"name": "AP:RMT134", "id": 832},
+        {"name": "AP:RM227", "id": 833},
+        {"name": "AP:RM027", "id": 834},
+        {"name": "AP:HALL109", "id": 835},
+        {"name": "AP:RM102", "id": 836},
+        {"name": "AP:RM097", "id": 837},
+        {"name": "AP:RM040", "id": 838}
+
     ]);
 
     datatile_init("school_info_box_container", "NCES",484,502, 2593, 22, [{ id: 20}], [22],[
@@ -474,7 +640,18 @@ $(document).ready(function(){
         {"name": "PiEnvMon01", "id": 244},
         {"name": "Informacast", "id": 355},
         {"name": "ROUTER", "id": 22},
-        {"name": "sw253", "id": 414}
+        {"name": "sw253", "id": 414},
+        {"name": "AP:RM7", "id": 498},
+        {"name": "AP:RM12", "id": 490},
+        {"name": "AP:RM23", "id": 493},
+        {"name": "AP:RM6", "id": 497},
+        {"name": "AP:RM4", "id": 494},
+        {"name": "AP:RM8", "id": 499},
+        {"name": "AP:RM42", "id": 496},
+        {"name": "AP:RM17", "id": 492},
+        {"name": "AP:RM15", "id": 491},
+        {"name": "AP:RM40", "id": 495}
+
     ]);
 
     datatile_init("school_info_box_container", "SHS",700,197, 2655, 23, [{ id: 25, label: "SRVR"},{ id: 26, label: "LAB"}], [23],[
@@ -489,7 +666,28 @@ $(document).ready(function(){
         {"name": "sw253", "id": 405},
         {"name": "sw252", "id": 406},
         {"name": "sw250", "id": 372},
-        {"name": "sw248", "id": 330}
+        {"name": "sw248", "id": 330},
+        {"name": "AP:RM43", "id": 725},
+        {"name": "AP:RM20", "id": 726},
+        {"name": "AP:RM25", "id": 727},
+        {"name": "AP:RM79", "id": 728},
+        {"name": "AP:RM30", "id": 729},
+        {"name": "AP:RM72", "id": 730},
+        {"name": "AP:RM77", "id": 731},
+        {"name": "AP:RM08", "id": 732},
+        {"name": "AP:RM29", "id": 733},
+        {"name": "AP:RM67", "id": 734},
+        {"name": "AP:RM32", "id": 735},
+        {"name": "AP:RM66", "id": 736},
+        {"name": "AP:RM71", "id": 737},
+        {"name": "AP:RM86", "id": 738},
+        {"name": "AP:RM13", "id": 739},
+        {"name": "AP:RM54", "id": 740},
+        {"name": "AP:RM27", "id": 741},
+        {"name": "AP:RM88", "id": 742},
+        {"name": "AP:RM68", "id": 743},
+        {"name": "AP:RM69", "id": 744}
+
     ]);
 
     datatile_init("school_info_box_container", "St. Vital",1115,700, 2343, 26, [{ id: 27, label: "LIB"},{ id: 28, label: "R104"}], [26],[
@@ -503,7 +701,25 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 357},
         {"name": "ROUTER", "id": 26},
         {"name": "sw251", "id": 418},
-        {"name": "sw253", "id": 417}
+        {"name": "sw253", "id": 417},
+        {"name": "AP:RM209", "id": 708},
+        {"name": "AP:RM150", "id": 709},
+        {"name": "AP:RM152", "id": 710},
+        {"name": "AP:RM206", "id": 711},
+        {"name": "AP:RM201", "id": 712},
+        {"name": "AP:RM149", "id": 713},
+        {"name": "AP:RM121", "id": 714},
+        {"name": "AP:RM208", "id": 715},
+        {"name": "AP:RM124", "id": 716},
+        {"name": "AP:RM117", "id": 717},
+        {"name": "AP:LIBRARY", "id": 718},
+        {"name": "AP:RM108", "id": 719},
+        {"name": "AP:GYMOFF", "id": 720},
+        {"name": "AP:RM205", "id": 721},
+        {"name": "AP:RM153", "id": 722},
+        {"name": "AP:ARTRM", "id": 723},
+        {"name": "AP:RM145", "id": 724}
+
     ]);
 
     datatile_init("school_info_box_container", "UCHS",265,508, 2531, 24, [{ id: 29, label: "SRVR"},{ id: 30, label: "BOIL"}], [24],[
@@ -516,7 +732,37 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 257},
         {"name": "ROUTER", "id": 24},
         {"name": "sw252", "id": 399},
-        {"name": "sw253", "id": 398}
+        {"name": "sw253", "id": 398},
+        {"name": "AP:RM31", "id": 479},
+        {"name": "AP:RM221", "id": 473},
+        {"name": "AP:RM206", "id": 465},
+        {"name": "AP:RM65", "id": 488},
+        {"name": "AP:RM44", "id": 482},
+        {"name": "AP:RM63", "id": 486},
+        {"name": "AP:RM29", "id": 477},
+        {"name": "AP:RM33", "id": 481},
+        {"name": "AP:RM32", "id": 480},
+        {"name": "AP:RM208", "id": 466},
+        {"name": "AP:RM59", "id": 485},
+        {"name": "AP:RM64", "id": 487},
+        {"name": "AP:RM30", "id": 478},
+        {"name": "AP:RM220", "id": 472},
+        {"name": "AP:RM205", "id": 464},
+        {"name": "AP:RM216", "id": 470},
+        {"name": "AP:RM47", "id": 483},
+        {"name": "AP:RM03", "id": 462},
+        {"name": "AP:RM22", "id": 471},
+        {"name": "AP:RM210", "id": 468},
+        {"name": "AP:RM02", "id": 461},
+        {"name": "AP:RM27", "id": 475},
+        {"name": "AP:RM11", "id": 463},
+        {"name": "AP:RM28", "id": 476},
+        {"name": "AP:RM223", "id": 474},
+        {"name": "AP:RM209", "id": 467},
+        {"name": "AP:RM48", "id": 484},
+        {"name": "AP:RM213", "id": 469},
+        {"name": "AP:RM67", "id": 489}
+
     ]);
 
     datatile_init("school_info_box_container", "UPS", 265, 663, 2405, 25, [{ id: 31}], [25],[
@@ -528,7 +774,20 @@ $(document).ready(function(){
         {"name": "Informacast", "id": 358},
         {"name": "ROUTER", "id": 25},
         {"name": "sw250", "id": 332},
-        {"name": "sw253", "id": 416}
+        {"name": "sw253", "id": 416},
+        {"name": "AP:RM41", "id": 457},
+        {"name": "AP:RM14", "id": 450},
+        {"name": "AP:RM42", "id": 458},
+        {"name": "AP:RM17", "id": 452},
+        {"name": "AP:RM44", "id": 459},
+        {"name": "AP:RM45", "id": 460},
+        {"name": "AP:CORRIDOR-03", "id": 449},
+        {"name": "AP:RM31", "id": 454},
+        {"name": "AP:RM35", "id": 455},
+        {"name": "AP:RM24", "id": 453},
+        {"name": "AP:RM16", "id": 451},
+        {"name": "AP:RM40", "id": 456}
+
     ]);
 
     datatile_update();
