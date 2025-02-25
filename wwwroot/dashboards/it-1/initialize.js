@@ -118,7 +118,7 @@ $(document).ready(function(){
         {"name": "AP:STUDSRV", "id": 578}
     ]);
 
-    datatile_init("school_info_box_container", "Cando",585,675, 604, 7, [ { id: 33, label: "SRVR"},{ id: 34, label: "ELEM"} ], [7],[
+    datatile_init("school_info_box_container", "Cando",685,663, 604, 7, [ { id: 33, label: "SRVR"},{ id: 34, label: "ELEM"} ], [7],[
         {"name": "FireAlarm", "id": 128},
         {"name": "BMC", "id": 130},
         {"name": "SCCM", "id": 131},
@@ -262,7 +262,7 @@ $(document).ready(function(){
         {"name": "AP:RM26", "id": 538}
     ]);
 
-    datatile_init("school_info_box_container", "Kerrobert",375,750, 1974, 13, [{ id: 10}], [13],[
+    datatile_init("school_info_box_container", "Kerrobert",470,663, 1974, 13, [{ id: 10}], [13],[
         {"name": "FireAlarm", "id": 160},
         {"name": "BMC", "id": 162},
         {"name": "SCCM", "id": 163},
