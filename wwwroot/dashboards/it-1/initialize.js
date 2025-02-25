@@ -262,7 +262,7 @@ $(document).ready(function(){
         {"name": "AP:RM26", "id": 538}
     ]);
 
-    datatile_init("school_info_box_container", "Kerrobert",348,788, 1974, 13, [{ id: 10}], [13],[
+    datatile_init("school_info_box_container", "Kerrobert",375,750, 1974, 13, [{ id: 10}], [13],[
         {"name": "FireAlarm", "id": 160},
         {"name": "IDRAC", "id": 162},
         {"name": "SCCM", "id": 163},
