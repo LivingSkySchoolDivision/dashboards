@@ -53,7 +53,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "BCS", 1350, 700, 364, 5, [{ id: 1}], [5],[
         {"name": "FireAlarm", "id": 116},
-        {"name": "IDRAC", "id": 118},
+        {"name": "BMC", "id": 118},
         {"name": "SCCM", "id": 119},
         {"name": "ESXI", "id": 117},
         {"name": "PiEnvMon01", "id": 218},
@@ -92,7 +92,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "Bready",1140,145, 328, 6,  [{ id: 2}], [6],[
         {"name": "FireAlarm", "id": 122},
-        {"name": "IDRAC", "id": 124},
+        {"name": "BMC", "id": 124},
         {"name": "SCCM", "id": 125},
         {"name": "ESXI", "id": 123},
         {"name": "PiEnvMon01", "id": 219},
@@ -120,7 +120,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "Cando",585,675, 604, 7, [ { id: 33, label: "SRVR"},{ id: 34, label: "ELEM"} ], [7],[
         {"name": "FireAlarm", "id": 128},
-        {"name": "IDRAC", "id": 130},
+        {"name": "BMC", "id": 130},
         {"name": "SCCM", "id": 131},
         {"name": "ESXI", "id": 129},
         {"name": "Pi-MainRack", "id": 220},
@@ -145,7 +145,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "CKCS",222,330, 621, 8, [{ id: 4, label: "SRVR"},{ id: 5, label: "STOR"}], [8],[
         {"name": "FireAlarm", "id": 134},
-        {"name": "IDRAC", "id": 135},
+        {"name": "BMC", "id": 135},
         {"name": "SCCM", "id": 136},
         {"name": "ESXI", "id": 133},
         {"name": "Pi-MainRack", "id":222},
@@ -175,7 +175,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "Connaught",1370,410, 246, 9, [{ id: 3}], [9],[
         {"name": "FireAlarm", "id": 138},
-        {"name": "IDRAC", "id": 140},
+        {"name": "BMC", "id": 140},
         {"name": "SCCM", "id": 141},
         {"name": "ESXI", "id": 139},
         {"name": "PiEnvMon01", "id": 224},
@@ -200,7 +200,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "Hafford",801,403, 1935, 10, [{ id: 35}], [10],[
         {"name": "FireAlarm", "id": 146},
-        {"name": "IDRAC", "id": 147},
+        {"name": "BMC", "id": 147},
         {"name": "SCCM", "id": 148},
         {"name": "ESXI", "id": 145},
         {"name": "PiEnvMon01", "id": 225},
@@ -225,7 +225,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "HCES",898,197, 2059, 11, [{ id: 8}], [11],[
         {"name": "FireAlarm", "id": 150},
-        {"name": "IDRAC", "id": 153},
+        {"name": "BMC", "id": 153},
         {"name": "SCCM", "id": 154},
         {"name": "ESXI", "id": 152},
         {"name": "PiEnvMon01", "id": 226},
@@ -246,7 +246,7 @@ $(document).ready(function(){
     ]);
 
     datatile_init("school_info_box_container", "Heritage", 1558, 700, 1563, 12, [{ id: 9}], [12],[
-        {"name": "IDRAC", "id": 156},
+        {"name": "BMC", "id": 156},
         {"name": "SCCM", "id": 157},
         {"name": "ESXI", "id": 155},
         {"name": "PiEnvMon01", "id": 227},
@@ -264,7 +264,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "Kerrobert",375,750, 1974, 13, [{ id: 10}], [13],[
         {"name": "FireAlarm", "id": 160},
-        {"name": "IDRAC", "id": 162},
+        {"name": "BMC", "id": 162},
         {"name": "SCCM", "id": 163},
         {"name": "ESXI", "id": 161},
         {"name": "PiEnvMon01", "id": 228},
@@ -298,7 +298,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "Lawrence",1330,80, 522, 4, [{ id: 11}], [4],[
         {"name": "FireAlarm", "id": 165},
-        {"name": "IDRAC", "id": 167},
+        {"name": "BMC", "id": 167},
         {"name": "SCCM", "id": 168},
         {"name": "ESXI", "id": 166},
         {"name": "PiEnvMon01", "id": 229},
@@ -327,7 +327,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "Leoville",630,30, 2987, 15, [{ id: 12}], [15],[
         {"name": "FireAlarm", "id": 171},
-        {"name": "IDRAC", "id": 173},
+        {"name": "BMC", "id": 173},
         {"name": "SCCM", "id": 174},
         {"name": "ESXI", "id": 172},
         {"name": "PiEnvMon01", "id": 230},
@@ -354,7 +354,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "Luseland",50,690, 1873, 14, [{ id: 13}], [14],[
         {"name": "FireAlarm", "id": 176},
-        {"name": "IDRAC", "id": 178},
+        {"name": "BMC", "id": 178},
         {"name": "SCCM", "id": 179},
         {"name": "ESXI", "id": 177},
         {"name": "PiEnvMon01", "id": 231},
@@ -380,7 +380,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "Macklin",16,512, 1779, 16, [{ id: 14, label: "SRVR"},{ id: 15, label: "HIGHS"}], [16],[
         {"name": "FireAlarm", "id": 181},
-        {"name": "IDRAC", "id": 183},
+        {"name": "BMC", "id": 183},
         {"name": "SCCM", "id": 184},
         {"name": "ESXI", "id": 182},
         {"name": "Pi-ServerRack", "id": 233},
@@ -422,7 +422,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "Maymont",715,530, 1519, 18, [{ id: 32}], [18],[
         {"name": "FireAlarm", "id": 186},
-        {"name": "IDRAC", "id": 188},
+        {"name": "BMC", "id": 188},
         {"name": "SCCM", "id": 189},
         {"name": "ESXI", "id": 187},
         {"name": "PiEnvMon01", "id": 234},
@@ -448,7 +448,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "McKitrick",1330,235, 1394, 19, [{ id: 16}], [19],[
         {"name": "FireAlarm", "id": 191},
-        {"name": "IDRAC", "id": 193},
+        {"name": "BMC", "id": 193},
         {"name": "SCCM", "id": 194},
         {"name": "ESXI", "id": 192},
         {"name": "PiEnvMon01", "id": 235},
@@ -478,7 +478,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "McLurg",478,345, 2111, 20, [{ id: 17, label: "ELEC"}], [20],[
         {"name": "FireAlarm", "id": 197},
-        {"name": "IDRAC", "id": 199},
+        {"name": "BMC", "id": 199},
         {"name": "SCCM", "id": 200},
         {"name": "ESXI", "id": 198},
         {"name": "Pi-Electrical", "id": 236},
@@ -506,7 +506,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "Medstead",500,188, 1362, 21, [{ id: 19}], [21],[
         {"name": "FireAlarm", "id": 202},
-        {"name": "IDRAC", "id": 204},
+        {"name": "BMC", "id": 204},
         {"name": "SCCM", "id": 205},
         {"name": "ESXI", "id": 203},
         {"name": "PiEnvMon01", "id": 238},
@@ -536,7 +536,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "NBCHS",1540,25, 1301, 17, [{ id: 37, label: "SRVR"},{ id: 21, label: "R206"},{ id: 22, label: "CHEM"},{ id: 23, label: "TELE"},{ id: 24, label: "MAINT"},{ id: 38, label: "VLAB"}], [17],[
         {"name": "FireAlarm", "id": 207},
-        {"name": "IDRAC", "id": 209},
+        {"name": "BMC", "id": 209},
         {"name": "SCCM", "id": 210},
         {"name": "ESXI", "id": 208},
         {"name": "Pi-206", "id": 239},
@@ -634,7 +634,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "NCES",484,502, 2593, 22, [{ id: 20}], [22],[
         {"name": "FireAlarm", "id": 213},
-        {"name": "IDRAC", "id": 215},
+        {"name": "BMC", "id": 215},
         {"name": "SCCM", "id": 216},
         {"name": "ESXI", "id": 214},
         {"name": "PiEnvMon01", "id": 244},
@@ -656,7 +656,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "SHS",700,197, 2655, 23, [{ id: 25, label: "SRVR"},{ id: 26, label: "LAB"}], [23],[
         {"name": "FireAlarm", "id": 253},
-        {"name": "IDRAC", "id": 255},
+        {"name": "BMC", "id": 255},
         {"name": "SCCM", "id": 256},
         {"name": "ESXI", "id": 254},
         {"name": "PiEnvMon01", "id": 245},
@@ -692,7 +692,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "St. Vital",1115,700, 2343, 26, [{ id: 27, label: "LIB"},{ id: 28, label: "R104"}], [26],[
         {"name": "FireAlarm", "id": 259},
-        {"name": "IDRAC", "id": 261},
+        {"name": "BMC", "id": 261},
         {"name": "SCCM", "id": 262},
         {"name": "ESXI", "id": 260},
         {"name": "Pi-Library", "id": 247},
@@ -724,7 +724,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "UCHS",265,508, 2531, 24, [{ id: 29, label: "SRVR"},{ id: 30, label: "BOIL"}], [24],[
         {"name": "FireAlarm", "id": 270},
-        {"name": "IDRAC", "id": 267},
+        {"name": "BMC", "id": 267},
         {"name": "SCCM", "id": 268},
         {"name": "ESXI", "id": 266},
         {"name": "Pi-ServerRack", "id": 249},
@@ -767,7 +767,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "UPS", 265, 663, 2405, 25, [{ id: 31}], [25],[
         {"name": "FireAlarm", "id": 271},
-        {"name": "IDRAC", "id": 273},
+        {"name": "BMC", "id": 273},
         {"name": "SCCM", "id": 274},
         {"name": "ESXI", "id": 272},
         {"name": "PiEnvMon01", "id": 252},
