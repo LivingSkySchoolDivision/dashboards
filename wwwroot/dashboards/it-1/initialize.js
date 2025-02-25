@@ -6,9 +6,9 @@ $(document).ready(function(){
     time_init(DATE_AND_TIME_URL);
 
     // function datatile_largesnmp_init(containerid, tilename, portid, swap_in_and_out)
-    datatile_largesnmp_init("large_snmp_tile_container", "INTERSITE-RURAL", 13475, false);
-    datatile_largesnmp_init("large_snmp_tile_container", "INTERSITE-CITY", 12793, true);
-    datatile_largesnmp_init("large_snmp_tile_container", "INTERNET", 13480, false); // Port on outside switch
+    datatile_largesnmp_init("large_snmp_tile_container", "INTERSITE", 30381, false);
+    datatile_largesnmp_init("large_snmp_tile_container", "INTERNET FW1", 30377, true);
+    datatile_largesnmp_init("large_snmp_tile_container", "INTERNET FW2", 30379, true);
     datatile_large_website_init("large_snmp_tile_container", "INTERNET", 362);
 
     // Initialize school tiles
