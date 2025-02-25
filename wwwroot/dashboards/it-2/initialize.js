@@ -67,7 +67,7 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "firepower FMC", 448);
     librenms_simple_ping_tile("container-tilesensors", "firepower-01", 443);
     librenms_simple_ping_tile("container-tilesensors", "firepower-02", 444);
-    librenms_simple_ping_tile("container-tilesensors", "Outside FW switch", 447);
+    librenms_simple_ping_tile("container-tilesensors", "Outside FW switch", 889);
     librenms_simple_ping_tile("container-tilesensors", "Inside FW switch", 446);
     librenms_simple_ping_tile("container-tilesensors", "graylog", 388);
     librenms_simple_ping_tile("container-tilesensors", "JingleKeys", 77);
