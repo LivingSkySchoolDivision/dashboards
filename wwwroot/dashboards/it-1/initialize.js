@@ -264,7 +264,7 @@ $(document).ready(function(){
 
     datatile_init("school_info_box_container", "Kerrobert",470,663, 1974, 13, [{ id: 10}], [13],[
         {"name": "FireAlarm", "id": 160},
-        {"name": "BMC", "id": 162},
+        //{"name": "BMC", "id": 162},
         {"name": "SCCM", "id": 163},
         {"name": "ESXI", "id": 161},
         {"name": "PiEnvMon01", "id": 228},
