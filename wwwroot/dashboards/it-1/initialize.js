@@ -87,7 +87,7 @@ $(document).ready(function(){
         {"name": "AP:RM22", "id": 559},
         {"name": "AP:RM16", "id": 560},
         {"name": "AP:RM76", "id": 561},
-        {"name": "AP:RM38", "id": 562}
+        {"name": "AP:RM38", "id": 896}
     ]);
 
     datatile_init("school_info_box_container", "Bready",1140,145, 328, 6,  [{ id: 2}], [6],[
