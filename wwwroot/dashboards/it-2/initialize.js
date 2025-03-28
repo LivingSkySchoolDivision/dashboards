@@ -45,6 +45,7 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "do-dashboards-it-3", 36);
     librenms_simple_ping_tile("container-tilesensors", "do-dashboards-ss-1", 37);
     librenms_simple_ping_tile("container-tilesensors", "do-dashboards-busgarage", 38);
+    librenms_simple_ping_tile("container-tilesensors", "do-google-gam", 897);
     librenms_simple_ping_tile("container-tilesensors", "deploy-do", 32);
     librenms_simple_ping_tile("container-tilesensors", "do-kube-int-lb", 104);
     librenms_simple_ping_tile("container-tilesensors", "do-kube-int-m", 105);
