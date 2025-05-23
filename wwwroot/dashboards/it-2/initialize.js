@@ -68,9 +68,10 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "firepower FMC", 448);
     librenms_simple_ping_tile("container-tilesensors", "firepower-01", 443);
     librenms_simple_ping_tile("container-tilesensors", "firepower-02", 444);
-    librenms_simple_ping_tile("container-tilesensors", "Outside FW switch", 889);
-    librenms_simple_ping_tile("container-tilesensors", "Inside FW switch", 446);
+    librenms_simple_ping_tile("container-tilesensors", "Gitea", 900);
     librenms_simple_ping_tile("container-tilesensors", "graylog", 388);
+    librenms_simple_ping_tile("container-tilesensors", "Harbor", 898);
+    librenms_simple_ping_tile("container-tilesensors", "Jenkins", 899);
     librenms_simple_ping_tile("container-tilesensors", "JingleKeys", 77);
     librenms_simple_ping_tile("container-tilesensors", "kwiktag", 66);
     librenms_simple_ping_tile("container-tilesensors", "lemons", 72);
@@ -118,6 +119,9 @@ $(document).ready(function(){
     librenms_simple_ping_tile("container-tilesensors", "webportal", 57);
     librenms_simple_ping_tile("container-tilesensors", "WTS2-DO", 70);
     librenms_simple_ping_tile("container-tilesensors", "xibo", 52);
+    librenms_simple_ping_tile("container-tilesensors", "Outside FW switch", 889);
+    librenms_simple_ping_tile("container-tilesensors", "Inside FW switch", 446);
+
 
     datatile_update();
     librenms_update();
