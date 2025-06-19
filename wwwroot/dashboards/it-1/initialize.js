@@ -250,8 +250,6 @@ $(document).ready(function(){
         {"name": "ESXI", "id": 155},
         {"name": "PiEnvMon01", "id": 227},
         {"name": "Informacast", "id": 345},
-        {"name": "QB-HER", "id": 386},
-        {"name": "HCS-SEC-2", "id": 387},
         {"name": "ROUTER", "id": 12},
         {"name": "sw253", "id": 428},
         {"name": "AP:RM21", "id": 534},
