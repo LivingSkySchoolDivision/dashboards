@@ -625,7 +625,8 @@ $(document).ready(function(){
         {"name": "AP:HALL109", "id": 835},
         {"name": "AP:RM102", "id": 836},
         {"name": "AP:RM097", "id": 837},
-        {"name": "AP:RM040", "id": 838}
+        {"name": "AP:RM040", "id": 838},
+        {"name": "PostageMachine", "id": 904}
 
     ]);
 
