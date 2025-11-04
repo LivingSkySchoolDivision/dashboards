@@ -52,7 +52,7 @@ if (currentMonth == 11) {
 
 // Remembrance Day
 if (currentMonth == 11) {
-    if ((currentDay >= 7) && (currentDay <= 11)) {
+    if ((currentDay >= 4) && (currentDay <= 11)) {
         LoadCSSFile("../../common/css/seasonal/remembranceday.css");
         LoadJSFile("../../common/js/seasonal/remembranceday.js");
     }
