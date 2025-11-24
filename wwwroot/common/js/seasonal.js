@@ -67,6 +67,15 @@ if ((currentMonth == 12)) {
     }
 }
 
+// xmas (early for deck the halls)
+if ((currentMonth == 11)) { 
+    if ((currentDay >= 24) && (currentDay <= 28)) {
+        
+        LoadCSSFile("../../common/css/seasonal/xmas.css");
+        LoadJSFile("../../common/js/seasonal/xmas.js");
+    }
+}
+
 // Valentines
 if ((currentMonth == 2)) { 
     if ((currentDay >= 10) && (currentDay <= 14)) {
