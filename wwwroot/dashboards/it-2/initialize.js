@@ -13,7 +13,7 @@ $(document).ready(function(){
     datatile_large_website_init("container-tilesensors-2", "GRAYLOG", 388);
 
     init_days_since_tile("days_until_container", "DAYS SINCE", "CNET caused an outage", 2025, 1, 8);
-    init_days_since_tile("days_until_container", "DAYS SINCE", "Purple ball", 2025, 11, 13);
+    init_days_since_tile("days_until_container", "DAYS SINCE", "Purple ball has been on ceiling", 2025, 11, 13);
 
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Navision EOL", 2026, 10, 31);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2026, 3, 5);
