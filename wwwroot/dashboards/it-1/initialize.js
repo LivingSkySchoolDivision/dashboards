@@ -670,7 +670,6 @@ $(document).ready(function(){
         {"name": "AP:RM79", "id": 728},
         {"name": "AP:RM30", "id": 729},
         {"name": "AP:RM72", "id": 730},
-        {"name": "AP:RM77", "id": 731},
         {"name": "AP:RM08", "id": 732},
         {"name": "AP:RM29", "id": 733},
         {"name": "AP:RM67", "id": 734},
