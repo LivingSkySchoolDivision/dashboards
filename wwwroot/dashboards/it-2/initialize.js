@@ -13,9 +13,12 @@ $(document).ready(function(){
     datatile_large_website_init("container-tilesensors-2", "GRAYLOG", 388);
 
     init_days_since_tile("days_until_container", "DAYS SINCE", "CNET caused an outage", 2025, 1, 8);
+    init_days_since_tile("days_until_container", "DAYS SINCE", "Purple ball", 2025, 11, 13);
+
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Navision EOL", 2026, 10, 31);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "SSL cert expires", 2026, 3, 5);
-    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Christmas Break", 2025, 12, 20);
+    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Christmas Break (Students)", 2025, 12, 20);
+    init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Christmas Holidays (Staff", 2025, 12, 25);    
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Last day for students", 2026, 6, 26);
     init_days_until_tile("days_until_container", "SLEEPS UNTIL", "Last day for teachers", 2026, 6, 30);
 
